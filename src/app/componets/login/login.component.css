@@ -1,0 +1,31 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.login__modal {
+    background-color: #FFFFFF;
+    border: 0.5px solid var(--border-color);
+    border-radius: 30px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.login__subtitle {
+    font-size: 1.5rem;
+}
+
+.login__btn {
+    background-color: var(--btn-color);
+    border: none;
+}
+
+.login__btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.login__register {
+    padding-top: 1rem;
+}
