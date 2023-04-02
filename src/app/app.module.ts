@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componets/login/login.component';
 import { AutocadastroComponent } from './componets/autocadastro/autocadastro.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { AutocadastroComponent } from './componets/autocadastro/autocadastro.com
     AutocadastroComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
