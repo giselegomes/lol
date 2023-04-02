@@ -7,18 +7,18 @@
         <form>
             <div class="row mb-3">
               <div class="col-sm-12">
-                <input type="email" placeholder="E-mail:" class="form-control" id="inputEmail3">
+                <input type="email" placeholder="E-mail:" class="form-control" id="inputEmail3" required>
               </div>
             </div>
             <div class="row mb-3">
               <div class="col-sm-12">
-                <input type="password" placeholder="Senha:" class="form-control" id="inputPassword3">
+                <input type="password" placeholder="Senha:" class="form-control" id="inputPassword3" required>
               </div>
             </div>
             
             <button type="submit" class="login__btn btn btn-primary">Entrar</button>
             <div class="login__register">
-                <p>Não tem uma conta? <a href="#">Cadastre-se!</a></p>
+                <p>Não tem uma conta? <a routerLink="/autocadastro">Cadastre-se</a></p>
             </div>
           </form>
     </section>
