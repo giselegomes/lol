@@ -1,0 +1,12 @@
+.autocadastro {
+    padding: 2rem;
+}
+
+.autocadastro__btn {
+    background-color: var(--btn-color);
+    border: none;
+}
+
+.autocadastro__btn:hover {
+    background-color: var(--btn-hover);
+}
