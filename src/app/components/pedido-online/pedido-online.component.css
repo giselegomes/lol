@@ -1,0 +1,7 @@
+.pedido{
+    display: flex;
+    column-gap: 5px;
+    justify-content: ;
+    padding: 20px;
+    padding-left: 0;
+}
