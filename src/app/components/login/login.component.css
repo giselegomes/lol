@@ -2,7 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 0 3rem 2rem;
+}
+
+.login__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__header img {
+    width: 300px;
 }
 
 .login__modal {
