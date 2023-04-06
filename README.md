@@ -1,27 +1,63 @@
-# Lol
+# LOL - Lavanderia On-Line :socks: :jeans:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Este projeto está sendo desenvolvido como trabalho semestral da disciplina Desenvolvimento Web II, do curso de Análise e Desenvolvimento de Sistemas, da Universidade Federal do Paraná
 
-## Development server
+# Objetivo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O objetivo deste projeto é desenvolver um sistema de Controle de Lavanderia, que controla os pedidos de lavagem de roupas, utilizando a linguagem de programação Angular.
 
-## Code scaffolding
+## Índice
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Status do Projeto](#status-do-projeto)
+- [Instalação](#instalação)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Contribuições](#contribuição)
 
-## Build
+## Status do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Este projeto está em desenvolvimento e ainda não está finalizado. Algumas funcionalidades podem não estar implementadas e o projeto pode conter bugs ou erros.
 
-## Running unit tests
+## Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone este repositório para sua máquina local usando `https://github.com/giselegomes/lol.git`
+2. Inicie o projeto usando `ng serve`
 
-## Running end-to-end tests
+## Funcionalidades
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- RF001 - Autocadastro
+- RF002 - Login
 
-## Further help
+### Perfil Cliente
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- RF003 - Página Inicial de Cliente
+- RF004 - Pedido on-line
+- RF005 - Aprovar Orçamento do Pedido
+- RF006 - Rejeitar Orçamento do Pedido
+- RF007 - Listagem de pedidos
+- RF008 - Cancelamento de pedidos
+- RF009 - Consulta de pedido
+- RF010 - Pagar pedido
+
+### Perfil Funcionário
+
+- RF011 - Página Inicial de Funcionário
+- RF012 - Confirmação de recolhimento
+- RF013 - Visualização de pedidos
+
+## Tecnologias
+
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Bootstrap](https://getbootstrap.com/)
+
+### Contribuição
+
+Este projeto está sendo desenvolvido por:
+
+- [Allana Flausino](https://github.com/allanaflausino)
+- [Eduardo Aluizio Bello](https://github.com/edubello93)
+- [Gisele Gomes da Silva](https://github.com/giselegomes)
+- [Jackson Mardi](https://github.com/Jack1sn)
+- [Lucas Schip] 
+- [Maricot Nicolas](https://github.com/nuicolas)
