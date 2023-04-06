@@ -59,5 +59,5 @@ Este projeto está sendo desenvolvido por:
 - [Eduardo Aluizio Bello](https://github.com/edubello93)
 - [Gisele Gomes da Silva](https://github.com/giselegomes)
 - [Jackson Mardi](https://github.com/Jack1sn)
-- [Lucas Schip] 
+- [Lucas Schip](https://github.com/LSchip)
 - [Maricot Nicolas](https://github.com/nuicolas)
