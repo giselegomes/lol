@@ -31,6 +31,18 @@
     margin-top: 1rem;
 }
 
+.autocadastro__erro {
+    background-color: var(--background-erro);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.autocadastro__erro p{
+    margin: 0;
+    color: var(--text-erro);
+    font-size: 12px;
+}
+
 .autocadastro__row {
     padding-bottom: 22px;
 }

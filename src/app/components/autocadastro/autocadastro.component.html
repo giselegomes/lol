@@ -11,23 +11,32 @@
 
 <section class="autocadastro">
     <h1 class="autocadastro__title">Cadastre-se:</h1>
-    <form class="row g-3">
-
-        <section class="autocadastro__row  row">
+    <form class="row g-3" (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+        <section class="autocadastro__row row">
             <div class="col-sm">
                 <label for="inputCpf4" class="form-label">CPF:*</label>
-                <input type="number" class="form-control" id="inputCpf4" required>
+                <input type="number" class="form-control" id="inputCpf4" formControlName="cpf" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>CPF é obrigatório</p>
+                </div>
             </div>
         </section>
 
-        <section class="autocadastro__row  row">
+        <section class="autocadastro__row row">
             <div class="col-6">
                 <label for="inputNome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="inputNome" required>
+                <input type="text" class="form-control" id="inputNome"required>
+                <div class="autocadastro__erro">
+                    <p>Nome é obrigatório</p>
+                </div>
             </div>
+            
             <div class="col-6">
                 <label for="inputEmail" class="form-label">E-mail:*</label>
-                <input type="email" class="form-control" id="inputEmail" required>
+                <input type="email" class="form-control" id="inputEmail">
+                <div class="autocadastro__erro">
+                    <p>E-mail é obrigatório</p>
+                </div>
             </div>
         </section>
 
@@ -35,16 +44,25 @@
             <div class="col-3">
                 <label for="inputAddress" class="form-label">CEP:*</label>
                 <input type="number" class="form-control" id="inputAddress" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>CEP é obrigatório</p>
+                </div>
             </div>
 
             <div class="col-7">
                 <label for="inputAddress" class="form-label">Endereço:*</label>
                 <input type="text" class="form-control" id="inputAddress" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>Endereço é obrigatório</p>
+                </div>
             </div>
 
             <div class="col-2">
-                <label for="inputAddress2" class="form-label">Número:*</label>
+                <label for="inputAddress2" class="form-label">Nº:*</label>
                 <input type="number" class="form-control" id="inputAddress2" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>Nº é obrigatório</p>
+                </div>
             </div>
         </section>
 
@@ -52,14 +70,23 @@
             <div class="col-6">
                 <label for="inputCidade" class="form-label">Cidade:*</label>
                 <input type="text" class="form-control" id="inputCidade" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>Cidade é obrigatório</p>
+                </div>
             </div>
             <div class="col-2">
                 <label for="inputUF" class="form-label">UF:*</label>
                 <input type="text" class="form-control" id="inputUf" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>UF é obrigatório</p>
+                </div>
             </div>
             <div class="col-4">
                 <label for="inputFone" class="form-label">Telefone:*</label>
                 <input type="number" class="form-control" id="inputFone" required>
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+                    <p>Telefone é obrigatório</p>
+                </div>
             </div>
         </section>
 
