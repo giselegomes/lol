@@ -1,6 +1,17 @@
+<nav class="area-logada__navbar navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+    <div class="navbar__content container-fluid">
+        <img src="../../../assets/images/pilha-de-roupas.png"
+            alt="Imagem ilustrada de uma camisetas de roupas dobradas">
+        <p class="navbar__title">LOL - Lavanderia On-line</p>
+        <div class="navbar__btn collapse navbar-collapse" id="navbarsExample02">
+            <a routerLink="/">Logout</a>
+        </div>
+    </div>
+</nav>
+
 <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+        <nav id="sidebarMenu" class="area-logada__sidebar col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
             <div class="position-sticky pt-3 sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -48,50 +59,43 @@
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Olá, fulano!</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-
-                    <button type="button" class="btn btn-sm btn-outline-secondary">
-                        Logout
-                    </button>
                 </div>
             </div>
 
-            <!-- select de categorias: o select mostra um as opções, a pessoa seleciona as opsções e elas são descriminadas -->
+            <section class="pedidos">
+                <h2 class="pedidos__titulo">Seus Pedidos:</h2>
+                <table class="pedidos__tabela table caption-top">
+                    <thead>
+                        <tr>
+                            <th scope="co">Nº do Pedido</th>
+                            <th scope="col">Data de Recolhimento</th>
+                            <th scope="col">Data de Devolução</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Ver</th>
+                        </tr>
+                    </thead>
 
-            <h2>Seus Pedidos:</h2>
-        <table class="table" >
-    
-<thead>
-<th>Numero do Pedido</th>
-<th>Data Recolhimento</th>
-<th>Data Devolução</th>
-<th>Valor</th>
-
-</thead>
-<tr>
-    <td>#003</td>
-    <td>23/02/23</td>
-    <td>24/02/23</td>
-    <td>120,00</td>
-    
-</tr>
-<tr>
-    <td>#002</td>
-    <td>02/02/23</td>
-    <td>05/02/23</td>
-    <td>10,00</td>
-    
-</tr>
-<tr>
-    <td>#001</td>
-    <td>05/01/23</td>
-    <td>07/01/23</td>
-    <td>32,00</td>
-    
-</tr>
-
-        </table>
-
-
+                    <tbody>
+                        <tr *ngFor="let pedido of pedidos">
+                            <td>{{pedido.num_pedido}}</td>
+                            <td>{{pedido.dt_recolhimento}}</td>
+                            <td>{{pedido.dt_devolucao}}</td>
+                            <td>{{pedido.valor}}</td>
+                            <td>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                        <path
+                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </main>
     </div>
 </div>
