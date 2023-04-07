@@ -1,0 +1,22 @@
+.footer {
+    background-color: #a8dadc;
+    border-left: none;
+    border-right: none;
+}
+
+.footer__content {
+    padding-top: 2rem;
+}
+
+.footer__content h3 {
+    font-size: 14px;
+}
+
+.footer__content p {
+    font-size: 12px;
+}
+
+.footer__content.img {
+    display: flex;
+    justify-content: end;
+}

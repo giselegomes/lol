@@ -49,6 +49,7 @@ a {
 
 .area-logada__sidebar {
     background-color: var(--background);
+    min-height: 90vh;
 }
 
 .area-logada__sidebar ul li a {

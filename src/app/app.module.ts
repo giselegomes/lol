@@ -8,6 +8,7 @@ import { AutocadastroComponent } from './components/autocadastro/autocadastro.co
 import { PedidoOnlineComponent } from './components/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicialClienteComponent } from './components/inicial-cliente/inicial-cliente.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { InicialClienteComponent } from './components/inicial-cliente/inicial-cl
     LoginComponent,
     AutocadastroComponent,
     PedidoOnlineComponent,
-    InicialClienteComponent
+    InicialClienteComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule
