@@ -1,0 +1,18 @@
+.area-logada__sidebar {
+    background-color: var(--background);
+    min-height: 90vh;
+}
+
+.area-logada__sidebar ul li a {
+    color: #000;
+}
+
+.area-logada__sidebar ul li a:hover {
+    color: #000;
+    font-style: italic;
+}
+
+.area-logada__sidebar ul li a.active {
+    text-decoration: underline;
+    font-style: italic;
+}
