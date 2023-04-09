@@ -11,6 +11,8 @@ import { InicialClienteComponent } from './pages/inicial-cliente/inicial-cliente
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OrcamentosComponent } from './pages/orcamentos/orcamentos.component';
+import { ListagemPedidosComponent } from './pages/listagem-pedidos/listagem-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
     InicialClienteComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    OrcamentosComponent,
+    ListagemPedidosComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule

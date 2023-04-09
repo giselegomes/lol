@@ -12,7 +12,7 @@
     font-style: italic;
 }
 
-.area-logada__sidebar ul li a.active {
+.area-logada__sidebar ul li a {
     text-decoration: underline;
     font-style: italic;
 }
