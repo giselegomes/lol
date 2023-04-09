@@ -1,9 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./components/login/login.component"
-import { AutocadastroComponent } from "./components/autocadastro/autocadastro.component";
-import { PedidoOnlineComponent } from "./components/pedido-online/pedido-online.component";
-import { InicialClienteComponent } from "./components/inicial-cliente/inicial-cliente.component";
+import { LoginComponent } from "./pages/login/login.component"
+import { AutocadastroComponent } from "./pages/autocadastro/autocadastro.component";
+import { PedidoOnlineComponent } from "./pages/pedido-online/pedido-online.component";
+import { InicialClienteComponent } from "./pages/inicial-cliente/inicial-cliente.component";
+
 
 const routes: Routes = [
     {path: '', component: LoginComponent},

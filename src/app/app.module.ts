@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
-import { AutocadastroComponent } from './components/autocadastro/autocadastro.component';
-import { PedidoOnlineComponent } from './components/pedido-online/pedido-online.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AutocadastroComponent } from './pages/autocadastro/autocadastro.component';
+import { PedidoOnlineComponent } from './pages/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
-import { InicialClienteComponent } from './components/inicial-cliente/inicial-cliente.component';
+import { InicialClienteComponent } from './pages/inicial-cliente/inicial-cliente.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FooterComponent } from './components/footer/footer.component';
     AutocadastroComponent,
     PedidoOnlineComponent,
     InicialClienteComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule
