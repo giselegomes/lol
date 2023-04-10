@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 export class itemRoupa {
   nome: string;
   valor: number;
-  prazo: string ;
+  prazo: string;
 }
 
 @Component({
@@ -38,32 +38,31 @@ export class PedidoOnlineComponent {
     { nome: "Vestido", valor: 10.00, prazo: "2" }
   ];
 
-  // ele não puxa os valores do array
-  
+  // Item selecionado pelo usuário
   itemSelecionado: itemRoupa;
+
+  // Quantidade de itens a serem adicionados ao carrinho
   quantidade: number = 1;
+
+  // Lista de itens adicionados ao carrinho
   itensCarrinho: { item: itemRoupa, quantidade: number }[] = [];
+
+  // Total de itens no carrinho
   totalCarrinho: number = 0;
-  
 
-  adicionarItem() {
-    const itemCarrinho = { item: this.itemSelecionado, quantidade: this.quantidade };
+  constructor() { }
+
+  // Função para adicionar um item ao carrinho
+  adicionarItemCarrinho() {
+    let itemCarrinho = { item: this.itemSelecionado, quantidade: this.quantidade };
     this.itensCarrinho.push(itemCarrinho);
-    this.totalCarrinho += itemCarrinho.item.valor * itemCarrinho.quantidade;
-    this.itemSelecionado = null;
-    this.quantidade = 1;
-    console.log("itemSelecionado", this.itemSelecionado.toString());
-    
+    this.totalCarrinho += this.itemSelecionado.valor * this.quantidade;
   }
 
-  removerItem(index: number) {
-    const itemCarrinho = this.itensCarrinho[index];
-    this.totalCarrinho -= itemCarrinho.item.valor * itemCarrinho.quantidade;
+  // Função para remover um item do carrinho
+  removerItemCarrinho(index: number) {
+    let itemRemovido = this.itensCarrinho[index];
     this.itensCarrinho.splice(index, 1);
-  }
-
-  limparCarrinho() {
-    this.itensCarrinho = [];
-    this.totalCarrinho = 0;
+    this.totalCarrinho -= itemRemovido.item.valor * itemRemovido.quantidade;
   }
 }
