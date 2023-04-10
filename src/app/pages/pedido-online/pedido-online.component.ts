@@ -65,4 +65,11 @@ export class PedidoOnlineComponent {
     this.itensCarrinho.splice(index, 1);
     this.totalCarrinho -= itemRemovido.item.valor * itemRemovido.quantidade;
   }
+
+  // modal pedido aprovado
+  mostrar: boolean = false;
+
+  toggle () {
+    this.mostrar = !this.mostrar;
+  }
 }
