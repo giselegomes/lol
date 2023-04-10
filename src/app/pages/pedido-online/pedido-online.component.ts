@@ -67,9 +67,11 @@ export class PedidoOnlineComponent {
   }
 
   // modal pedido aprovado
-  mostrar: boolean = false;
+  aceitar: boolean = false;
+  recusar: boolean = false;
 
-  toggle () {
-    this.mostrar = !this.mostrar;
+  toggle() {
+    this.aceitar = !this.aceitar;
+    this.recusar = !this.recusar
   }
 }

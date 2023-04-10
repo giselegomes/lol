@@ -69,19 +69,30 @@
 
             <div class="pedido__orcamento">
                 <h3>Valor total do pedido: R$ {{ totalCarrinho }} </h3>
-                <button (click)="mostrar = !mostrar">
+                <button (click)="aceitar = !aceitar">
                     Aprovar Pedido
                 </button>
-                <button>Recusar Pedido</button>
+                <button (click)="recusar = !recusar">
+                    Recusar Pedido
+                </button>
             </div>
-
-            <section *ngIf="mostrar">
+            <section *ngIf="aceitar">
                 <div>
-                    <div class="teste">
+                    <div class="modal__content">
                         <h3>Pedido Aprovado!</h3>
                         <p>Número do pedido: #000</p>
                         <p>Valor total {{ totalCarrinho }}</p>
                         <p>Data de Recolhimento:</p>
+                        <button routerLink="/inicial-cliente">Ver pedidos</button>
+                    </div>
+                     <div class="overlay"></div>
+                </div>
+            </section> 
+
+            <section *ngIf="recusar">
+                <div>
+                    <div class="modal__content">
+                        <h3>Orçamento Recusado</h3>
                         <button routerLink="/inicial-cliente">Ver pedidos</button>
                     </div>
                      <div class="overlay"></div>
