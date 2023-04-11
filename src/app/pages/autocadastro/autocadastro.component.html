@@ -26,7 +26,7 @@
             <div class="col-6">
                 <label for="inputNome" class="form-label">Nome:</label>
                 <input type="text" class="form-control" id="inputNome"required>
-                <div class="autocadastro__erro">
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
                     <p>Nome é obrigatório</p>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="col-6">
                 <label for="inputEmail" class="form-label">E-mail:*</label>
                 <input type="email" class="form-control" id="inputEmail">
-                <div class="autocadastro__erro">
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
                     <p>E-mail é obrigatório</p>
                 </div>
             </div>
