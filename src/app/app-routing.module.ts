@@ -7,6 +7,7 @@ import { InicialClienteComponent } from "./pages/inicial-cliente/inicial-cliente
 import { OrcamentosComponent } from "./pages/orcamentos/orcamentos.component";
 import { ListagemPedidosComponent } from "./pages/listagem-pedidos/listagem-pedidos.component";
 import { ConsultarPedidosComponent } from "./pages/consultar-pedidos/consultar-pedidos.component";
+import { PedidoComponent } from "./components/pedido/pedido.component";
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
     {path: 'inicial-cliente', component: InicialClienteComponent},
     {path: 'orcamentos', component: OrcamentosComponent},
     {path: 'listagem-pedidos', component: ListagemPedidosComponent},
-    {path: 'consultar-pedidos', component: ConsultarPedidosComponent}
+    {path: 'consultar-pedidos', component: ConsultarPedidosComponent},
+    {path: 'pedido', component:PedidoComponent}
 
 ]
 

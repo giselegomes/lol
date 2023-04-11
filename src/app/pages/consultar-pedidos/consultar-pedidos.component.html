@@ -16,26 +16,37 @@
                 </div>
             </div>
 
-            <label>Número do pedido:</label>
-            <input type="text" [(ngModel)]="numeroPedido">
-           
-            <table>
-  <thead>
-    <tr>
-      <th>Número do pedido</th>
-      <th>Descrição</th>
-      <th>Valor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items" [hidden]="item.numeroPedido !== numeroPedido">
-      <td>{{item.numeroPedido}}</td>
-      <td>{{item.valor}}</td>
-    </tr>
-  </tbody>
-</table>
-
-
+            <section class="consultar-pedido">
+                <div class="consultar-pedido__header">
+                    <h2>Consultar Pedido</h2>
+                    <label class="form-label">Digite o número do pedido:</label>
+                    <input class="form-control" type="text" [(ngModel)]="numeroPedido">
+                </div>
+                <table class="table consultar-pedido__table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Número do pedido</th>
+                            <th scope="col">Valor Total</th>
+                            <th scope="col">Data de Recolhimento</th>
+                            <th scope="col">Data de Devolução</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of items" [hidden]="item.numeroPedido !== numeroPedido">
+                            <td>{{item.numeroPedido}}</td>
+                            <td>{{item.valor}}</td>
+                            <td>{{item.dt_recolhimento}}</td>
+                            <td>{{item.dt_devolucao}}</td>
+                            <td>{{item.status}}</td>
+                            <td>
+                                <button routerLink="/pedido" type="button" class="btn btn-primary">Ver</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
         </main>
     </div>
 </div>

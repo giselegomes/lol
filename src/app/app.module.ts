@@ -15,6 +15,7 @@ import { OrcamentosComponent } from './pages/orcamentos/orcamentos.component';
 import { ListagemPedidosComponent } from './pages/listagem-pedidos/listagem-pedidos.component'
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
 import { ConsultarPedidosComponent } from './pages/consultar-pedidos/consultar-pedidos.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ConsultarPedidosComponent } from './pages/consultar-pedidos/consultar-p
     OrcamentosComponent,
     ListagemPedidosComponent,
     PedidoAprovadoComponent,
-    ConsultarPedidosComponent
+    ConsultarPedidosComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule
