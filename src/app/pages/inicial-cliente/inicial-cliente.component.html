@@ -21,6 +21,7 @@
                     <thead>
                         <tr>
                             <th scope="co">Nº do Pedido</th>
+                            <th scope="col">Status do Pedido</th>
                             <th scope="col">Data de Recolhimento</th>
                             <th scope="col">Data de Devolução</th>
                             <th scope="col">Valor</th>
@@ -31,6 +32,7 @@
                     <tbody>
                         <tr *ngFor="let pedido of pedidos">
                             <td>{{pedido.num_pedido}}</td>
+                            <td>{{pedido.status_pedido}}</td>
                             <td>{{pedido.dt_recolhimento}}</td>
                             <td>{{pedido.dt_devolucao}}</td>
                             <td>{{pedido.valor}}</td>
