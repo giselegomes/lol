@@ -12,7 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrcamentosComponent } from './pages/orcamentos/orcamentos.component';
-import { ListagemPedidosComponent } from './pages/listagem-pedidos/listagem-pedidos.component';
+import { ListagemPedidosComponent } from './pages/listagem-pedidos/listagem-pedidos.component'
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
 
 @NgModule({

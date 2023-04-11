@@ -1,1 +1,55 @@
-<p>listagem-pedidos works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu"
+            class="area-logada__sidebar col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <app-sidebar></app-sidebar>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Olá, fulano!</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
+            </div>
+
+            <select class="form-select" [(ngModel)]="selectedStatus">
+                <option value="">Todos</option>
+                <option value="Aprovado">Aprovado</option>
+                <option value="Em aberto">Em Aberto</option>
+                <option value="Cancelado">Cancelado</option>
+                <option value="Aguardando Pagamento">Aguardando Pagamento</option>
+            </select>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nº do Pedido</th>
+                        <th scope="col">Data de Recolhimento</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of applyStatusFilter()">
+                        <td>{{order.id}}</td>
+                        <td>{{order.dt_recolhimento}}</td>
+                        <td>{{order.status}}</td>
+                        <td *ngIf="order.status === 'Aguardando Pagamento'">
+                            <button class="btn btn-primary">Pagar
+                                Pedido</button>
+                        </td>
+                        <td *ngIf="order.status != 'Aguardando Pagamento'">
+                            <button class="btn btn-primary">Ver pedido</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+
+<app-footer></app-footer>

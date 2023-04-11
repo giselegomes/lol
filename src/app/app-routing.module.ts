@@ -5,6 +5,7 @@ import { AutocadastroComponent } from "./pages/autocadastro/autocadastro.compone
 import { PedidoOnlineComponent } from "./pages/pedido-online/pedido-online.component";
 import { InicialClienteComponent } from "./pages/inicial-cliente/inicial-cliente.component";
 import { OrcamentosComponent } from "./pages/orcamentos/orcamentos.component";
+import { ListagemPedidosComponent } from "./pages/listagem-pedidos/listagem-pedidos.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
     {path: 'autocadastro', component: AutocadastroComponent},
     {path: 'pedido-online', component: PedidoOnlineComponent},
     {path: 'inicial-cliente', component: InicialClienteComponent},
-    {path: 'orcamentos', component: OrcamentosComponent}
+    {path: 'orcamentos', component: OrcamentosComponent},
+    {path: 'listagem-pedidos', component: ListagemPedidosComponent}
 
 ]
 
