@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OrcamentosComponent } from './pages/orcamentos/orcamentos.component';
 import { ListagemPedidosComponent } from './pages/listagem-pedidos/listagem-pedidos.component'
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
+import { ConsultarPedidosComponent } from './pages/consultar-pedidos/consultar-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-apr
     SidebarComponent,
     OrcamentosComponent,
     ListagemPedidosComponent,
-    PedidoAprovadoComponent
+    PedidoAprovadoComponent,
+    ConsultarPedidosComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule
