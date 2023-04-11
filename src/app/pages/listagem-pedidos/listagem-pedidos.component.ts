@@ -9,7 +9,7 @@ export class ListagemPedidosComponent {
   selectedStatus: string = ''; // Variável para armazenar o valor selecionado no seletor
 
   // Lista de pedidos
-  orders = [
+  pedidos = [
     { id: 1, status: "Cancelado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
     { id: 2, status: "Aprovado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
     { id: 3, status: "Aguardando Pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
@@ -24,10 +24,17 @@ export class ListagemPedidosComponent {
   applyStatusFilter() {
     if (this.selectedStatus === '') {
       // Se nenhum status for selecionado, mostra todos os pedidos
-      return this.orders;
+      return this.pedidos;
     } else {
       // Filtra a lista de pedidos pelo status selecionado
-      return this.orders.filter(order => order.status === this.selectedStatus);
+      return this.pedidos.filter(pedido => pedido.status === this.selectedStatus);
+    }
+  }
+
+  cancelarPedido(id: number) {
+    const pedido = this.pedidos.find(p => p.id === id);
+    if (pedido) {
+      pedido.status = 'Cancelado';
     }
   }
 }

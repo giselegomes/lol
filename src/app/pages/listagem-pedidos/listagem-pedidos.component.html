@@ -34,16 +34,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let order of applyStatusFilter()">
-                        <td>{{order.id}}</td>
-                        <td>{{order.dt_recolhimento}}</td>
-                        <td>{{order.status}}</td>
-                        <td *ngIf="order.status === 'Aguardando Pagamento'">
+                    <tr *ngFor="let pedido of applyStatusFilter()">
+                        <td>{{pedido.id}}</td>
+                        <td>{{pedido.dt_recolhimento}}</td>
+                        <td>{{pedido.status}}</td>
+                        <td *ngIf="pedido.status === 'Aguardando Pagamento'">
                             <button class="btn btn-primary">Pagar
                                 Pedido</button>
                         </td>
-                        <td *ngIf="order.status != 'Aguardando Pagamento'">
+                        <td *ngIf="pedido.status != 'Aguardando Pagamento'">
                             <button class="btn btn-primary">Ver pedido</button>
+                        </td>
+                        <td *ngIf="pedido.status === 'Em aberto'">
+                            <button class="btn btn-danger" (click)="cancelarPedido(pedido.id)">Cancelar Pedido</button>
                         </td>
                     </tr>
                 </tbody>
