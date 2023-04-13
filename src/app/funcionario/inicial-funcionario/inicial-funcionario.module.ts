@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InicialFuncionarioComponent } from './inicial-funcionario/inicial-funcionario.component';
-
+import { InicialFuncionarioComponent } from './inicial-funcionario/';
 
 
 @NgModule({
