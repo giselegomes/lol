@@ -7,7 +7,8 @@
     --border-color: #CCCCCC;
     --background-erro: #FEC89A;
     --text-erro: #BF0603;
-    --background: #82C3FF;
+    --background-cliente: #82C3FF;
+    --background-funcionario: #457B9D;
 }
 
 /* CSS reset */
@@ -27,7 +28,12 @@ a {
 }
 
 .area-logada__sidebar {
-    background-color: var(--background);
+    background-color: var(--background-cliente);
+    min-height: 90vh;
+}
+
+.area-logada__sidebar.funcionario {
+    background-color: var(--background-funcionario);
     min-height: 90vh;
 }
 

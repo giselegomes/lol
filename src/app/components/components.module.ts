@@ -5,6 +5,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 //import { PedidoComponent } from './pedido/pedido.component';
 //import { PedidoAprovadoComponent } from './pedido-aprovado/pedido-aprovado.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarFuncionarioComponent } from './sidebar-funcionario/sidebar-funcionario.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    SidebarFuncionarioComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    SidebarFuncionarioComponent
   ]
 })
 
