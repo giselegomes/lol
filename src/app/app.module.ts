@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { PedidoOnlineComponent } from './cliente/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OrcamentosComponent } from './cliente/orcamentos/orcamentos.component';
 import { ListagemPedidosComponent } from './cliente/listagem-pedidos/listagem-pedidos.component'
@@ -20,11 +19,11 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
 
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.module';
+import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PedidoOnlineComponent,
     OrcamentosComponent,
     ListagemPedidosComponent,
     PedidoAprovadoComponent,
@@ -36,11 +35,10 @@ import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
     LoginModule,
     AutocadastroModule,
-
     InicialClienteModule,
+    PedidoOnlineModule,
     InicialFuncionarioModule
   ],
   providers: [],

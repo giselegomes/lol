@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PedidoOnlineComponent } from 'src/app/cliente/pedido-online/pedido-online.component';
+// import { PedidoOnlineComponent } from 'src/app/cliente/pedido-online/pedido-online.component';
 
 @Component({
   selector: 'app-pedido-aprovado',

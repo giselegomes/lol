@@ -12,10 +12,8 @@ export class itemRoupa {
   templateUrl: './pedido-online.component.html',
   styleUrls: ['./pedido-online.component.css']
 })
-
 export class PedidoOnlineComponent {
-
-  // prazo = quantidade de dias
+// prazo = quantidade de dias
   itens: itemRoupa[] = [
     { nome: "Blusa", valor: 5.50, prazo: "1" },
     { nome: "Calça", valor: 7.00, prazo: "1" },
@@ -66,7 +64,7 @@ export class PedidoOnlineComponent {
     this.totalCarrinho -= itemRemovido.item.valor * itemRemovido.quantidade;
   }
 
-  // modal pedido aprovado
+  // modal pedido aprovado /
   aceitar: boolean = false;
   recusar: boolean = false;
 
