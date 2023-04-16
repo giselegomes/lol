@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { OrcamentosComponent } from './cliente/orcamentos/orcamentos.component';
+
+//Componentes globais
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
-import { ConsultarPedidosComponent } from './cliente/consultar-pedidos/consultar-pedidos.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 
 // Módulos: Public
@@ -20,13 +19,12 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
 import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.module';
 import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module';
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
+import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrcamentosComponent,
     PedidoAprovadoComponent,
-    ConsultarPedidosComponent,
     PedidoComponent,
   ],
   imports: [
@@ -39,6 +37,7 @@ import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedid
     InicialClienteModule,
     PedidoOnlineModule,
     ListagemPedidosModule,
+    ConsultarPedidosModule,
     InicialFuncionarioModule
   ],
   providers: [],

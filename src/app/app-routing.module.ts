@@ -5,9 +5,8 @@ import { AutocadastroComponent } from "./autocadastro/autocadastro/autocadastro.
 import { InicialClienteComponent } from "./cliente/inicial-cliente/inicial-cliente/inicial-cliente.component";
 import { PedidoOnlineComponent } from "./cliente/pedido-online/pedido-online/pedido-online.component";
 import { ListagemPedidosComponent } from "./cliente/listagem-pedidos/listagem-pedidos/listagem-pedidos.component";
+import { ConsultarPedidosComponent } from "./cliente/consultar-pedidos/consultar-pedidos/consultar-pedidos.component"
 
-import { OrcamentosComponent } from "./cliente/orcamentos/orcamentos.component";
-import { ConsultarPedidosComponent } from "./cliente/consultar-pedidos/consultar-pedidos.component";
 import { PedidoComponent } from "./components/pedido/pedido.component";
 import { InicialFuncionarioComponent } from "./funcionario/inicial-funcionario/inicial-funcionario";
 
@@ -18,7 +17,6 @@ const routes: Routes = [
     {path: 'pedido-online', component: PedidoOnlineComponent},
 
     {path: 'inicial-cliente', component: InicialClienteComponent},
-    {path: 'orcamentos', component: OrcamentosComponent},
     {path: 'listagem-pedidos', component: ListagemPedidosComponent},
     {path: 'consultar-pedidos', component: ConsultarPedidosComponent},
     {path: 'pedido', component:PedidoComponent},
