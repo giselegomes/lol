@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from "./cliente/login/login.component"
-import { AutocadastroComponent } from "./cliente/autocadastro/autocadastro.component";
+import { LoginComponent } from "./login/login/login.component";
+import { AutocadastroComponent } from "./autocadastro/autocadastro.component";
 import { PedidoOnlineComponent } from "./cliente/pedido-online/pedido-online.component";
 import { InicialClienteComponent } from "./cliente/inicial-cliente/inicial-cliente.component";
 import { OrcamentosComponent } from "./cliente/orcamentos/orcamentos.component";

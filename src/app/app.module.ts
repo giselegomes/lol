@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './cliente/login/login.component';
-import { AutocadastroComponent } from './cliente/autocadastro/autocadastro.component';
+import { AutocadastroComponent } from './autocadastro/autocadastro.component';
 import { PedidoOnlineComponent } from './cliente/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicialClienteComponent } from './cliente/inicial-cliente/inicial-cliente.component';
@@ -15,12 +14,14 @@ import { ConsultarPedidosComponent } from './cliente/consultar-pedidos/consultar
 import { PedidoComponent } from './components/pedido/pedido.component';
 
 // Módulos
+import { LoginModule } from './login/login.module';
+
+// Módulos Funcionário
 import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     AutocadastroComponent,
     PedidoOnlineComponent,
     InicialClienteComponent,
@@ -35,7 +36,8 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    InicialFuncionarioModule
+    InicialFuncionarioModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
