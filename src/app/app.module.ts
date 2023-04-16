@@ -5,25 +5,26 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PedidoOnlineComponent } from './cliente/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
-import { InicialClienteComponent } from './cliente/inicial-cliente/inicial-cliente.component';
 import { OrcamentosComponent } from './cliente/orcamentos/orcamentos.component';
 import { ListagemPedidosComponent } from './cliente/listagem-pedidos/listagem-pedidos.component'
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
 import { ConsultarPedidosComponent } from './cliente/consultar-pedidos/consultar-pedidos.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 
-// Módulos
+// Módulos: Public
 import { LoginModule } from './login/login.module';
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 
-// Módulos Funcionário
+// Módulos: Funcionário
 import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
+
+// Módulos: Cliente
+import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidoOnlineComponent,
-    InicialClienteComponent,
     OrcamentosComponent,
     ListagemPedidosComponent,
     PedidoAprovadoComponent,
@@ -35,9 +36,12 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    InicialFuncionarioModule,
+
     LoginModule,
-    AutocadastroModule
+    AutocadastroModule,
+
+    InicialClienteModule,
+    InicialFuncionarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
