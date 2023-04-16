@@ -8,9 +8,6 @@ import { AutocadastroComponent } from './cliente/autocadastro/autocadastro.compo
 import { PedidoOnlineComponent } from './cliente/pedido-online/pedido-online.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InicialClienteComponent } from './cliente/inicial-cliente/inicial-cliente.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { OrcamentosComponent } from './cliente/orcamentos/orcamentos.component';
 import { ListagemPedidosComponent } from './cliente/listagem-pedidos/listagem-pedidos.component'
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
@@ -27,9 +24,6 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
     AutocadastroComponent,
     PedidoOnlineComponent,
     InicialClienteComponent,
-    FooterComponent,
-    NavbarComponent,
-    SidebarComponent,
     OrcamentosComponent,
     ListagemPedidosComponent,
     PedidoAprovadoComponent,

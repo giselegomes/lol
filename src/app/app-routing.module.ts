@@ -8,6 +8,7 @@ import { OrcamentosComponent } from "./cliente/orcamentos/orcamentos.component";
 import { ListagemPedidosComponent } from "./cliente/listagem-pedidos/listagem-pedidos.component";
 import { ConsultarPedidosComponent } from "./cliente/consultar-pedidos/consultar-pedidos.component";
 import { PedidoComponent } from "./components/pedido/pedido.component";
+import { InicialFuncionarioComponent } from "./funcionario/inicial-funcionario/inicial-funcionario";
 
 
 const routes: Routes = [
@@ -18,8 +19,8 @@ const routes: Routes = [
     {path: 'orcamentos', component: OrcamentosComponent},
     {path: 'listagem-pedidos', component: ListagemPedidosComponent},
     {path: 'consultar-pedidos', component: ConsultarPedidosComponent},
-    {path: 'pedido', component:PedidoComponent}
-
+    {path: 'pedido', component:PedidoComponent},
+    {path: 'inicial-funcionario', component:InicialFuncionarioComponent}
 ]
 
 @NgModule({
