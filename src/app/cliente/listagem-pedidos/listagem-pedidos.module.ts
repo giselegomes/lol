@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PedidoOnlineComponent } from './pedido-online/pedido-online.component';
+import { ListagemPedidosComponent } from './listagem-pedidos/listagem-pedidos.component';
 import { ComponentsModule } from 'src/app/components/components.module';
+
 
 @NgModule({
   declarations: [
-    PedidoOnlineComponent
+    ListagemPedidosComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
-export class PedidoOnlineModule { }
+export class ListagemPedidosModule { }
