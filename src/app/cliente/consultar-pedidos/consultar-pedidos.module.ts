@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ConsultarPedidosComponent } from './consultar-pedidos/consultar-pedidos.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 
-
-
 @NgModule({
   declarations: [
     ConsultarPedidosComponent
