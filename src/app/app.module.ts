@@ -14,6 +14,7 @@ import { AutocadastroModule } from './autocadastro/autocadastro.module';
 
 // Módulos: Funcionário
 import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
+import { VisualizarPedidosModule } from './funcionario/visualizar-pedidos/visualizar-pedidos.module';
 
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.module';
@@ -38,7 +39,8 @@ import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pe
     PedidoOnlineModule,
     ListagemPedidosModule,
     ConsultarPedidosModule,
-    InicialFuncionarioModule
+    InicialFuncionarioModule,
+    VisualizarPedidosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

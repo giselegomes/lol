@@ -9,6 +9,7 @@ import { ConsultarPedidosComponent } from "./cliente/consultar-pedidos/consultar
 
 import { PedidoComponent } from "./components/pedido/pedido.component";
 import { InicialFuncionarioComponent } from "./funcionario/inicial-funcionario/inicial-funcionario";
+import { VisualizarPedidosComponent } from "./funcionario/visualizar-pedidos/visualizar-pedidos/visualizar-pedidos.component";
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path: 'listagem-pedidos', component: ListagemPedidosComponent},
     {path: 'consultar-pedidos', component: ConsultarPedidosComponent},
     {path: 'pedido', component:PedidoComponent},
-    {path: 'inicial-funcionario', component:InicialFuncionarioComponent}
+    {path: 'inicial-funcionario', component:InicialFuncionarioComponent},
+    {path: 'visualizar-pedidos', component: VisualizarPedidosComponent}
 ]
 
 @NgModule({

@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu"
+            class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <app-sidebar-funcionario></app-sidebar-funcionario>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Olá, fulano!</h1>
+            </div>
+            <select class="form-select" [(ngModel)]="selectedStatus">
+                <option value="">Todos</option>
+                <option value="Em aberto">Em aberto</option>
+                <option value="Rejeitado">Rejeitado</option>
+                <option value="Recolhido">Recolhido</option>
+                <option value="Pago">Pago</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Aguardando pagamento">Aguardando pagamento</option>
+            </select>
+
+            <table class="table visualizar-pedidos__table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nº do Pedido</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pedido of applyStatusFilter()" [ngClass]="{
+                        'em-aberto': pedido.status === 'Em aberto',
+                        'rejeitado': pedido.status === 'Rejeitado',
+                        'recolhido': pedido.status === 'Recolhido',
+                        'aguardando': pedido.status === 'Aguardando pagamento',
+                        'pago': pedido.status === 'Pago',
+                        'finalizado': pedido.status === 'Finalizado',
+                    }">
+                        <td>{{pedido.id}}</td>
+                        <td>{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ pedido.dataHora | date:'HH:mm' }}</td>
+                        <td class="linha">
+                            <div class="status"></div>
+                            {{pedido.status}}
+                        </td>
+                        <td *ngIf="pedido.status === 'Aguardando Pagamento'">
+                            <button class="btn btn-primary">Pagar
+                                Pedido</button>
+                        </td>
+                        <td *ngIf="pedido.status != 'Aguardando Pagamento'">
+                            <button class="btn btn-primary">Ver pedido</button>
+                        </td>
+                        <td *ngIf="pedido.status === 'Em aberto'">
+                            <button class="btn btn-danger" (click)="cancelarPedido(pedido.id)">Cancelar Pedido</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+<app-footer></app-footer>
