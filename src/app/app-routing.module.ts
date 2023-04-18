@@ -10,12 +10,14 @@ import { ConsultarPedidosComponent } from "./cliente/consultar-pedidos/consultar
 import { PedidoComponent } from "./components/pedido/pedido.component";
 import { InicialFuncionarioComponent } from "./funcionario/inicial-funcionario/inicial-funcionario";
 import { VisualizarPedidosComponent } from "./funcionario/visualizar-pedidos/visualizar-pedidos/visualizar-pedidos.component";
+import { PagamentoComponent } from "./cliente/pagamento/pagamento/pagamento.component";
 
 
 const routes: Routes = [
     {path: '', component: LoginComponent},
     {path: 'autocadastro', component: AutocadastroComponent},
     {path: 'pedido-online', component: PedidoOnlineComponent},
+    {path: 'pagamento', component: PagamentoComponent},
 
     {path: 'inicial-cliente', component: InicialClienteComponent},
     {path: 'listagem-pedidos', component: ListagemPedidosComponent},

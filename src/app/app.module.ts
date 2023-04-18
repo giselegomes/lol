@@ -21,6 +21,7 @@ import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.
 import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module';
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
+import { PagamentoModule } from './cliente/pagamento/pagamento.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pe
     ListagemPedidosModule,
     ConsultarPedidosModule,
     InicialFuncionarioModule,
-    VisualizarPedidosModule
+    VisualizarPedidosModule,
+    PagamentoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
