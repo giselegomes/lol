@@ -44,6 +44,13 @@ Este projeto está em desenvolvimento e ainda não está finalizado. Algumas fun
 - RF011 - Página Inicial de Funcionário
 - RF012 - Confirmação de recolhimento
 - RF013 - Visualização de pedidos
+- RF014 - Confirmação de Lavagem
+- RF015 - Finalização de Pedido
+- RF016 - Manutenção de Peças de Roupas
+- RF017 - Manutenção de Funcionários
+- RF018 - Relatório de Receitas em PDF
+- RF019 - Relatório de Clientes em PDF
+- RF020 - Relatório de Clientes Fiéis em PDF
 
 ## Tecnologias
 
