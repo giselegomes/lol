@@ -18,7 +18,6 @@ import { PagamentoComponent } from "./cliente/pagamento/pagamento/pagamento.comp
 // Funcionário
 import { PedidoComponent } from "./components/pedido/pedido.component";
 
-
 const routes: Routes = [
     {path: '', component: LoginComponent},
     {path: 'autocadastro', component: AutocadastroComponent},
