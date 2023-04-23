@@ -53,7 +53,7 @@
                             <button routerLink="/funcionario" class="btn btn-primary">Confirmar Recolhimento</button>
                         </td>
                         <td *ngIf="pedido.status === 'Recolhido'">
-                            <button class="btn btn-primary">Confirmar Lavagem</button>
+                            <button class="btn btn-primary" (click)="abrirModal(pedido.id)">Confirmar Lavagem</button>
                         </td>
                         <td *ngIf="pedido.status === 'Pago'">
                             <button class="btn btn-primary">Finalizar Pedido</button>
@@ -61,7 +61,22 @@
                     </tr>
                 </tbody>
             </table>
+
+            <section *ngIf="confirmar">
+                <div>
+                    <div class="modal__content">
+                        <h3>Deseja confirmar lavagem?</h3>
+                        <p>Pedido: {{numeroPedido}}</p>
+                        <div>
+                            <button (click)="confirmarLavagem()">Sim</button>
+                            <button (click)="confirmar = false">Não</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </section>
         </main>
+
     </div>
 </div>
 <app-footer></app-footer>
