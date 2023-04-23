@@ -22,45 +22,52 @@
                 <option value="Finalizado">Finalizado</option>
                 <option value="Aguardando pagamento">Aguardando pagamento</option>
             </select>
-
-            <table class="table visualizar-pedidos__table">
-                <thead>
-                    <tr>
-                        <th scope="col">Nº do Pedido</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pedido of applyStatusFilter()" [ngClass]="{
-                        'em-aberto': pedido.status === 'Em aberto',
-                        'rejeitado': pedido.status === 'Rejeitado',
-                        'recolhido': pedido.status === 'Recolhido',
-                        'aguardando': pedido.status === 'Aguardando pagamento',
-                        'pago': pedido.status === 'Pago',
-                        'finalizado': pedido.status === 'Finalizado',
-                    }">
-                        <td>{{pedido.id}}</td>
-                        <td>{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
-                        <td>{{ pedido.dataHora | date:'HH:mm' }}</td>
-                        <td class="linha">
-                            <div class="status"></div>
-                            {{pedido.status}}
-                        </td>
-                        <td *ngIf="pedido.status === 'Em aberto'">
-                            <button routerLink="/funcionario" class="btn btn-primary">Confirmar Recolhimento</button>
-                        </td>
-                        <td *ngIf="pedido.status === 'Recolhido'">
-                            <button class="btn btn-primary" (click)="abrirModal(pedido.id)">Confirmar Lavagem</button>
-                        </td>
-                        <td *ngIf="pedido.status === 'Pago'">
-                            <button class="btn btn-primary">Finalizar Pedido</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container">
+                <div class="row">
+                    <div class="visualizar-pedidos__table col-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-2" scope="col">Nº do Pedido</th>
+                                    <th class="col-2" scope="col">Data</th>
+                                    <th class="col-2" scope="col">Hora</th>
+                                    <th class="col-3" scope="col">Status</th>
+                                    <th class="col-3" scope="col">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pedido of applyStatusFilter()" [ngClass]="{
+                                    'em-aberto': pedido.status === 'Em aberto',
+                                    'rejeitado': pedido.status === 'Rejeitado',
+                                    'recolhido': pedido.status === 'Recolhido',
+                                    'aguardando': pedido.status === 'Aguardando pagamento',
+                                    'pago': pedido.status === 'Pago',
+                                    'finalizado': pedido.status === 'Finalizado',
+                                }">
+                                    <td>{{pedido.id}}</td>
+                                    <td>{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
+                                    <td>{{ pedido.dataHora | date:'HH:mm' }}</td>
+                                    <td class="linha">
+                                        <div class="status"></div>
+                                        {{pedido.status}}
+                                    </td>
+                                    <td *ngIf="pedido.status === 'Em aberto'">
+                                        <a routerLink="/funcionario" class="btn-action">Confirmar
+                                            Recolhimento</a>
+                                    </td>
+                                    <td *ngIf="pedido.status === 'Recolhido'">
+                                        <a class="btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                            Lavagem</a>
+                                    </td>
+                                    <td *ngIf="pedido.status === 'Pago'">
+                                        <a class="btn-action">Finalizar Pedido</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             <section *ngIf="confirmar">
                 <div>

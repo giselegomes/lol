@@ -1,3 +1,10 @@
+.visualizar-pedidos__table {
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 2rem;
+    margin: 12px 0 32px;
+}
+
 .visualizar-pedidos__table .linha {
     display: flex;
     flex-direction: row;
@@ -29,6 +36,7 @@
 .visualizar-pedidos__table .pago .linha .status {
     background-color: orange;
 }
+
 .visualizar-pedidos__table .finalizado .linha .status {
     background-color: green;
 }
@@ -54,4 +62,18 @@
     top: 0;
     width: 100vw;
     z-index: 10;
+}
+
+.btn-action {
+    background: var(--btn-color);
+    text-decoration: none;
+    color: #FFF;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-action:hover {
+    font-style: italic;
 }
