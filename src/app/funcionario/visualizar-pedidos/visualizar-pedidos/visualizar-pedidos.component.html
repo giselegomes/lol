@@ -52,15 +52,15 @@
                                         {{pedido.status}}
                                     </td>
                                     <td *ngIf="pedido.status === 'Em aberto'">
-                                        <a routerLink="/funcionario" class="btn-action">Confirmar
-                                            Recolhimento</a>
+                                        <button routerLink="/funcionario" class="btn btn-action">Confirmar
+                                            Recolhimento</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Recolhido'">
-                                        <a class="btn-action" (click)="abrirModal(pedido.id)">Confirmar
-                                            Lavagem</a>
+                                        <button class="btn btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                            Lavagem</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Pago'">
-                                        <a class="btn-action">Finalizar Pedido</a>
+                                        <button class="btn btn-action">Finalizar Pedido</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -72,11 +72,11 @@
             <section *ngIf="confirmar">
                 <div>
                     <div class="modal__content">
-                        <h3>Deseja confirmar lavagem?</h3>
-                        <p>Pedido: {{numeroPedido}}</p>
-                        <div>
-                            <button (click)="confirmarLavagem()">Sim</button>
-                            <button (click)="confirmar = false">Não</button>
+                        <h3 class="modal__title">Deseja confirmar lavagem?</h3>
+                        <p>Número do pedido: {{numeroPedido}}</p>
+                        <div class="modal__button">
+                            <button class="btn" (click)="confirmarLavagem()">Sim</button>
+                            <button class="btn" (click)="confirmar = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>
