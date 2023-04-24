@@ -3,10 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { InicialFuncionarioComponent } from './inicial-funcionario';
 import { VisualizarPedidosComponent } from './visualizar-pedidos/visualizar-pedidos/visualizar-pedidos.component';
 
-const routes: Routes = [
-    {path: 'funcionario', component: InicialFuncionarioComponent},
-    {path: 'funcionario/visualizar-pedido', component: VisualizarPedidosComponent}
-];
+    const routes: Routes = [
+        {
+            path: 'funcionario',
+            redirectTo: 'funcionario/inicial-funcionario',
+            pathMatch: 'full'
+        },
+        {
+            path: 'funcionario/inicial-funcionario',
+            component: InicialFuncionarioComponent
+        },
+        {
+            path: 'funcionario/visualizar-pedido',
+            component: VisualizarPedidosComponent
+        },
+    ];
 
 @NgModule({
     imports: [
