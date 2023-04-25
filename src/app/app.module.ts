@@ -28,7 +28,7 @@ import { PagamentoModule } from './cliente/pagamento/pagamento.module';
   declarations: [
     AppComponent,
     PedidoAprovadoComponent,
-    PedidoComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,

@@ -60,7 +60,8 @@
                                             Lavagem</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Pago'">
-                                        <button class="btn btn-action">Finalizar Pedido</button>
+                                        <button class="btn btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                            Finalização</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -76,6 +77,19 @@
                         <p>Número do pedido: {{numeroPedido}}</p>
                         <div class="modal__button">
                             <button class="btn" (click)="confirmarLavagem()">Sim</button>
+                            <button class="btn" (click)="confirmar = false">Não</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </section>
+            <section *ngIf="confirmar">
+                <div>
+                    <div class="modal__content">
+                        <h3 class="modal__title">Deseja finalizar pedido?</h3>
+                        <p>Número do pedido: {{numeroPedido}}</p>
+                        <div class="modal__button">
+                            <button class="btn" (click)="confirmarFinalizacao()">Sim</button>
                             <button class="btn" (click)="confirmar = false">Não</button>
                         </div>
                     </div>

@@ -52,5 +52,12 @@ export class VisualizarPedidosComponent {
     this.confirmar = false;
     alert("Lavagem confirmada! Pedido aguardando pagamento do cliente.")
   }
+  confirmarFinalizacao() {
+    // ao clicar, muda o status para "aguardando pagamento"
+    this.pedidoSelecionado.status = 'Finalizado';
+    // fecha a modal
+    this.confirmar = false;
+    alert("Finalização confirmada! Pedido Finalizado.")
+  }
 }
 
