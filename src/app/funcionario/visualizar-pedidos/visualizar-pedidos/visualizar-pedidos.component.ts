@@ -10,21 +10,21 @@ export class VisualizarPedidosComponent {
 
   // Lista de pedidos
   pedidos = [
-    { id: 1, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 2, status: "Rejeitado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 3, status: "Recolhido", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 4, status: "Aguardando pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 5, status: "Pago", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 6, status: "Finalizado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 7, status: "Recolhido", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) },
-    { id: 8, status: "Recolhido", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', dataHora: new Date(2023, 4, 18, 1, 30) }
+    { id: 1111, status: "Em aberto", dataHora: new Date(2022, 2, 8, 1, 28) },
+    { id: 2222, status: "Rejeitado", dataHora: new Date(2023, 3, 1, 5, 56) },
+    { id: 3333, status: "Recolhido", dataHora: new Date(2021, 4, 19, 23, 50) },
+    { id: 4444, status: "Aguardando pagamento", dataHora: new Date(2023, 4, 18, 7, 30) },
+    { id: 5555, status: "Pago", dataHora: new Date(2020, 4, 18, 1, 30) },
+    { id: 6666, status: "Finalizado", dataHora: new Date(2022, 4, 18, 1, 30) },
+    { id: 7777, status: "Pago", dataHora: new Date(2023, 12, 25, 5, 30) },
+    { id: 8888, status: "Recolhido", dataHora: new Date(2021, 5, 18, 2, 50) }
   ];
 
   // Método para aplicar o filtro de status do pedido
   applyStatusFilter() {
     if (this.selectedStatus === '') {
-      // Se nenhum status for selecionado, mostra todos os pedidos
-      return this.pedidos;
+      // Se nenhum status for selecionado, mostra todos os pedidos ordenados por data/hora
+      return this.pedidos.sort((a, b) => a.dataHora.getTime() - b.dataHora.getTime());
     } else {
       // Filtra a lista de pedidos pelo status selecionado
       return this.pedidos.filter(pedido => pedido.status === this.selectedStatus);
@@ -34,7 +34,7 @@ export class VisualizarPedidosComponent {
   // Modais
   confirmar: boolean = false;
   finalizar: boolean = false;
-  
+
   pedidoSelecionado: any;
   numeroPedido: number;
 
@@ -71,5 +71,7 @@ export class VisualizarPedidosComponent {
     this.finalizar = false;
     alert("Finalização confirmada! Pedido Finalizado.")
   }
+
+
 }
 
