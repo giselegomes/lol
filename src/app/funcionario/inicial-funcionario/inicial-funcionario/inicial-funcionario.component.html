@@ -1,45 +1,72 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
-    <div class="row">
-        <nav id="sidebarMenu"
-            class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
-            <div class="position-sticky pt-3 sidebar-sticky">
-                <app-sidebar-funcionario></app-sidebar-funcionario>
+  <div class="row">
+    <nav
+      id="sidebarMenu"
+      class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse"
+    >
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <app-sidebar-funcionario></app-sidebar-funcionario>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <section class="inicial-funcionario">
+        <h2>Pedidos em aberto:</h2>
+        <div class="container">
+          <div class="row">
+            <div class="inicial-funcionario__table col-md-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center" scope="col">Número do Pedido:</th>
+                    <th class="text-center" scope="col">Data</th>
+                    <th class="text-center" scope="col">Hora</th>
+                    <th class="text-center" scope="col">Status</th>
+                    <th class="text-center" scope="col">Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pedido of pedidosSorted">
+                    <td class="col-3 text-center">{{ pedido.num_pedido }}</td>
+                    <td class="col-2 text-center">
+                      {{ pedido.dataHora | date : "dd/MM/yyyy" }}
+                    </td>
+                    <td class="col-2 text-center">
+                      {{ pedido.dataHora | date : "HH:mm" }}
+                    </td>
+                    <td class="col-2 text-center">
+                      {{ pedido.status_pedido }}
+                    </td>
+                    <td  *ngIf="pedido.status_pedido === 'Em aberto'" class="col-3 text-center">
+                      <button (click)="abrirModalRecolhimento(pedido.num_pedido)" class="btn btn-action">
+                        Confirmar Recolhimento
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-        </nav>
+          </div>
+        </div>
+      </section>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-            <section class="inicial-funcionario">
-                <h2>Pedidos em aberto:</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="inicial-funcionario__table col-md-10">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" scope="col">Número do Pedido:</th>
-                                        <th class="text-center" scope="col">Data</th>
-                                        <th class="text-center" scope="col">Hora</th>
-                                        <th class="text-center" scope="col">Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let pedido of pedidosSorted">
-                                        <td class="col-3 text-center">{{ pedido.num_pedido }}</td>
-                                        <td class="col-2 text-center">{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
-                                        <td class="col-2 text-center">{{ pedido.dataHora | date:'HH:mm' }}</td>
-                                        <td class="col-6 text-center">
-                                            <button class="btn btn-primary">Registrar pedido</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
+      <section *ngIf="recolher">
+        <div>
+          <div class="modal__content">
+            <h3 class="modal__title">
+              Deseja confirmar recolhimento do pedido?
+            </h3>
+            <p>Número do pedido: {{ numeroPedido }}</p>
+            <div class="modal__button">
+             <button class="btn" (click)="confirmarRecolhimento()">Sim</button>
+              <button class="btn" (click)="recolher = false">Não</button>
+            </div>
+          </div>
+          <div class="overlay"></div>
+        </div>
+      </section>
+    </main>
+  </div>
 </div>
 <app-footer></app-footer>

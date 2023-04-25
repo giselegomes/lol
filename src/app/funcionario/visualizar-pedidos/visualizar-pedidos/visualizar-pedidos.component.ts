@@ -34,6 +34,7 @@ export class VisualizarPedidosComponent {
   // Modais
   confirmar: boolean = false;
   finalizar: boolean = false;
+  recolher: boolean = false;
 
   pedidoSelecionado: any;
   numeroPedido: number;
@@ -72,6 +73,21 @@ export class VisualizarPedidosComponent {
     alert("Finalização confirmada! Pedido Finalizado.")
   }
 
+  abrirModalRecolhimento(id: number) {
+    // abre a modal 
+    this.recolher = true;
+    // pega o pedido selecionado
+    this.pedidoSelecionado = this.pedidos.find(p => p.id === id);
+    // para printar o número do pedido na modal
+    this.numeroPedido = id;
+  }
 
+  confirmarRecolhimento() {
+    // ao clicar, muda o status para "Recolhido"
+    this.pedidoSelecionado.status = 'Recolhido';
+    // fecha a modal
+    this.recolher = false;
+    alert("Pedido recolhido.")
+  }
 }
 
