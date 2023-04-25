@@ -56,11 +56,11 @@
                                             Recolhimento</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Recolhido'">
-                                        <button class="btn btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                        <button class="btn btn-action" (click)="abrirModalConfirmar(pedido.id)">Confirmar
                                             Lavagem</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Pago'">
-                                        <button class="btn btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                        <button class="btn btn-action" (click)="abrirModalFinalizar(pedido.id)">Confirmar
                                             Finalização</button>
                                     </td>
                                 </tr>
@@ -83,14 +83,15 @@
                     <div class="overlay"></div>
                 </div>
             </section>
-            <section *ngIf="confirmar">
+
+            <section *ngIf="finalizar">
                 <div>
                     <div class="modal__content">
                         <h3 class="modal__title">Deseja finalizar pedido?</h3>
                         <p>Número do pedido: {{numeroPedido}}</p>
                         <div class="modal__button">
                             <button class="btn" (click)="confirmarFinalizacao()">Sim</button>
-                            <button class="btn" (click)="confirmar = false">Não</button>
+                            <button class="btn" (click)="finalizar = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>

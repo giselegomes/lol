@@ -31,12 +31,14 @@ export class VisualizarPedidosComponent {
     }
   }
 
-  // Modal de confirmação de lavagem inicia com o valor false 
+  // Modais
   confirmar: boolean = false;
+  finalizar: boolean = false;
+  
   pedidoSelecionado: any;
   numeroPedido: number;
 
-  abrirModal(id: number) {
+  abrirModalConfirmar(id: number) {
     // abre a modal 
     this.confirmar = true;
     // pega o pedido selecionado
@@ -52,11 +54,21 @@ export class VisualizarPedidosComponent {
     this.confirmar = false;
     alert("Lavagem confirmada! Pedido aguardando pagamento do cliente.")
   }
+
+  abrirModalFinalizar(id: number) {
+    // abre a modal 
+    this.finalizar = true;
+    // pega o pedido selecionado
+    this.pedidoSelecionado = this.pedidos.find(p => p.id === id);
+    // para printar o número do pedido na modal
+    this.numeroPedido = id;
+  }
+
   confirmarFinalizacao() {
-    // ao clicar, muda o status para "aguardando pagamento"
+    // ao clicar, muda o status para "Finalizado"
     this.pedidoSelecionado.status = 'Finalizado';
     // fecha a modal
-    this.confirmar = false;
+    this.finalizar = false;
     alert("Finalização confirmada! Pedido Finalizado.")
   }
 }
