@@ -30,8 +30,8 @@
                                 <tr>
                                     <th class="col-2" scope="col">Nº do Pedido</th>
                                     <th class="col-2" scope="col">Data</th>
-                                    <th class="col-2" scope="col">Hora</th>
-                                    <th class="col-3" scope="col">Status</th>
+                                    <th class="col-1" scope="col">Hora</th>
+                                    <th class="col-4" scope="col">Status</th>
                                     <th class="col-3" scope="col">Ação</th>
                                 </tr>
                             </thead>
@@ -48,19 +48,25 @@
                                     <td>{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
                                     <td>{{ pedido.dataHora | date:'HH:mm' }}</td>
                                     <td class="linha">
-                                        <div class="status"></div>
                                         {{pedido.status}}
+                                    </td>
+                                    <td
+                                        *ngIf="pedido.status != 'Pago' && pedido.status != 'Em aberto' && pedido.status != 'Recolhido'">
+                                        <button class="btn btn-action ver">Ver</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Em aberto'">
                                         <button routerLink="/funcionario" class="btn btn-action">Confirmar
                                             Recolhimento</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Recolhido'">
-                                        <button class="btn btn-action" (click)="abrirModal(pedido.id)">Confirmar
+                                        <button class="btn btn-action"
+                                            (click)="abrirModalConfirmar(pedido.id)">Confirmar
                                             Lavagem</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Pago'">
-                                        <button class="btn btn-action">Finalizar Pedido</button>
+                                        <button class="btn btn-action"
+                                            (click)="abrirModalFinalizar(pedido.id)">Confirmar
+                                            Finalização</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -77,6 +83,20 @@
                         <div class="modal__button">
                             <button class="btn" (click)="confirmarLavagem()">Sim</button>
                             <button class="btn" (click)="confirmar = false">Não</button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </section>
+
+            <section *ngIf="finalizar">
+                <div>
+                    <div class="modal__content">
+                        <h3 class="modal__title">Deseja finalizar pedido?</h3>
+                        <p>Número do pedido: {{numeroPedido}}</p>
+                        <div class="modal__button">
+                            <button class="btn" (click)="confirmarFinalizacao()">Sim</button>
+                            <button class="btn" (click)="finalizar = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>

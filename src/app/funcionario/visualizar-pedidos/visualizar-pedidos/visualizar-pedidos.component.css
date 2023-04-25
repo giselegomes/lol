@@ -5,40 +5,40 @@
     margin: 12px 0 32px;
 }
 
-.visualizar-pedidos__table .linha {
-    display: flex;
-    flex-direction: row;
-    column-gap: 6px;
-}
-
 .visualizar-pedidos__table .status {
     width: 20px;
     height: 20px;
     border-radius: 50%;
 }
 
-.visualizar-pedidos__table .em-aberto .linha .status {
-    background-color: yellow;
+.visualizar-pedidos__table .em-aberto .linha  {
+    background-color: #FFDF12;
+    color: #000;
 }
 
-.visualizar-pedidos__table .rejeitado .linha .status {
-    background-color: red;
+.visualizar-pedidos__table .rejeitado .linha  {
+    background-color: #ba181b;
+    color: #FFF;
 }
 
-.visualizar-pedidos__table .recolhido .linha .status {
-    background-color: grey;
+.visualizar-pedidos__table .recolhido .linha  {
+    background-color: #968C89;
+    color: #FFF;
 }
 
-.visualizar-pedidos__table .aguardando .linha .status {
-    background-color: blue;
+.visualizar-pedidos__table .aguardando .linha  {
+    background-color: #467DAC;
+    color: #FFF;
 }
 
-.visualizar-pedidos__table .pago .linha .status {
-    background-color: orange;
+.visualizar-pedidos__table .pago .linha  {
+    background-color: #f18701;
+    color: #000;
 }
 
-.visualizar-pedidos__table .finalizado .linha .status {
-    background-color: green;
+.visualizar-pedidos__table .finalizado .linha  {
+    background-color: #337F05;
+    color: #FFF;
 }
 
 .modal__content {
@@ -67,6 +67,10 @@
 .btn-action {
     background: var(--btn-color);
     color: #FFF;
+}
+
+.btn-action.ver {
+    display: none;
 }
 
 .modal__content .modal__button {
