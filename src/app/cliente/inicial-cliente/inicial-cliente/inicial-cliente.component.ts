@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 export class InicialClienteComponent {
 
   pedidos = [
-    { num_pedido: '1', status_pedido: "Cancelado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '2', status_pedido: "Aprovado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '3', status_pedido: "Aguardando Pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '4', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '5', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '6', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '7', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '8', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: '9', status_pedido: "Em Aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" }
+    { num_pedido: 111, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 222, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 333, status: "Aguardando pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 444, status: "Aguardando pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 555, status: "Recolhido", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 666, status: "Finalizado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 777, status: "Rejeitado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 888, status: "Pago", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
+    { num_pedido: 999, status: "Pago", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
   ];
 }

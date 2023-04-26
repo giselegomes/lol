@@ -1,10 +1,8 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
   <div class="row">
-    <nav
-      id="sidebarMenu"
-      class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse"
-    >
+    <nav id="sidebarMenu"
+      class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
       <div class="position-sticky pt-3 sidebar-sticky">
         <app-sidebar-funcionario></app-sidebar-funcionario>
       </div>
@@ -38,7 +36,7 @@
                     <td class="col-2 text-center">
                       {{ pedido.status_pedido }}
                     </td>
-                    <td  *ngIf="pedido.status_pedido === 'Em aberto'" class="col-3 text-center">
+                    <td *ngIf="pedido.status_pedido === 'Em aberto'" class="col-3 text-center">
                       <button (click)="abrirModalRecolhimento(pedido.num_pedido)" class="btn btn-action">
                         Confirmar Recolhimento
                       </button>
@@ -59,7 +57,7 @@
             </h3>
             <p>Número do pedido: {{ numeroPedido }}</p>
             <div class="modal__button">
-             <button class="btn" (click)="confirmarRecolhimento()">Sim</button>
+              <button class="btn" (click)="confirmarRecolhimento()">Sim</button>
               <button class="btn" (click)="recolher = false">Não</button>
             </div>
           </div>

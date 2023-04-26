@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="area-logada__sidebar col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+        <nav id="sidebarMenu"
+            class="area-logada__sidebar col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
             <div class="position-sticky pt-3 sidebar-sticky">
                 <app-sidebar></app-sidebar>
             </div>
@@ -16,40 +17,49 @@
             </div>
 
             <section class="pedidos">
-                <h2 class="pedidos__titulo">Aqui estão seus pedidos:</h2>
-                <table class="pedidos__tabela table caption-top">
-                    <thead>
-                        <tr>
-                            <th scope="co">Nº do Pedido</th>
-                            <th scope="col">Status do Pedido</th>
-                            <th scope="col">Data de Recolhimento</th>
-                            <th scope="col">Data de Devolução</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Ver</th>
-                        </tr>
-                    </thead>
+                <h2 class="pedidos__titulo">Aqui estão seus pedidos <strong>em aberto:</strong></h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="pedidos__tabela">
+                            <table class="table caption-top">
+                                <thead>
+                                    <tr>
+                                        <th scope="co">Nº do Pedido</th>
+                                        <th scope="col">Status do Pedido</th>
+                                        <th scope="col">Data de Recolhimento</th>
+                                        <th scope="col">Data de Devolução</th>
+                                        <th scope="col">Valor</th>
+                                        <!-- <th scope="col">Ver</th> -->
+                                    </tr>
+                                </thead>
 
-                    <tbody>
-                        <tr *ngFor="let pedido of pedidos">
-                            <td>{{pedido.num_pedido}}</td>
-                            <td>{{pedido.status_pedido}}</td>
-                            <td>{{pedido.dt_recolhimento}}</td>
-                            <td>{{pedido.dt_devolucao}}</td>
-                            <td>{{pedido.valor}}</td>
-                            <td>
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-eye" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                                        <path
-                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                                    </svg>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                                <tbody>
+                                    <!-- Renderiza apenas pedidos com o status em aberto -->
+                                    <ng-container *ngFor="let pedido of pedidos">
+                                        <tr *ngIf="pedido.status === 'Em aberto'">
+                                            <td>{{pedido.num_pedido}}</td>
+                                            <td>{{pedido.status}}</td>
+                                            <td>{{pedido.dt_recolhimento}}</td>
+                                            <td>{{pedido.dt_devolucao}}</td>
+                                            <td>{{pedido.valor}}</td>
+                                            <!-- <td>
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                                    <path
+                                                        d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                                </svg>
+                                            </a>
+                                        </td> -->
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </div>

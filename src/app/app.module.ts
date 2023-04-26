@@ -19,7 +19,7 @@ import { VisualizarPedidosModule } from './funcionario/visualizar-pedidos/visual
 import { ManutencaoRoupasModule } from './funcionario/manutencao-roupas';
 
 // Módulos: Cliente
-import { InicialClienteModule } from './cliente/inicial-cliente/inicial-cliente.module';
+import { InicialClienteModule } from './cliente/inicial-cliente';
 import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module';
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
