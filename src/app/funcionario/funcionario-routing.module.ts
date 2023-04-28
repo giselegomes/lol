@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InicialFuncionarioComponent } from './inicial-funcionario';
 import { VisualizarPedidosComponent } from './visualizar-pedidos/visualizar-pedidos/visualizar-pedidos.component';
 import { ManutencaoRoupasComponent } from './manutencao-roupas/manutencao-roupas/manutencao-roupas.component';
+import { RelatorioReceitaComponent } from './relatorio-receita';
     
 const routes: Routes = [
         {
@@ -21,6 +22,10 @@ const routes: Routes = [
         {
             path: 'funcionario/manutencao-roupas',
             component: ManutencaoRoupasComponent
+        },
+        {
+            path: 'funcionario/relatorio-receita',
+            component: RelatorioReceitaComponent
         },
     ];
 
