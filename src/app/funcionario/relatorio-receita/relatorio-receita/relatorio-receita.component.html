@@ -32,7 +32,36 @@
                 </div>
             </div>
 
-            
+            <div class="container">
+                <div class="row">
+                  <div class="inicial-funcionario__table col-md-12">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Número do Pedido:</th>
+                          <th scope="col">Data de Pagamento</th>
+                          <th scope="col">Valor total do Pedido</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let pedido of filteredData">
+                          <td class="col-3">{{pedido.numPedido}}</td>
+                          <td class="col-2">{{pedido.dataPagamento  | date : "dd/MM/yyyy" }}</td>
+                          <td class="col-2">{{pedido.valorTotal}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <p>Valor do total, do período selecionado:  {{ somaValores }}</p>
+                 
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary" (click)="gerarPDF()">Gerar PDF</button>
+              </div>
+              </div>
         </main>
     </div>
 </div>
