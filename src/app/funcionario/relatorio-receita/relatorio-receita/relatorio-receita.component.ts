@@ -29,7 +29,6 @@ export class RelatorioReceitaComponent implements OnInit {
     this.somaValores = this.pedidos.reduce((acc, pedido) => acc + pedido.valorTotal, 0);
   }
 
-
   filtrar() {
     // verifica se o filtro de datas faz sentido
     if (this.startDate > this.endDate) {
@@ -72,7 +71,6 @@ export class RelatorioReceitaComponent implements OnInit {
       body: rows,
       startY: 40,
       didDrawPage: (data) => {
-        // Adiciona o rodapé com o total de valores na página
         doc.setFontSize(18);
         doc.text(`Total: R$ ${this.somaValores.toFixed(2)}`, data.settings.margin.left, doc.internal.pageSize.height - 10);
       }

@@ -1,68 +1,66 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
-    <div class="row">
-        <nav id="sidebarMenu"
-            class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
-            <div class="position-sticky pt-3 sidebar-sticky">
-                <app-sidebar-funcionario></app-sidebar-funcionario>
-            </div>
-        </nav>
+	<div class="row">
+		<nav id="sidebarMenu"
+			class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+			<div class="position-sticky pt-3 sidebar-sticky">
+				<app-sidebar-funcionario></app-sidebar-funcionario>
+			</div>
+		</nav>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="container mt-5">
-                <h1>Relatório de Receitas</h1>
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+			<div class="container mt-5">
+				<h1>Relatório de receita</h1>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="dataInicio">Data de Início:</label>
-                            <input type="date" class="form-control" id="dataInicio" [(ngModel)]="startDate">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="dataTermino">Data de Término:</label>
-                            <input type="date" class="form-control" id="dataTermino" [(ngModel)]="endDate">
-                        </div>
-                    </div>
-                </div>
+				<section class="row receita__inputs">
+					<div class="col-4">
+						<label for="dataInicio">Data de Início:</label>
+						<input type="date" placeholder="Selecione uma data" class="form-control" id="dataInicio"
+							[(ngModel)]="startDate">
+					</div>
+					<div class="col-4">
+						<label for="dataTermino">Data de Término:</label>
+						<input type="date" class="form-control" id="dataTermino" [(ngModel)]="endDate">
+					</div>
+					<div class="col-2">
+						<button class="btn btn-primary" (click)="filtrar()">Filtrar</button>
+					</div>
+				</section>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-primary" (click)="filtrar()">Filtrar</button>
-                    </div>
-                </div>
-            </div>
+				<section class="container">
+					<div class="row">
+						<div class="receita__table col-md-9">
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="text-center" scope="col">Número do pedido:</th>
+										<th class="text-center" scope="col">Data de pagamento</th>
+										<th class="text-center" scope="col">Valor total do pedido</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let pedido of filteredData">
+										<td class="col-3 text-center">{{pedido.numPedido}}</td>
+										<td class="col-3 text-center">{{pedido.dataPagamento | date : "dd/MM/yyyy" }}
+										</td>
+										<td class="col-3 text-center">R$ {{pedido.valorTotal.toFixed(2)}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 
-            <div class="container">
-                <div class="row">
-                  <div class="inicial-funcionario__table col-md-12">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">Número do Pedido:</th>
-                          <th scope="col">Data de Pagamento</th>
-                          <th scope="col">Valor total do Pedido</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let pedido of filteredData">
-                          <td class="col-3">{{pedido.numPedido}}</td>
-                          <td class="col-2">{{pedido.dataPagamento  | date : "dd/MM/yyyy" }}</td>
-                          <td class="col-2">{{pedido.valorTotal}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+					<div class="row receita__total">
+						<p>Valor do total: <strong>R$ {{ somaValores.toFixed(2) }}</strong></p>
+					</div>
 
-                </div>
-                <div class="row">
-                  <p>Valor do total, do período selecionado:  {{ somaValores }}</p>
-                 
-                </div>
-                <div class="col-md-12">
-                  <button class="btn btn-primary" (click)="gerarPDF()">Gerar PDF</button>
-              </div>
-              </div>
-        </main>
-    </div>
+					<div class="col-md-12 receita__btn">
+						<button class="btn btn-primary" (click)="gerarPDF()">
+							<i class="fa-solid fa-download"></i>Baixar em PDF</button>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
 </div>
 <app-footer></app-footer>
