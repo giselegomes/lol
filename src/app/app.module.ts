@@ -18,6 +18,8 @@ import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
 import { VisualizarPedidosModule } from './funcionario/visualizar-pedidos/visualizar-pedidos.module';
 import { ManutencaoRoupasModule } from './funcionario/manutencao-roupas';
 import { RelatorioReceitaModule } from './funcionario/relatorio-receita';
+import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
+import { RelatorioMelhoresClientesModule } from './funcionario/relatorio-melhores-clientes';
 
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente/inicial-cliente';
@@ -25,7 +27,7 @@ import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente/pagamento/pagamento.module';
-import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
     InicialFuncionarioModule,
     VisualizarPedidosModule,
     PagamentoModule,
-    RelatorioReceitaModule
+    RelatorioReceitaModule,
+    RelatorioClientesModule,
+    RelatorioMelhoresClientesModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
