@@ -4,6 +4,7 @@ import { InicialFuncionarioComponent } from './inicial-funcionario';
 import { VisualizarPedidosComponent } from './visualizar-pedidos/visualizar-pedidos/visualizar-pedidos.component';
 import { ManutencaoRoupasComponent } from './manutencao-roupas/manutencao-roupas/manutencao-roupas.component';
 import { RelatorioReceitaComponent } from './relatorio-receita';
+import { RelatorioClientesComponent } from './relatorio-clientes';
     
 const routes: Routes = [
         {
@@ -26,6 +27,10 @@ const routes: Routes = [
         {
             path: 'funcionario/relatorio-receita',
             component: RelatorioReceitaComponent
+        },
+        {
+            path: 'funcionario/relatorio-clientes',
+            component: RelatorioClientesComponent
         }
     ];
 

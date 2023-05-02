@@ -1,0 +1,23 @@
+.receita__inputs {
+    display: flex;
+    align-items: end;
+}
+
+.receita__table {
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 2rem;
+    margin: 12px 0 32px;
+ }
+
+.receita__total p {
+    font-size: 1.5rem;
+}
+
+.receita__btn {
+    margin-bottom: 32px;
+}
+
+.receita__btn button i {
+    padding-right: 10px;
+}

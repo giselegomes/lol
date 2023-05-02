@@ -25,6 +25,7 @@ import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente/pagamento/pagamento.module';
+import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
 
 @NgModule({
   declarations: [
