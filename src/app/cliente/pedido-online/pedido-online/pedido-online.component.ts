@@ -13,6 +13,7 @@ export class itemRoupa {
   styleUrls: ['./pedido-online.component.css']
 })
 export class PedidoOnlineComponent {
+
 // prazo = quantidade de dias
   itens: itemRoupa[] = [
     { nome: "Blusa", valor: 5.50, prazo: "1" },
@@ -43,25 +44,35 @@ export class PedidoOnlineComponent {
   quantidade: number = 1;
 
   // Lista de itens adicionados ao carrinho
-  itensCarrinho: { item: itemRoupa, quantidade: number }[] = [];
+  itensPedido: { item: itemRoupa, quantidade: number }[] = [];
 
   // Total de itens no carrinho
-  totalCarrinho: number = 0;
+  totalPedido: number = 0;
 
   constructor() { }
 
   // Função para adicionar um item ao carrinho
-  adicionarItemCarrinho() {
-    let itemCarrinho = { item: this.itemSelecionado, quantidade: this.quantidade };
-    this.itensCarrinho.push(itemCarrinho);
-    this.totalCarrinho += this.itemSelecionado.valor * this.quantidade;
+  adicionarItemPedido() {
+    
+    if (!this.itemSelecionado) {
+      alert("Por favor, selecione uma peça de roupa");
+      return;
+    }
+    
+    if (this.quantidade === 0) {
+      alert("Por favor, insera a quantidade de peças");
+      return;
+    }
+    let itemPedido = { item: this.itemSelecionado, quantidade: this.quantidade };
+    this.itensPedido.push(itemPedido);
+    this.totalPedido += this.itemSelecionado.valor * this.quantidade;
   }
 
   // Função para remover um item do carrinho
-  removerItemCarrinho(index: number) {
-    let itemRemovido = this.itensCarrinho[index];
-    this.itensCarrinho.splice(index, 1);
-    this.totalCarrinho -= itemRemovido.item.valor * itemRemovido.quantidade;
+  removerItemPedido(index: number) {
+    let itemRemovido = this.itensPedido[index];
+    this.itensPedido.splice(index, 1);
+    this.totalPedido -= itemRemovido.item.valor * itemRemovido.quantidade;
   }
 
   // modal pedido aprovado /
