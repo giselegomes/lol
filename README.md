@@ -21,7 +21,8 @@ Este projeto está em desenvolvimento e ainda não está finalizado. Algumas fun
 ## Instalação
 
 1. Clone este repositório para sua máquina local usando `https://github.com/giselegomes/lol.git`
-2. Inicie o projeto usando `ng serve`
+2. Instale do JsPDF usando `npm install jspdf --save`
+3. Inicie o projeto usando `ng serve`
 
 ## Funcionalidades
 
@@ -57,6 +58,7 @@ Este projeto está em desenvolvimento e ainda não está finalizado. Algumas fun
 - [Angular](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Bootstrap](https://getbootstrap.com/)
+- [JsPDF](https://www.npmjs.com/package/jspdf)
 
 ### Contribuição
 
