@@ -71,24 +71,28 @@
                 </div>
             </section>
             
-
             <div class="pedido__orcamento">
                 <h3>Valor total do pedido: R$ {{ totalPedido.toFixed(2) }} </h3>
-                <button (click)="aceitar = !aceitar">
+                <button class="btn btn-primary" (click)="aceitar = !aceitar">
                     Aprovar Pedido
                 </button>
-                <button (click)="recusar = !recusar">
+                <button class="btn btn-primary" (click)="recusar = !recusar">
                     Recusar Pedido
                 </button>
             </div>
             <section *ngIf="aceitar">
                 <div>
                     <div class="modal__content">
-                        <h3>Pedido Aprovado!</h3>
-                        <p>Número do pedido: #000</p>
-                        <p>Valor total do pedido: R$ {{ totalPedido.toFixed(2) }}</p>
-                        <p>Prazo de lavagem:</p>
-                        <button routerLink="/inicial-cliente">Ver pedidos</button>
+                        <h3 class="modal__title">Pedido Aprovado!</h3>
+                        <!-- O nuḿero do pedido precisa ser gerado aqui? -->
+                        <p><strong>Número do pedido: </strong>#000</p>
+                        <p><strong>Valor total do pedido: </strong>R$ {{ totalPedido.toFixed(2) }}</p>
+                        <p><strong>Prazo de lavagem:</strong> 2 dias</p>
+
+                        <div class="modal__buttons">
+                            <button class="btn btn-primary" routerLink="/cliente/listagem-pedidos">Ver pedidos</button>
+                            <button class="btn btn-danger"(click)="fecharModal($event)"><i class="fa-sharp fa-regular fa-circle-xmark"></i> Fechar</button>
+                        </div>
                     </div>
                     <div class="overlay"></div>
                 </div>
@@ -97,8 +101,11 @@
             <section *ngIf="recusar">
                 <div>
                     <div class="modal__content">
-                        <h3>Orçamento Recusado</h3>
-                        <button routerLink="/inicial-cliente">Ver pedidos</button>
+                        <h3 class="modal__title">Orçamento Recusado!</h3>
+                        <div class="modal__buttons">
+                            <button class="btn btn-primary" routerLink="/cliente/listagem-pedidos">Ver pedidos</button>
+                            <button class="btn btn-danger"(click)="fecharModalRecusado($event)"><i class="fa-sharp fa-regular fa-circle-xmark"></i> Fechar</button>
+                        </div>
                     </div>
                     <div class="overlay"></div>
                 </div>

@@ -53,12 +53,12 @@ export class PedidoOnlineComponent {
 
   // Função para adicionar um item ao carrinho
   adicionarItemPedido() {
-    
+
     if (!this.itemSelecionado) {
       alert("Por favor, selecione uma peça de roupa");
       return;
     }
-    
+
     if (this.quantidade === 0) {
       alert("Por favor, insera a quantidade de peças");
       return;
@@ -79,8 +79,16 @@ export class PedidoOnlineComponent {
   aceitar: boolean = false;
   recusar: boolean = false;
 
-  toggle() {
-    this.aceitar = !this.aceitar;
-    this.recusar = !this.recusar
+  fecharModal(event: Event) {
+    event.preventDefault();
+    this.aceitar = false;
+    location.reload();
   }
+
+  fecharModalRecusado(event: Event) {
+    event.preventDefault();
+    this.recusar = false;
+    location.reload();
+  }
+
 }

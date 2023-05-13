@@ -1,5 +1,9 @@
 .pedido__orcamento {
-    margin-top: 32px;
+    margin: 32px 0; 
+}
+
+.pedido__orcamento button {
+    margin-right: 12px;
 }
 
 .pedidos__tabela {
@@ -15,10 +19,22 @@
     box-shadow: 0 2px 8px #333;
     position: fixed;
     left: 50%;
-    padding: 24px;
+    padding: 2rem 5rem;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 11;
+    min-width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__title {
+    margin-bottom: 1.5rem;
+}
+
+.modal__buttons {
+    display: flex;
+    column-gap: 12px;
 }
 
 .overlay {
