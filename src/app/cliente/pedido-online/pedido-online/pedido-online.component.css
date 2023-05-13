@@ -6,6 +6,11 @@
     margin-right: 12px;
 }
 
+.orcamento__title {
+    border-bottom: 1px dotted #333;
+    padding-bottom: 12px;
+}
+
 .pedidos__tabela {
     border: 1px solid var(--border-color);
     border-radius: 22px;
