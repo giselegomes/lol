@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'; 
+
 
 //Componentes globais
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
@@ -51,7 +53,8 @@ import { PagamentoModule } from './cliente/pagamento/pagamento.module';
     PagamentoModule,
     RelatorioReceitaModule,
     RelatorioClientesModule,
-    RelatorioMelhoresClientesModule 
+    RelatorioMelhoresClientesModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

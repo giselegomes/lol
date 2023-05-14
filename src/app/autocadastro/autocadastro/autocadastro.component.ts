@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+interface Endereco {
+  cep: string;
+  logradouro: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+}
 
 @Component({
   selector: 'app-autocadastro',
@@ -8,21 +17,44 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AutocadastroComponent {
 
-  momentForm!: FormGroup;
+  momentForm: FormGroup;
 
-  ngOnInit(): void {
-    this.momentForm = new FormGroup({
-      id: new FormControl(''),
-      cpf: new FormControl('', Validators.required),
-      nome: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      cep: new FormControl('', Validators.required),
-      endereco: new FormControl('', Validators.required),
-      numero: new FormControl('', Validators.required),
-      cidade: new FormControl('', Validators.required),
-      uf: new FormControl('', Validators.required),
-      telefone: new FormControl('', Validators.required)
-    })
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+    this.momentForm = this.formBuilder.group({
+      cpf: ['', Validators.required],
+      nome: ['', Validators.required],
+      email: ['', Validators.required],
+      cep: ['', Validators.required],
+      logradouro: ['', Validators.required],
+      numero: ['', Validators.required],
+      cidade: ['', Validators.required],
+      uf: ['', Validators.required],
+      telefone: ['', Validators.required],
+    });
+  }
+
+  buscarCEP() {
+    const cep = this.momentForm.get('cep').value;
+
+    if (cep && cep.length === 8) {
+
+      this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`)
+    .subscribe((endereco) => {
+      console.log(endereco); // exibe o objeto endereco no console
+      this.momentForm.patchValue({
+        cep: endereco.cep,
+        logradouro: endereco.logradouro,
+        bairro: endereco.bairro,
+        cidade: endereco.localidade,
+        uf: endereco.uf
+      });
+    });
+    }
+  }
+
+  submit() {
+    console.log(this.momentForm.value);
+    alert("Usuário cadastrado com sucesso")
   }
 
   // valida campos vazios
@@ -42,8 +74,8 @@ export class AutocadastroComponent {
     return this.momentForm.get('cep')!;
   }
 
-  get endereco() {
-    return this.momentForm.get('endereco')!;
+  get logradouro() {
+    return this.momentForm.get('logradouro')!;
   }
 
   get numero() {
@@ -60,11 +92,5 @@ export class AutocadastroComponent {
 
   get telefone() {
     return this.momentForm.get('telefone')!;
-  }
-
-
-
-  submit() {
-    console.log("enviou formulário");
   }
 }
