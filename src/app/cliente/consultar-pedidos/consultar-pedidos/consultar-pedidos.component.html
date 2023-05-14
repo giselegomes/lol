@@ -11,42 +11,59 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Olá, fulano!</h1>
+                <h1 class="h2">Consultar Pedido</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
 
             <section class="consultar-pedido">
-                <div class="consultar-pedido__header">
-                    <h2>Consultar Pedido</h2>
-                    <label class="form-label">Digite o número do pedido:</label>
-                    <input class="form-control" type="text" [(ngModel)]="numeroPedido">
+                <p>Digite o número do pedido:</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="pesquisa" type="number">
+                    <button class="btn btn-primary" (click)="pesquisarPedido()" type="button">Pesquisar</button>
                 </div>
-                <table class="table consultar-pedido__table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Número do pedido</th>
-                            <th scope="col">Valor Total</th>
-                            <th scope="col">Data de Recolhimento</th>
-                            <th scope="col">Data de Devolução</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of items" [hidden]="item.numeroPedido !== numeroPedido">
-                            <td>{{item.numeroPedido}}</td>
-                            <td>{{item.valor}}</td>
-                            <td>{{item.dt_recolhimento}}</td>
-                            <td>{{item.dt_devolucao}}</td>
-                            <td>{{item.status}}</td>
-                            <td>
-                                <button routerLink="/pedido" type="button" class="btn btn-primary">Ver</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div class="pedido" *ngIf="pedidoEncontrado">
+                    <h2 class="pedido__title">Detalhes do pedido:</h2>
+                    <div class="pedido__infos">
+                        <p><strong>Número do pedido:</strong> {{ pedidoEncontrado.num_pedido }}</p>
+                        <p><strong>Status:</strong> {{ pedidoEncontrado.status }}</p>
+                        <p><strong>Prazo:</strong> indefinido </p>
+                        <p><strong>Valor total do pedido:</strong> R$: {{ pedidoEncontrado.valor }}</p>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="pecas__tabela">
+                                <h3>Pedido:</h3>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Peça de Roupa:</th>
+                                            <th scope="col">Valor por peça:</th>
+                                            <th scope="col">Quantidade:</th>
+                                            <th scope="col">Valor total por peças: </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{pedidoEncontrado.pecas[0]}}</td>
+                                            <td>R$: 12,00</td>
+                                            <td>1</td>
+                                            <td>{{pedidoEncontrado.valor}}</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="pedidoNaoEncontrado">
+                    <p>Nenhum pedido encontrado com o número informado.</p>
+                </div>
+
             </section>
+
         </main>
     </div>
 </div>

@@ -1,3 +1,26 @@
 .consultar-pedido__table {
     margin-top: 22px;
 }
+
+.pedido__title {
+    border-bottom: 1px dotted #333;
+    padding-bottom: 12px;
+    font-size: 1.5rem;
+    margin-top: 32px;
+}
+
+.pedido__infos {
+    padding: 12px 8px 0;
+}
+
+.pecas__tabela {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 12px 0 32px;
+}
+
+.pecas__tabela h3 {
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+}
