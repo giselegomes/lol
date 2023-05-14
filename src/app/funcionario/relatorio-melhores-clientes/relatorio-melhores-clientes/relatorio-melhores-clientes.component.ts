@@ -10,9 +10,9 @@ import autoTable from 'jspdf-autotable'
 export class RelatorioMelhoresClientesComponent {
 
   clientes = [
-    { nome: 'João', CPF: 25, email: "teste@gmail.com", CEP: 78507120, uf: 'Minas Gerais', cidade: 'Sabará', endereco: 'Duque de Caxias', n: 9437, telefone: "9999 9999" },
-    { nome: 'Maria', CPF: 30, email: "teste@gmail.com", CEP: 71014676, uf: 'Paraíba', cidade: 'João P.', endereco: 'Castro Alves', n: 6788, telefone: "9999 9999" },
-    { nome: 'Pedro', CPF: 40,  email: "teste@gmail.com", CEP: 63762156, uf: 'Distrito Federal', cidade: 'Brasília', endereco: 'Goiás', n: 1268, telefone: "9999 9999" }
+    { nome: 'João', CPF: 25123333, email: "teste@gmail.com", CEP: 78507120, uf: 'Minas Gerais', cidade: 'Sabará', endereco: 'Duque de Caxias', n: 9437, telefone: "9999 9999" },
+    { nome: 'Maria', CPF: 30444556, email: "teste@gmail.com", CEP: 71014676, uf: 'Paraíba', cidade: 'João P.', endereco: 'Castro Alves', n: 6788, telefone: "9999 9999" },
+    { nome: 'Pedro', CPF: 40222222,  email: "teste@gmail.com", CEP: 63762156, uf: 'Distrito Federal', cidade: 'Brasília', endereco: 'Goiás', n: 1268, telefone: "9999 9999" }
   ];
 
   gerarPDF() {
