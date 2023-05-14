@@ -1,6 +1,12 @@
 .pagamento__title {
     font-size: 1.5rem;
-    padding-bottom: 1rem;
+    border-bottom: 1px dotted gray;
+    margin-bottom: 22px;
+    padding: 12px 0;
+}
+
+.pagamento {
+    margin-bottom: 32px;
 }
 
 .pagamento .form-group {
