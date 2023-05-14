@@ -14,32 +14,32 @@
 
 				<section class="container">
 					<div class="row">
-						<div class="receita__table col-md-9">
+						<div class="receita__table col-md-12">
 							<table class="table">
 								<thead>
 									<tr>
-										<th class="text-center" scope="col">Nome cliente</th>
-										<th class="text-center" scope="col">Idade</th>
-										<th class="text-center" scope="col">CEP</th>
-										<th class="text-center" scope="col">Estado</th>
-										<th class="text-center" scope="col">Cidade</th>
-										<th class="text-center" scope="col">Rua</th>
-										<th class="text-center" scope="col">Numero</th>
-										<th class="text-center" scope="col">Quantidade de Pedidos</th>
-										<th class="text-center" scope="col">Receita Total</th>
+										<th scope="col">Nome</th>
+										<th scope="col">CPF</th>
+										<th scope="col">E-mail</th>
+										<th scope="col">CEP</th>
+										<th scope="col">Endereço</th>
+										<th scope="col">Nº</th>
+										<th scope="col">Cidade</th>
+										<th scope="col">UF</th>
+										<th scope="col">Telefone</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr *ngFor="let cliente of clientes">
-										<td class="col-3 text-center">{{cliente.nome}}</td>
-										<td class="col-3 text-center">{{cliente.idade}}</td>
-										<td class="col-3 text-center">{{cliente.CEP}}</td>
-										<td class="col-3 text-center">{{cliente.estado}}</td>
-										<td class="col-3 text-center">{{cliente.cidade}}</td>
-										<td class="col-3 text-center">{{cliente.rua}}</td>
-										<td class="col-3 text-center">{{cliente.numero}}</td>
-										<td class="col-3 text-center">{{cliente.quantidade}}</td>
-										<td class="col-3 text-center">{{cliente.receita}}</td>
+										<td class="col-2">{{cliente.nome}}</td>
+										<td class="col-1">{{cliente.CPF}}</td>
+										<td class="col-2">{{cliente.email}}</td>
+										<td class="col-1">{{cliente.CEP}}</td>
+										<td class="col-2">{{cliente.endereco}}</td>
+										<td class="col-1">{{cliente.n}}</td>
+										<td class="col-1">{{cliente.cidade}}</td>
+										<td class="col-1">{{cliente.uf}}</td>
+										<td class="col-1">{{cliente.telefone}}</td>
 									</tr>
 								</tbody>
 							</table>
