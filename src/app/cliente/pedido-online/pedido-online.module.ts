@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PedidoOnlineComponent } from './pedido-online/pedido-online.component';
+import { PedidoOnlineComponent } from './pedido-online';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { RouterModule } from '@angular/router';
 

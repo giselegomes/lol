@@ -20,6 +20,7 @@ export class ListagemPedidosComponent {
     { num_pedido: 888, status: "Em aberto", dataHora: new Date(2020, 2, 9, 1, 28), valor: "22,00" },
     { num_pedido: 999, status: "Em aberto", dataHora: new Date(2020, 2, 1, 1, 28), valor: "22,00" }
   ];
+  
   // Método para aplicar o filtro de status do pedido
   applyStatusFilter() {
     if (this.selectedStatus === '') {
