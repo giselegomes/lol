@@ -14,7 +14,14 @@ export class AutocadastroComponent {
     this.momentForm = new FormGroup({
       id: new FormControl(''),
       cpf: new FormControl('', Validators.required),
-      nome: new FormControl('', Validators.required)
+      nome: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      cep: new FormControl('', Validators.required),
+      endereco: new FormControl('', Validators.required),
+      numero: new FormControl('', Validators.required),
+      cidade: new FormControl('', Validators.required),
+      uf: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required)
     })
   }
 
