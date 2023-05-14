@@ -4,8 +4,6 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RelatorioClientesComponent } from './relatorio-clientes/relatorio-clientes.component';
 
-
-
 @NgModule({
   declarations: [
     RelatorioClientesComponent

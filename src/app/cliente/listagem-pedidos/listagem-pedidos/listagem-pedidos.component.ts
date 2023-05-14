@@ -10,29 +10,29 @@ export class ListagemPedidosComponent {
 
   // Lista de pedidos
   pedidos = [
-    { id: 1, status: "Cancelado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 2, status: "Aprovado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 3, status: "Aguardando Pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 4, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 5, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 6, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 7, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 8, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { id: 9, status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" }
+    { num_pedido: 111, status: "Cancelado", dataHora: new Date(2022, 2, 8, 1, 28), valor: "22,00" },
+    { num_pedido: 222, status: "Aprovado", dataHora: new Date(2022, 2, 1, 1, 28), valor: "22,00" },
+    { num_pedido: 333, status: "Aguardando Pagamento", dataHora: new Date(2023, 2, 8, 1, 28), valor: "22,00" },
+    { num_pedido: 444, status: "Em aberto", dataHora: new Date(2023, 2, 3, 1, 28), valor: "22,00" },
+    { num_pedido: 555, status: "Em aberto", dataHora: new Date(2022, 2, 5, 1, 28), valor: "22,00" },
+    { num_pedido: 666, status: "Em aberto", dataHora: new Date(2021, 2, 7, 1, 28), valor: "22,00" },
+    { num_pedido: 777, status: "Em aberto", dataHora: new Date(2021, 2, 8, 1, 28), valor: "22,00" },
+    { num_pedido: 888, status: "Em aberto", dataHora: new Date(2020, 2, 9, 1, 28), valor: "22,00" },
+    { num_pedido: 999, status: "Em aberto", dataHora: new Date(2020, 2, 1, 1, 28), valor: "22,00" }
   ];
   // Método para aplicar o filtro de status do pedido
   applyStatusFilter() {
     if (this.selectedStatus === '') {
-      // Se nenhum status for selecionado, mostra todos os pedidos
-      return this.pedidos;
+      // Se nenhum status for selecionado, mostra todos os pedidos em ordem decrescente
+      return this.pedidos.sort((a, b) => b.dataHora.getTime() - a.dataHora.getTime());
     } else {
       // Filtra a lista de pedidos pelo status selecionado
       return this.pedidos.filter(pedido => pedido.status === this.selectedStatus);
     }
   }
 
-  cancelarPedido(id: number) {
-    const pedido = this.pedidos.find(p => p.id === id);
+  cancelarPedido(num_pedido: number) {
+    const pedido = this.pedidos.find(p => p.num_pedido === num_pedido);
     if (pedido) {
       pedido.status = 'Cancelado';
     }
