@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar-cliente/sidebar.component';
 import { SidebarFuncionarioComponent } from './sidebar-funcionario/sidebar-funcionario.component';
 
-
 @NgModule({
 
   declarations: [
