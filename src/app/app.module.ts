@@ -23,6 +23,7 @@ import { RelatorioReceitaModule } from './funcionario/relatorio-receita';
 import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
 import { RelatorioMelhoresClientesModule } from './funcionario/relatorio-melhores-clientes';
 import { ManutencaoFuncionarioModule } from './funcionario/manutencao-funcionario';
+import { NovoFuncionarioModule } from './funcionario/novo-funcionario';
 
 
 // Módulos: Cliente
@@ -31,7 +32,6 @@ import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module
 import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente/pagamento/pagamento.module';
-
 
 
 @NgModule({
@@ -58,7 +58,8 @@ import { PagamentoModule } from './cliente/pagamento/pagamento.module';
     RelatorioClientesModule,
     RelatorioMelhoresClientesModule,
     HttpClientModule,
-    ManutencaoFuncionarioModule
+    ManutencaoFuncionarioModule,
+    NovoFuncionarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

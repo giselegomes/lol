@@ -7,6 +7,7 @@ import { RelatorioReceitaComponent } from './relatorio-receita';
 import { RelatorioClientesComponent } from './relatorio-clientes';
 import { RelatorioMelhoresClientesComponent } from './relatorio-melhores-clientes';
 import { ManutencaoFuncionarioComponent } from './manutencao-funcionario/manutencao-funcionario';
+import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario';
     
 const routes: Routes = [
         {
@@ -29,6 +30,10 @@ const routes: Routes = [
         {
             path: 'funcionario/manutencao-funcionario',
             component: ManutencaoFuncionarioComponent
+        },
+        {
+            path: 'funcionario/novo-funcionario',
+            component: NovoFuncionarioComponent
         },
         {
             path: 'funcionario/relatorio-receita',

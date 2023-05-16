@@ -9,28 +9,42 @@
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <section class="inicial-funcionario">
-                <h2>Manutenção de Funcionários</h2>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Manutenção de Funcionários</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
+            </div>
+
+            <section class="manutencao-funcionario">
+
+                <div class="novo-funcionario">
+                    <button routerLink="/funcionario/novo-funcionario" type="button" class="btn btn-success"> <i class="fa-solid fa-plus"></i> Novo</button>
+                </div>
+
                 <div class="container">
                     <div class="row">
-                        <div class="inicial-funcionario__table col-md-12">
+                        <div class="manutencao-funcionario__table col-md-12">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Número do Pedido:</th>
-                                        <th scope="col">Data</th>
-                                        <th scope="col">Hora</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Ação</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">E-mail</th>
+                                        <th scope="col">Data de Nascimento</th>
+                                        <th scope="col">Editar</th>
+                                        <th scope="col">Deletar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Teste</td>
-                                        <td>Teste</td>
-                                        <td>Teste</td>
-                                        <td>Teste</td>
-                                        <td>Teste</td>
+                                        <td>Pedrinho</td>
+                                        <td>pedrinho@gmail.com</td>
+                                        <td>17/08/2021</td>
+                                        <td>
+                                            <button class="btn btn-success" routerLink="funcionario/novo-funcionario" href="#"><i class="fa-regular fa-pen-to-square"> </i></button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

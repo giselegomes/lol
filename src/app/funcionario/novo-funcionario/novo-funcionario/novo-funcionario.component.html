@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu"
+            class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <app-sidebar-funcionario></app-sidebar-funcionario>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Manutenção de Funcionários</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
+            </div>
+
+            <section class="novo-funcionario">
+                <h2 class="h3">Cadastrar novo funcionário:</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="novo-funcionario__table col-md-10">
+
+                            <form class="row g-3">
+                                <section class="novo__row row">
+                                    <div class="col-10">
+                                        <label for="inputNome" class="form-label">Nome:</label>
+                                        <input type="text" class="form-control" id="inputNome" formControlName="nome" required>
+                                        <!-- <div class="autocadastro__erro" *ngIf="nome.invalid && formDir.submitted">
+                                            <p>Nome é obrigatório</p>
+                                        </div> -->
+                                    </div>
+                    
+                                </section>
+                        
+                                <section class="novo__row row">
+                                    <div class="col-6">
+                                        <label for="inputEmail" class="form-label">E-mail:*</label>
+                                        <input type="email" class="form-control" id="inputEmail" formControlName="email" required>
+                                        <!-- <div class="autocadastro__erro" *ngIf="email.invalid && formDir.submitted">
+                                            <p>E-mail é obrigatório</p>
+                                        </div> -->
+                                    </div>
+                        
+                                    <div class="col-4">
+                                        <label for="inputAddress2" class="form-label">Data de Nascimento*</label>
+                                        <input type="date" class="form-control" id="birthday" formControlName="numero" required>
+                                        <!-- <div class="autocadastro__erro" *ngIf="numero.invalid && formDir.submitted">
+                                            <p>Nº é obrigatório</p>
+                                        </div> -->
+                                    </div>
+                                </section>
+                        
+                                <section class="novo__row row">
+                                    <div class="col-5">
+                                        <label for="inputCidade" class="form-label">Senha:*</label>
+                                        <input type="password" class="form-control" id="inputCidade" formControlName="cidade" required>
+                                        <!-- <div class="autocadastro__erro" *ngIf="cidade.invalid && formDir.submitted">
+                                            <p>Cidade é obrigatório</p>
+                                        </div> -->
+                                    </div>
+                                    <div class="col-5">
+                                        <label for="inputUF" class="form-label">Repetir Senha: *</label>
+                                        <input type="password" class="form-control" id="inputUf" formControlName="uf" required>
+                                        <!-- <div class="autocadastro__erro" *ngIf="uf.invalid && formDir.submitted">
+                                            <p>UF é obrigatório</p>
+                                        </div> -->
+                                    </div>
+
+                                </section>
+                                <section class="row">
+                                    <div class="col-12 actions">
+                                        <button type="submit" class="autocadastro__btn btn btn-primary">Cadastrar</button>
+                                        <button routerLink="/funcionario/manutencao-funcionario" type="submit" class="autocadastro__btn btn btn-primary">Voltar</button>
+                                    </div>
+                                </section>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+<app-footer></app-footer>

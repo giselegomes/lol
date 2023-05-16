@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ManutencaoFuncionarioComponent } from './manutencao-funcionario/';
+import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { RouterModule } from '@angular/router';
+
+
 @NgModule({
   declarations: [
-    ManutencaoFuncionarioComponent
+    NovoFuncionarioComponent
   ],
   imports: [
     CommonModule,
@@ -13,4 +15,4 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ]
 })
-export class ManutencaoFuncionarioModule { }
+export class NovoFuncionarioModule { }
