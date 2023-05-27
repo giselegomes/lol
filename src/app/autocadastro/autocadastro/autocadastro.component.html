@@ -11,12 +11,15 @@
 
 <section class="autocadastro">
     <h1 class="autocadastro__title">Cadastre-se:</h1>
-    <form class="row g-3" (ngSubmit)="submit()" [formGroup]="momentForm" #formDir="ngForm">
+    <form class="row g-3" (ngSubmit)="submit()" [formGroup]="momentForm" #formCliente="ngForm">
         <section class="autocadastro__row row">
             <div class="col-sm">
                 <label for="inputCpf4" class="form-label">CPF:*</label>
-                <input type="number" class="form-control" id="inputCpf4" formControlName="cpf" required>
-                <div class="autocadastro__erro" *ngIf="cpf.invalid && formDir.submitted">
+
+                <input type="number" class="form-control" name="cpf" id="inputCpf4" formControlName="cpf"
+                    [(ngModel)]="cliente.cpf" required>
+
+                <div class="autocadastro__erro" *ngIf="cpf.invalid && formCliente.submitted">
                     <p>CPF é obrigatório</p>
                 </div>
             </div>
@@ -25,16 +28,22 @@
         <section class="autocadastro__row row">
             <div class="col-6">
                 <label for="inputNome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="inputNome" formControlName="nome" required>
-                <div class="autocadastro__erro" *ngIf="nome.invalid && formDir.submitted">
+
+                <input type="text" class="form-control" id="inputNome" formControlName="nome" [(ngModel)]="cliente.nome"
+                    ngModel required>
+
+                <div class="autocadastro__erro" *ngIf="nome.invalid && formCliente.submitted">
                     <p>Nome é obrigatório</p>
                 </div>
             </div>
 
             <div class="col-6">
                 <label for="inputEmail" class="form-label">E-mail:*</label>
-                <input type="email" class="form-control" id="inputEmail" formControlName="email" required>
-                <div class="autocadastro__erro" *ngIf="email.invalid && formDir.submitted">
+
+                <input type="email" class="form-control" id="inputEmail" formControlName="email"
+                    [(ngModel)]="cliente.email" required> 
+
+                <div class="autocadastro__erro" *ngIf="email.invalid && formCliente.submitted">
                     <p>E-mail é obrigatório</p>
                 </div>
             </div>
@@ -43,25 +52,33 @@
         <section class="autocadastro__row  row">
             <div class="col-3">
                 <label for="inputAddress" class="form-label">CEP:*</label>
+
                 <input type="text" class="form-control" id="inputAddress" formControlName="cep" (blur)="buscarCEP()"
-                    required>
-                <div class="autocadastro__erro" *ngIf="cep.invalid && formDir.submitted">
+                    [(ngModel)]="cliente.cep" required>
+
+                <div class="autocadastro__erro" *ngIf="cep.invalid && formCliente.submitted">
                     <p>CEP é obrigatório</p>
                 </div>
             </div>
 
             <div class="col-7">
                 <label for="inputAddress" class="form-label">Endereço:*</label>
-                <input type="text" class="form-control" id="inputAddress" formControlName="logradouro" required>
-                <div class="autocadastro__erro" *ngIf="logradouro.invalid && formDir.submitted">
+
+                <input type="text" class="form-control" id="inputAddress" formControlName="logradouro"
+                    [(ngModel)]="cliente.endereco" required>
+
+                <div class="autocadastro__erro" *ngIf="logradouro.invalid && formCliente.submitted">
                     <p>Endereço é obrigatório</p>
                 </div>
             </div>
 
             <div class="col-2">
                 <label for="inputAddress2" class="form-label">Nº:*</label>
-                <input type="number" class="form-control" id="inputAddress2" formControlName="numero" required>
-                <div class="autocadastro__erro" *ngIf="numero.invalid && formDir.submitted">
+
+                <input type="number" class="form-control" id="inputAddress2" formControlName="numero"
+                    [(ngModel)]="cliente.numero" required>
+
+                <div class="autocadastro__erro" *ngIf="numero.invalid && formCliente.submitted">
                     <p>Nº é obrigatório</p>
                 </div>
             </div>
@@ -70,23 +87,31 @@
         <section class="autocadastro__row  row">
             <div class="col-6">
                 <label for="inputCidade" class="form-label">Cidade:*</label>
-                <input type="text" class="form-control" id="inputCidade" formControlName="cidade" required>
-                <div class="autocadastro__erro" *ngIf="cidade.invalid && formDir.submitted">
+
+                <input type="text" class="form-control" id="inputCidade" formControlName="cidade" 
+                [(ngModel)]="cliente.cidade" required>
+
+                <div class="autocadastro__erro" *ngIf="cidade.invalid && formCliente.submitted">
                     <p>Cidade é obrigatório</p>
                 </div>
             </div>
             <div class="col-2">
                 <label for="inputUF" class="form-label">UF:*</label>
-                <input type="text" class="form-control" id="inputUf" formControlName="uf" required>
-                <div class="autocadastro__erro" *ngIf="uf.invalid && formDir.submitted">
+
+                <input type="text" class="form-control" id="inputUf" formControlName="uf" 
+                [(ngModel)]="cliente.uf" required>
+                
+                <div class="autocadastro__erro" *ngIf="uf.invalid && formCliente.submitted">
                     <p>UF é obrigatório</p>
                 </div>
             </div>
             <div class="col-4">
                 <label for="inputFone" class="form-label">Telefone:*</label>
+
                 <input type="text" class="form-control" id="inputFone" formControlName="telefone" mask="(00) 0000-0000"
-                    required>
-                <div class="autocadastro__erro" *ngIf="telefone.invalid && formDir.submitted">
+                [(ngModel)]="cliente.telefone" required>
+
+                <div class="autocadastro__erro" *ngIf="telefone.invalid && formCliente.submitted">
                     <p>Telefone é obrigatório</p>
                 </div>
             </div>
@@ -94,7 +119,8 @@
 
         <section class="row">
             <div class="col-12">
-                <button type="submit" class="autocadastro__btn btn btn-primary">Cadastrar</button>
+                <button type="submit" class="autocadastro__btn btn btn-primary" (click)="inserir()"
+                    [disabled]="!formCliente.form.valid">Cadastrar</button>
             </div>
         </section>
     </form>
