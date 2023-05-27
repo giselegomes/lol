@@ -40,5 +40,10 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
-  }
+  },
+  "description": "Este projeto está sendo desenvolvido como trabalho semestral da disciplina Desenvolvimento Web II, do curso de Análise e Desenvolvimento de Sistemas, da Universidade Federal do Paraná",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

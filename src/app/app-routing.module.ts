@@ -2,8 +2,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 // Rotas
-import { ClienteRoutingModule } from "./cliente/cliente-routing.module";
-import { FuncionarioRoutingModule } from "./funcionario/funcionario-routing.module";
+import { ClienteRoutingModule } from "./cliente-pages/cliente-routing.module";
+import { FuncionarioRoutingModule } from "./funcionario-pages/funcionario-routing.module";
 
 // Public
 import { LoginComponent } from "./login/login/login.component";

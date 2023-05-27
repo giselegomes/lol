@@ -16,22 +16,22 @@ import { LoginModule } from './login/login.module';
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 
 // Módulos: Funcionário
-import { InicialFuncionarioModule } from './funcionario/inicial-funcionario';
-import { VisualizarPedidosModule } from './funcionario/visualizar-pedidos/visualizar-pedidos.module';
-import { ManutencaoRoupasModule } from './funcionario/manutencao-roupas';
-import { RelatorioReceitaModule } from './funcionario/relatorio-receita';
-import { RelatorioClientesModule } from './funcionario/relatorio-clientes';
-import { RelatorioMelhoresClientesModule } from './funcionario/relatorio-melhores-clientes';
-import { ManutencaoFuncionarioModule } from './funcionario/manutencao-funcionario';
-import { NovoFuncionarioModule } from './funcionario/novo-funcionario';
+import { InicialFuncionarioModule } from './funcionario-pages/inicial-funcionario';
+import { VisualizarPedidosModule } from './funcionario-pages/visualizar-pedidos/visualizar-pedidos.module';
+import { ManutencaoRoupasModule } from './funcionario-pages/manutencao-roupas';
+import { RelatorioReceitaModule } from './funcionario-pages/relatorio-receita';
+import { RelatorioClientesModule } from './funcionario-pages/relatorio-clientes';
+import { RelatorioMelhoresClientesModule } from './funcionario-pages/relatorio-melhores-clientes';
+import { ManutencaoFuncionarioModule } from './funcionario-pages/manutencao-funcionario';
+import { NovoFuncionarioModule } from './funcionario-pages/novo-funcionario';
 
 
 // Módulos: Cliente
-import { InicialClienteModule } from './cliente/inicial-cliente';
-import { PedidoOnlineModule } from './cliente/pedido-online/pedido-online.module';
-import { ListagemPedidosModule } from './cliente/listagem-pedidos/listagem-pedidos.module';
-import { ConsultarPedidosModule } from './cliente/consultar-pedidos/consultar-pedidos.module';
-import { PagamentoModule } from './cliente/pagamento/pagamento.module';
+import { InicialClienteModule } from './cliente-pages/inicial-cliente';
+import { PedidoOnlineModule } from './cliente-pages/pedido-online/pedido-online.module';
+import { ListagemPedidosModule } from './cliente-pages/listagem-pedidos/listagem-pedidos.module';
+import { ConsultarPedidosModule } from './cliente-pages/consultar-pedidos/consultar-pedidos.module';
+import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
 
 
 @NgModule({
