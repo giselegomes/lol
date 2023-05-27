@@ -25,7 +25,6 @@ import { RelatorioMelhoresClientesModule } from './funcionario-pages/relatorio-m
 import { ManutencaoFuncionarioModule } from './funcionario-pages/manutencao-funcionario';
 import { NovoFuncionarioModule } from './funcionario-pages/novo-funcionario';
 
-
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente-pages/inicial-cliente';
 import { PedidoOnlineModule } from './cliente-pages/pedido-online/pedido-online.module';
@@ -33,6 +32,8 @@ import { ListagemPedidosModule } from './cliente-pages/listagem-pedidos/listagem
 import { ConsultarPedidosModule } from './cliente-pages/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
 
+// 
+import { ClienteModule } from './cliente/cliente.module';
 
 @NgModule({
   declarations: [
@@ -59,9 +60,12 @@ import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
     RelatorioMelhoresClientesModule,
     HttpClientModule,
     ManutencaoFuncionarioModule,
-    NovoFuncionarioModule
+    NovoFuncionarioModule,
+    ClienteModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

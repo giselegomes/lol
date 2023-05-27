@@ -32,11 +32,11 @@
 								<tbody>
 									<tr *ngFor="let cliente of clientes">
 										<td class="col-2">{{cliente.nome}}</td>
-										<td class="col-1">{{cliente.CPF}}</td>
+										<td class="col-1">{{cliente.cpf}}</td>
 										<td class="col-2">{{cliente.email}}</td>
-										<td class="col-1">{{cliente.CEP}}</td>
+										<td class="col-1">{{cliente.cep}}</td>
 										<td class="col-2">{{cliente.endereco}}</td>
-										<td class="col-1">{{cliente.n}}</td>
+										<td class="col-1">{{cliente.numero}}</td>
 										<td class="col-1">{{cliente.cidade}}</td>
 										<td class="col-1">{{cliente.uf}}</td>
 										<td class="col-1">{{cliente.telefone}}</td>
@@ -46,10 +46,10 @@
 						</div>
 					</div>
 
-					<div class="col-md-12 receita__btn">
+					<!-- <div class="col-md-12 receita__btn">
 						<button class="btn btn-primary" (click)="gerarPDF()">
 							<i class="fa-solid fa-download"></i>Baixar em PDF</button>
-					</div>
+					</div> -->
 				</section>
 			</div>
 		</main>
