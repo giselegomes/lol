@@ -12,16 +12,13 @@ export class ManutencaoFuncionarioComponent implements OnInit {
 
   funcionarios: Funcionario[] = [];
 
-  constructor (private funcionarioService : FuncionarioService) { }
+  constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
     this.funcionarios = this.listarFuncionarios();
   }
 
   listarFuncionarios(): Funcionario[] {
-    // return this.funcionarioService.listarFuncionarios();
-    return [
-      new Funcionario(1, "Gisele Gomes", "gselegomes@gmail.com", new Date(1993, 1, 28))
-    ]
+    return this.funcionarioService.listarFuncionarios();
   }
 }

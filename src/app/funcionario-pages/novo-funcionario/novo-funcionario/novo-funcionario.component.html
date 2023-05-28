@@ -22,57 +22,55 @@
                     <div class="row">
                         <div class="novo-funcionario__table col-md-10">
 
-                            <form class="row g-3">
+                            <form class="row g-3" [formGroup]="formFuncionario">
                                 <section class="novo__row row">
                                     <div class="col-10">
                                         <label for="inputNome" class="form-label">Nome:</label>
-                                        <input type="text" class="form-control" id="inputNome" formControlName="nome" required>
-                                        <!-- <div class="autocadastro__erro" *ngIf="nome.invalid && formDir.submitted">
-                                            <p>Nome é obrigatório</p>
-                                        </div> -->
+                                        <input type="text" class="form-control" id="inputNome" formControlName="nome"
+                                            [(ngModel)]="funcionario.nome" ngModel required>
                                     </div>
-                    
                                 </section>
-                        
+
                                 <section class="novo__row row">
                                     <div class="col-6">
                                         <label for="inputEmail" class="form-label">E-mail:*</label>
-                                        <input type="email" class="form-control" id="inputEmail" formControlName="email" required>
-                                        <!-- <div class="autocadastro__erro" *ngIf="email.invalid && formDir.submitted">
-                                            <p>E-mail é obrigatório</p>
-                                        </div> -->
+                                        <input type="email" class="form-control" id="inputEmail" formControlName="email"
+                                            [(ngModel)]="funcionario.email" ngModel required>
                                     </div>
-                        
+
                                     <div class="col-4">
                                         <label for="inputAddress2" class="form-label">Data de Nascimento*</label>
-                                        <input type="date" class="form-control" id="birthday" formControlName="numero" required>
-                                        <!-- <div class="autocadastro__erro" *ngIf="numero.invalid && formDir.submitted">
-                                            <p>Nº é obrigatório</p>
-                                        </div> -->
+                                        <input type="date" class="form-control" id="birthday" formControlName="dt_nasc"
+                                            [(ngModel)]="funcionario.dt_nasc" ngModel required>
                                     </div>
                                 </section>
-                        
+
                                 <section class="novo__row row">
                                     <div class="col-5">
-                                        <label for="inputCidade" class="form-label">Senha:*</label>
-                                        <input type="password" class="form-control" id="inputCidade" formControlName="cidade" required>
-                                        <!-- <div class="autocadastro__erro" *ngIf="cidade.invalid && formDir.submitted">
-                                            <p>Cidade é obrigatório</p>
-                                        </div> -->
+                                        <label for="password" class="form-label">Senha:*</label>
+                                        <input type="password" class="form-control" id="password"
+                                            formControlName="senha" required>
                                     </div>
                                     <div class="col-5">
-                                        <label for="inputUF" class="form-label">Repetir Senha: *</label>
-                                        <input type="password" class="form-control" id="inputUf" formControlName="uf" required>
-                                        <!-- <div class="autocadastro__erro" *ngIf="uf.invalid && formDir.submitted">
-                                            <p>UF é obrigatório</p>
-                                        </div> -->
+                                        <label for="confirmPassword" class="form-label">Repetir Senha: *</label>
+                                        <input type="password" class="form-control" id="confirmPassword"
+                                            formControlName="confirmarSenha" required>
+                                        <div class="autocadastro__erro"
+                                            *ngIf="formFuncionario.hasError('passwordMismatch') && formFuncionario.touched">
+                                            <p class="">As senhas não coincidem</p>
+                                        </div>
                                     </div>
 
                                 </section>
                                 <section class="row">
                                     <div class="col-12 actions">
-                                        <button type="submit" class="autocadastro__btn btn btn-primary">Cadastrar</button>
-                                        <button routerLink="/funcionario/manutencao-funcionario" type="submit" class="autocadastro__btn btn btn-primary">Voltar</button>
+                                        <button type="submit" class="autocadastro__btn btn btn-primary"
+                                            (click)="inserirFuncionario()" [disabled]="!formFuncionario.valid">
+                                            Cadastrar
+                                        </button>
+
+                                        <button routerLink="/funcionario/manutencao-funcionario" type="submit"
+                                            class="autocadastro__btn btn btn-primary">Voltar</button>
                                     </div>
                                 </section>
                             </form>
