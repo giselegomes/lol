@@ -21,4 +21,12 @@ export class ManutencaoFuncionarioComponent implements OnInit {
   listarFuncionarios(): Funcionario[] {
     return this.funcionarioService.listarFuncionarios();
   }
+
+  removerFuncionario($event: any, funcionario: Funcionario) {
+    $event.preventDefault();
+    if(confirm(`Deseja realmente remover o(a) ${funcionario.nome}?`)) {
+      this.funcionarioService.removerFuncionario(funcionario.id!);
+      this.funcionarios = this.listarFuncionarios();
+    }
+  }
 }

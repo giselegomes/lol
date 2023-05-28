@@ -43,7 +43,7 @@
                                             <button class="btn btn-success" [routerLink]="['/funcionario/editar', funcionario.id]" href="#"><i class="fa-regular fa-pen-to-square"> </i></button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-danger"><i class="fa-solid fa-delete-left"></i></button>
+                                            <button class="btn btn-danger" (click)="removerFuncionario($event, funcionario)"><i class="fa-solid fa-delete-left"></i></button>
                                         </td>
                                     </tr>
                                 </tbody>
