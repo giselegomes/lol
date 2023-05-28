@@ -33,9 +33,10 @@ import { ConsultarPedidosModule } from './cliente-pages/consultar-pedidos/consul
 import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
 
 
-// 
+// módulos com as services
 import { ClienteModule } from './cliente/cliente.module';
 import { PedidoModule } from './pedido/pedido.module';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PedidoModule } from './pedido/pedido.module';
     ManutencaoFuncionarioModule,
     NovoFuncionarioModule,
     ClienteModule,
-    PedidoModule
+    PedidoModule,
+    FuncionarioModule
   ],
   providers: [
 

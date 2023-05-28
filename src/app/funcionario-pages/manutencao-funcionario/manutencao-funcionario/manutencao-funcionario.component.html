@@ -35,10 +35,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Pedrinho</td>
-                                        <td>pedrinho@gmail.com</td>
-                                        <td>17/08/2021</td>
+                                    <tr *ngFor="let funcionario of funcionarios">
+                                        <td>{{funcionario.nome}}</td>
+                                        <td>{{funcionario.email}}</td>
+                                        <td>{{funcionario.dt_nasc  | date: 'dd/MM/yyyy' }}</td>
                                         <td>
                                             <button class="btn btn-success" routerLink="funcionario/novo-funcionario" href="#"><i class="fa-regular fa-pen-to-square"> </i></button>
                                         </td>
