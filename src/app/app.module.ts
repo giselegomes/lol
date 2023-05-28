@@ -32,6 +32,7 @@ import { ListagemPedidosModule } from './cliente-pages/listagem-pedidos/listagem
 import { ConsultarPedidosModule } from './cliente-pages/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
 
+
 // 
 import { ClienteModule } from './cliente/cliente.module';
 import { PedidoModule } from './pedido/pedido.module';
