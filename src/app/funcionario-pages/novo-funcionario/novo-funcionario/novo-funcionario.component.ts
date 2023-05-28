@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl, NgForm } from '@angular/forms';
 
 import { FuncionarioService } from '../../../funcionario/services/funcionario.service';
 import { Funcionario } from '../../../shared/models/funcionario.model';
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./novo-funcionario.component.css']
 })
 export class NovoFuncionarioComponent implements OnInit {
+  @ViewChild('formCliente') formCliente! : NgForm;
   formFuncionario: FormGroup;
   funcionario: Funcionario;
 
