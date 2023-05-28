@@ -34,6 +34,7 @@ import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
 
 // 
 import { ClienteModule } from './cliente/cliente.module';
+import { PedidoModule } from './pedido/pedido.module';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ClienteModule } from './cliente/cliente.module';
     HttpClientModule,
     ManutencaoFuncionarioModule,
     NovoFuncionarioModule,
-    ClienteModule
+    ClienteModule,
+    PedidoModule
   ],
   providers: [
 

@@ -13,18 +13,13 @@ export class ClienteService {
 
   listarTodos(): Cliente[] {
     const clientes = localStorage[LS_CHAVE];
-
     return clientes ? JSON.parse(clientes) : [];
   }
 
   inserir(cliente: Cliente): void {
-
     const clientes = this.listarTodos();
-
     cliente.id = new Date().getTime();
-
     clientes.push(cliente);
-
     localStorage[LS_CHAVE] = JSON.stringify(clientes);
   }
 }

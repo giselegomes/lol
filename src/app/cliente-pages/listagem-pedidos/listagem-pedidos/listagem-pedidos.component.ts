@@ -1,39 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { PedidoService } from '../../../pedido/services/pedido.service';
+import { Pedido } from '../../../shared/models/pedido.model';
 @Component({
   selector: 'app-listagem-pedidos',
   templateUrl: './listagem-pedidos.component.html',
   styleUrls: ['./listagem-pedidos.component.css']
 })
-export class ListagemPedidosComponent {
+
+export class ListagemPedidosComponent implements OnInit {
+
+  pedidos: Pedido[] = [];
+
+  constructor(private pedidoService: PedidoService) { }
+
+  ngOnInit(): void {
+    this.pedidos = this.listarPedidos();
+  }
+
+  listarPedidos(): Pedido[] {
+    // return this.pedidoService.listarPedidos();
+    return [
+      new Pedido(1, [], new Date(1993, 1, 28), "Cancelado"),
+      new Pedido(2, [], new Date(2013, 1, 29), "Aguardando agamento"),
+      new Pedido(3, [], new Date(2023, 1, 28), "Em aberto"),
+      new Pedido(4, [], new Date(2003, 1, 21), "Cancelado")
+    ];
+  }
+
   selectedStatus: string = ''; // Variável para armazenar o valor selecionado no seletor
 
-  // Lista de pedidos
-  pedidos = [
-    { num_pedido: 111, status: "Cancelado", dataHora: new Date(2022, 2, 8, 1, 28), valor: "22,00" },
-    { num_pedido: 222, status: "Aprovado", dataHora: new Date(2022, 2, 1, 1, 28), valor: "22,00" },
-    { num_pedido: 333, status: "Aguardando Pagamento", dataHora: new Date(2023, 2, 8, 1, 28), valor: "22,00" },
-    { num_pedido: 444, status: "Em aberto", dataHora: new Date(2023, 2, 3, 1, 28), valor: "22,00" },
-    { num_pedido: 555, status: "Em aberto", dataHora: new Date(2022, 2, 5, 1, 28), valor: "22,00" },
-    { num_pedido: 666, status: "Em aberto", dataHora: new Date(2021, 2, 7, 1, 28), valor: "22,00" },
-    { num_pedido: 777, status: "Em aberto", dataHora: new Date(2021, 2, 8, 1, 28), valor: "22,00" },
-    { num_pedido: 888, status: "Em aberto", dataHora: new Date(2020, 2, 9, 1, 28), valor: "22,00" },
-    { num_pedido: 999, status: "Em aberto", dataHora: new Date(2020, 2, 1, 1, 28), valor: "22,00" }
-  ];
-  
-  // Método para aplicar o filtro de status do pedido
+  //Método para aplicar o filtro de status do pedido
   applyStatusFilter() {
     if (this.selectedStatus === '') {
       // Se nenhum status for selecionado, mostra todos os pedidos em ordem decrescente
-      return this.pedidos.sort((a, b) => b.dataHora.getTime() - a.dataHora.getTime());
+      return this.pedidos.sort((a, b) => b.dataPedido.getTime() - a.dataPedido.getTime());
     } else {
       // Filtra a lista de pedidos pelo status selecionado
       return this.pedidos.filter(pedido => pedido.status === this.selectedStatus);
     }
   }
 
-  cancelarPedido(num_pedido: number) {
-    const pedido = this.pedidos.find(p => p.num_pedido === num_pedido);
+  cancelarPedido(id: number) {
+    const pedido = this.pedidos.find(p => p.id === id);
     if (pedido) {
       pedido.status = 'Cancelado';
     }
