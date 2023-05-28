@@ -16,59 +16,45 @@
                 </div>
             </div>
 
-            <section class="novo-funcionario">
-                <h2 class="h3">Cadastrar novo funcionário:</h2>
+            <section class="editar-funcionario">
+                <h2 class="h3">Editar cadastro de funcionário: </h2>
                 <div class="container">
                     <div class="row">
-                        <div class="novo-funcionario__table col-md-10">
+                        <div class="editar-funcionario__table col-md-10">
 
-                            <form class="row g-3" [formGroup]="formFuncionario"> 
+                            <form class="row g-3" #formFuncionario="ngForm" (ngSubmit)="atualizarFuncionario()">
+
                                 <section class="novo__row row">
                                     <div class="col-10">
                                         <label class="form-label">Nome completo: <span class="required">*</span></label>
-                                        <input type="text" class="form-control" id="inputNome" formControlName="nome"
+
+                                        <input type="text" class="form-control" id="inputNome" name="nome"
                                             [(ngModel)]="funcionario.nome" required>
+
                                     </div>
                                 </section>
 
                                 <section class="novo__row row">
                                     <div class="col-6">
                                         <label class="form-label">E-mail: <span class="required">*</span></label>
-                                        <input type="email" class="form-control" id="inputEmail" formControlName="email"
-                                            [(ngModel)]="funcionario.email" ngModel required>
+
+                                        <input type="email" class="form-control" id="inputEmail" name="email"
+                                            [(ngModel)]="funcionario.email" required>
                                     </div>
 
                                     <div class="col-4">
-                                        <label class="form-label">Data de nascimento: <span
-                                                class="required">*</span></label>
-                                        <input type="date" class="form-control" id="birthday" formControlName="dt_nasc"
-                                            [(ngModel)]="funcionario.dt_nasc" ngModel required>
+                                        <label class="form-label">Data de nascimento: <span class="required">*</span></label>
+
+                                        <input type="date" class="form-control" id="birthday" name="dt_nasc"
+                                            [(ngModel)]="funcionario.dt_nasc" required>
                                     </div>
                                 </section>
 
-                                <section class="novo__row row">
-                                    <div class="col-5">
-                                        <label class="form-label">Senha: <span class="required">*</span></label>
-                                        <input type="password" class="form-control" id="password"
-                                            formControlName="senha" [(ngModel)]="funcionario.senha" required>
-                                    </div>
-                                    <div class="col-5">
-                                        <label for="confirmPassword" class="form-label">Repetir senha: <span
-                                                class="required">*</span></label>
-                                        <input type="password" class="form-control" id="confirmPassword"
-                                            formControlName="confirmarSenha" required>
-                                        <div class="erro"
-                                            *ngIf="formFuncionario.hasError('passwordMismatch') && formFuncionario.touched">
-                                            <p class="">As senhas não coincidem</p>
-                                        </div>
-                                    </div>
-
-                                </section>
                                 <section class="row">
                                     <div class="col-12 actions">
                                         <button type="submit" class="autocadastro__btn btn btn-primary"
-                                            (click)="inserirFuncionario()" [disabled]="!formFuncionario.valid">
-                                            Cadastrar
+                                            (click)="atualizarFuncionario()" [disabled]="!formFuncionario.form.valid">
+                                            Salvar
                                         </button>
 
                                         <button routerLink="/funcionario/manutencao-funcionario" type="submit"

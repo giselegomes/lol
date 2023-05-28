@@ -24,6 +24,7 @@ import { RelatorioClientesModule } from './funcionario-pages/relatorio-clientes'
 import { RelatorioMelhoresClientesModule } from './funcionario-pages/relatorio-melhores-clientes';
 import { ManutencaoFuncionarioModule } from './funcionario-pages/manutencao-funcionario';
 import { NovoFuncionarioModule } from './funcionario-pages/novo-funcionario';
+import { EditarFuncionarioModule } from './funcionario-pages/editar-funcionario';
 
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente-pages/inicial-cliente';
@@ -66,7 +67,8 @@ import { FuncionarioModule } from './funcionario/funcionario.module';
     NovoFuncionarioModule,
     ClienteModule,
     PedidoModule,
-    FuncionarioModule
+    FuncionarioModule,
+    EditarFuncionarioModule
   ],
   providers: [
 

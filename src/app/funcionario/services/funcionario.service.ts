@@ -24,4 +24,31 @@ export class FuncionarioService {
 
     localStorage[LS_CHAVE] = JSON.stringify(funcionarios);
   }
+
+  // busca por id
+  buscarFuncionario(id: number): Funcionario | undefined {
+    const funcionarios: Funcionario[] = this.listarFuncionarios();
+
+    return funcionarios.find(funcionario => funcionario.id === id);
+  }
+
+  atualizarFuncionario(funcionario: Funcionario): void {
+    const funcionarios: Funcionario[] = this.listarFuncionarios();
+
+    funcionarios.forEach((obj, index, objs) => {
+      if (funcionario.id === obj.id) {
+        objs[index] = funcionario
+      }
+    });
+
+    localStorage[LS_CHAVE] = JSON.stringify(funcionarios)
+  }
+
+  removerFuncionario(id: number): void {
+    let funcionarios: Funcionario[] = this.listarFuncionarios();
+
+    funcionarios = funcionarios.filter(funcionario => funcionario.id !== id);
+
+    localStorage[LS_CHAVE] = JSON.stringify(funcionarios)
+  }
 }

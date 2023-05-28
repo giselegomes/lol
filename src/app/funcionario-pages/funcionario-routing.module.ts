@@ -8,6 +8,7 @@ import { RelatorioClientesComponent } from './relatorio-clientes';
 import { RelatorioMelhoresClientesComponent } from './relatorio-melhores-clientes';
 import { ManutencaoFuncionarioComponent } from './manutencao-funcionario/manutencao-funcionario';
 import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario';
+import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario';
     
 const routes: Routes = [
         {
@@ -46,6 +47,10 @@ const routes: Routes = [
         {
             path: 'funcionario/relatorio-melhores-clientes',
             component: RelatorioMelhoresClientesComponent
+        },
+        {
+            path: 'funcionario/editar/:id',
+            component: EditarFuncionarioComponent
         }
     ];
 
