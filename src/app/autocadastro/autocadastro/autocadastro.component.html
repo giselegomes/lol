@@ -86,8 +86,7 @@
 
         <section class="autocadastro__row  row">
             <div class="col-6">
-                <label for="inputCidade" class="form-label">Cidade:*</label>
-
+                <label for="inputCidade" class="form-label">Cidade:</label>
                 <input type="text" class="form-control" id="inputCidade" formControlName="cidade"
                     [(ngModel)]="cliente.cidade" required>
 
@@ -95,6 +94,16 @@
                     <p>Cidade é obrigatório</p>
                 </div>
             </div>
+            <div class="autocadastro__row  row">
+                <div class="col-8">
+                    <label for="inputLogradouro" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="inputLogradouro" formControlName="logradouro" 
+                    [(ngModel)]="cliente.logradouro" required/>
+                    
+                    <div class="autocadastro__erro" *ngIf="logradouro.invalid && formCliente.submitted">
+                        <p>Rua é obrigatório</p>
+                    </div>             
+                </div>
             <div class="col-2">
                 <label for="inputAddress2" class="form-label">Nº:*</label>
 
@@ -105,11 +114,12 @@
                     <p>Nº é obrigatório</p>
                 </div>
             </div>
+            </div>
         </section>
   
         <section class="row">
             <div class="col-12">
-                <button type="submit" class="autocadastro__btn btn btn-primary" (click)="inserir()" routerLink="/funcionario/relatorio-clientes">Cadastrar</button>
+                <button type="submit" class="autocadastro__btn btn btn-primary" (click)="inserir()">Cadastrar</button>
             </div>
         </section>
     </form>

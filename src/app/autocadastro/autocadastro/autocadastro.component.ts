@@ -24,7 +24,7 @@ interface Endereco {
 export class AutocadastroComponent implements OnInit {
   @ViewChild('formCliente') formCliente! : NgForm;
   cliente! : Cliente;
-  endereco! : Endereco;
+  
 
   ngOnInit(): void {
     this.cliente = new Cliente();
