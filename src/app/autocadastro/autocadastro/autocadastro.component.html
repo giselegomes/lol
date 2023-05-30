@@ -13,77 +13,73 @@
     <h1 class="autocadastro__title">Cadastre-se:</h1>
     <form class="row g-4" (ngSubmit)="submit()" [formGroup]="momentForm" #formCliente="ngForm">
         <section class="autocadastro__row row">
-            <div class="col-sm">
-                <label for="inputCpf3" class="form-label">CPF:*</label>
-
+            <div class="form-group col-md-4">
+                <label for="inputCpf3" class="form-label">CPF:</label>
                 <input type="text" class="form-control" name="cpf" id="inputCpf4" formControlName="cpf"
-                    [(ngModel)]="cliente.cpf" 
-                    mask="000.000.000-00"
-                    required>
-
-                <div class="autocadastro__erro" *ngIf="cpf.invalid && formCliente.submitted">
-                    <p>CPF é obrigatório</p>
+                    [(ngModel)]="cliente.cpf" mask="000.000.000-00" placeholder="000.000.000-00" maxlength="14"
+                    minlength="11" required />
+                <div *ngIf="cpf.errors && (cpf.dirty || cpf.touched)" class="alert alert-danger">
+                    <div [hidden]="!cpf.errors?.['required']">Digite o CPF.</div>
+                    <div [hidden]="!cpf.errors?.['minlength']">
+                        O CPF deve conter ao menos 11 caracteres.
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="autocadastro__row row">
-            <div class="col-6">
-                <label for="inputNome" class="form-label">Nome:</label>
-
-                <input type="text" class="form-control" id="inputNome" formControlName="nome" [(ngModel)]="cliente.nome"
-                    ngModel required>
-
-                <div class="autocadastro__erro" *ngIf="nome.invalid && formCliente.submitted">
-                    <p>Nome é obrigatório</p>
+            <div class="form-group col-md-6">
+                <label for="inputNome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="cliente.nome"
+                    placeholder="Digite seu nome" minlength="2" required />
+                <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+                    <div [hidden]="!nome.errors?.['required']">Digite o nome.</div>
+                    <div [hidden]="!nome.errors?.['minlength']">
+                        O nome deve conter ao menos 2 caracteres.
+                    </div>
                 </div>
             </div>
 
-            <div class="col-6">
-                <label for="inputEmail" class="form-label">E-mail:*</label>
-
-                <input type="email" class="form-control" id="inputEmail" formControlName="email"
-                    [(ngModel)]="cliente.email" required>
-
-                <div class="autocadastro__erro" *ngIf="email.invalid && formCliente.submitted">
-                    <p>E-mail é obrigatório</p>
+            <div class="form-group col-md-3">
+                <label for="inputTelefone">Telefone</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" [(ngModel)]="cliente.telefone"
+                    #telefone="ngModel" mask="(XX) XXXXX-XXXX" placeholder="XX XXXXX-XXXX" minlength="11" maxlength="15"
+                    required />
+                <div *ngIf="telefone.errors && (telefone.dirty || telefone.touched)" class="alert alert-danger">
+                    <div [hidden]="!telefone.errors?.['required']">Digite o telefone.</div>
+                    <div [hidden]="!telefone.errors?.['minlength']">
+                        O telefone deve conter ao menos 11 caracteres.
+                    </div>
+                </div>
+            </div>
+            <div class="row col-md-12">
+                <div class="form-group col-md-4">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="cliente.email"
+                        #email="ngModel" placeholder="fulano@email.com" required />
+                    <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert alert-danger">
+                        <div [hidden]="!email.errors?.['required']">Digite o email.</div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="autocadastro__row  row">
             <div class="col-3">
-                <label for="inputAddress" class="form-label">CEP:*</label>
-
+                <label for="inputAddress" class="form-label">CEP:</label>
                 <input type="text" class="form-control" id="inputAddress" formControlName="cep" (blur)="buscarCEP()"
-                    [(ngModel)]="cliente.cep" 
-                    mask="00000-000"
-                    required>
-
+                    [(ngModel)]="cliente.cep" mask='00000-000' placeholder="000000-000" minlength="8" maxlength="9"
+                    required />
                 <div class="autocadastro__erro" *ngIf="cep.invalid && formCliente.submitted">
                     <p>CEP é obrigatório</p>
                 </div>
             </div>
-
-            <div class="col-7">
-                <label for="inputAddress" class="form-label">Endereço:*</label>
-
-                <input type="text" class="form-control" id="inputAddress" formControlName="logradouro"
-                    [(ngModel)]="cliente.endereco" required>
-
-                <div class="autocadastro__erro" *ngIf="logradouro.invalid && formCliente.submitted">
-                    <p>Endereço é obrigatório</p>
-                </div>
-            </div>
-
-            <div class="col-2">
-                <label for="inputAddress2" class="form-label">Nº:*</label>
-
-                <input type="text" class="form-control" id="inputAddress2" formControlName="numero"
-                    [(ngModel)]="cliente.numero" required>
-
-                <div class="autocadastro__erro" *ngIf="numero.invalid && formCliente.submitted">
-                    <p>Nº é obrigatório</p>
+            <div class="col-3">
+                <label for="inputUF" class="form-label">UF:*</label>
+                <input type="text" class="form-control" id="inputUf" formControlName="uf" [(ngModel)]="cliente.uf"
+                    required>
+                <div class="autocadastro__erro" *ngIf="uf.invalid && formCliente.submitted">
+                    <p>UF é obrigatório</p>
                 </div>
             </div>
         </section>
@@ -100,33 +96,20 @@
                 </div>
             </div>
             <div class="col-2">
-                <label for="inputUF" class="form-label">UF:*</label>
+                <label for="inputAddress2" class="form-label">Nº:*</label>
 
-                <input type="text" class="form-control" id="inputUf" formControlName="uf" [(ngModel)]="cliente.uf"
-                    required>
+                <input type="text" class="form-control" id="inputAddress2" formControlName="numero"
+                    [(ngModel)]="cliente.numero" required>
 
-                <div class="autocadastro__erro" *ngIf="uf.invalid && formCliente.submitted">
-                    <p>UF é obrigatório</p>
-                </div>
-            </div>
-            <div class="col-4">
-                <label for="inputFone" class="form-label">Telefone:*</label>
-
-                <input type="text" class="form-control" id="inputFone" formControlName="telefone" 
-                    [(ngModel)]="cliente.telefone" 
-                    mask="(00) 0000-0000"
-                    required>
-
-                <div class="autocadastro__erro" *ngIf="telefone.invalid && formCliente.submitted">
-                    <p>Telefone é obrigatório</p>
+                <div class="autocadastro__erro" *ngIf="numero.invalid && formCliente.submitted">
+                    <p>Nº é obrigatório</p>
                 </div>
             </div>
         </section>
-
+  
         <section class="row">
             <div class="col-12">
-                <button type="submit" class="autocadastro__btn btn btn-primary" (click)="inserir()"
-                    [disabled]="!formCliente.form.valid">Cadastrar</button>
+                <button type="submit" class="autocadastro__btn btn btn-primary" (click)="inserir()" routerLink="/funcionario/relatorio-clientes">Cadastrar</button>
             </div>
         </section>
     </form>

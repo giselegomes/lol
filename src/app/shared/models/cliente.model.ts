@@ -6,6 +6,8 @@ export class Cliente {
         public email?: string,
         public cep?: number,
         public endereco?: string,
+        public logradouro?: string,
+        public estado?: string,
         public numero?: number,
         public cidade?: string,
         public uf?: string,
