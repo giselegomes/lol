@@ -9,7 +9,9 @@ import { RelatorioMelhoresClientesComponent } from './relatorio-melhores-cliente
 import { ManutencaoFuncionarioComponent } from './manutencao-funcionario/manutencao-funcionario';
 import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario';
 import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario';
-    
+import { NovaRoupaComponent } from './nova-roupa/nova-roupa/nova-roupa.component';    
+import { EditarRoupaComponent } from './editar-roupa/editar-roupa/editar-roupa.component';
+
 const routes: Routes = [
         {
             path: 'funcionario',
@@ -27,6 +29,10 @@ const routes: Routes = [
         {
             path: 'funcionario/manutencao-roupas',
             component: ManutencaoRoupasComponent
+        },
+        {
+            path:'funcionario/nova-roupa',
+            component: NovaRoupaComponent
         },
         {
             path: 'funcionario/manutencao-funcionario',
@@ -49,7 +55,11 @@ const routes: Routes = [
             component: RelatorioMelhoresClientesComponent
         },
         {
-            path: 'funcionario/editar/:id',
+            path: 'funcionario/editar-roupa/:id',
+            component: EditarRoupaComponent
+        },
+        {
+            path: 'funcionario/editar-funcionario/:id',
             component: EditarFuncionarioComponent
         }
     ];
