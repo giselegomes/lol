@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Funcionario } from '../../shared/models/funcionario.model';
 
-const LS_CHAVE: string = "funcionarios";
+const LS_CHAVE: string = "chave_funcionarios";
 
 @Injectable({
   providedIn: 'root'
