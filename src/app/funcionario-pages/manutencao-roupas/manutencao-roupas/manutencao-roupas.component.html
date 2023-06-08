@@ -9,97 +9,51 @@
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Manutenção de Roupas</h1>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Manutenção de roupas</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
             </div>
 
-            <section class="selecaoCRUD">
-                <div class="form-group col-8">
-                    <button #additem type="button" (click)="novoItem=true" class="btn btn-primary">Adicionar item</button>
+            <section class="manutencao-roupa">
 
-                    <button type="button" (click)="alterarItem=true "class="btn btn-warning">Alterar Item Existente</button>
+                <div class="novo-roupa">
+                    <button routerLink="/funcionario/nova-roupa" type="button" class="btn btn-success"> <i class="fa-solid fa-plus"></i> Novo Roupa</button>
                 </div>
-            </section>
-            <section class="novoItem" *ngIf="novoItem" >
-                <form #novoItemForm="ngForm" class="row g-3" (ngSubmit)="submit()" #formDir="ngForm">
-                    <div class="col-6">
 
-                        <label for="novoItemNome" class="form-label">Nome do item:</label>
-                        <input type="text" class="form-control" id="novoItemNome" required
-                        >
-                        <div class="autocadastro__erro" *ngIf="nome.invalid && formDir.submitted">
-                            <p>Nome é obrigatório</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="manutencao-funcionario__table col-md-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Prazo de Lavagem</th>
+                                        <th scope="col">Valor</th>
+                                        <th scope="col">Editar</th>
+                                        <th scope="col">Deletar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let roupa of roupas">
+                                        <td>{{roupa.nome}}</td>
+                                        <td>{{roupa.prazo}}</td>
+                                        <td>{{roupa.valor}}</td>
+                                        <td>
+                                            <a class="btn btn-success" [routerLink]="['/funcionario/editar-roupa', roupa.id]" href="#"><i class="fa-regular fa-pen-to-square"> </i></a>
+                                            <!-- [routerLink]="['/roupa/editar', roupa.id]"-->
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-danger" ><i class="fa-solid fa-delete-left"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                
-                    <div class="col-4">
-                        <label for="novoItemValor" class="form-label">Valor: </label>
-                        <input type="text" class="form-control" id="novoItemValor">
-                        <div class="autocadastro__erro" *ngIf="valor.invalid && formDir.submitted">
-                            <p>Valor é obrigatório</p>
-                        </div>
-                    </div>
-                
-                    <div class="col-2">
-                        <label for="novoItemPrazo" class="form-label">Prazo (dias)</label>
-                        <input type="text" class="form-control" id="novoItemPrazo">
-                        <div class="autocadastro__erro" *ngIf="prazo.invalid && formDir.submitted">
-                            <p>Prazo é obrigatório</p>
-                        </div>
-                    </div>
-                
-                </form>
-                <td>
-                    <button type="button" id="b2" class="btn btn-success"  (click)="adicionarItem()">Adicionar Item</button>
-                </td>
-
-            </section>
-
-
-            <section class="manutencaoItem" *ngIf="alterarItem">
-            <section >
-                <div class="row">
-                    <h2>Selecione um item para fazer manutenção:</h2>
-                    <div class="form-group col-6">
-                        <select class="form-select" [(ngModel)]="itemSelecionado">
-                            <option *ngFor="let item of itens" [ngValue]="item">{{ item.nome }}</option>
-                        </select>
                     </div>
                 </div>
             </section>
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Peça</th>
-                        <th scope="col">Prazo de Lavagem (Dias)</th>
-                        <th scope="col">Valor unitário</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        
-                        <td><input type="text" id="nomeEditar" readonly placeholder={{itemSelecionado.nome}}></td>
-                        <td><input type="text" id="prazoEditar" readonly placeholder={{itemSelecionado.prazo}}></td>
-                        <td><input type="text" id="valorEditar" readonly placeholder={{itemSelecionado.valor}}></td>
-                        <td>
-                            <button type="button" id="b1" class="btn btn-secondary"  (click)="editarItem()">Editar</button>
-                        </td>
-                        <td>
-                            <button type="button" id="b2" class="btn btn-success"  (click)="salvarEdicaoItem()">Salvar Edição</button>
-                        </td>
-                        <td>
-                            <button type="button" id="b2" class="btn btn-danger"  (click)="removerItem()">Remover Peça</button>
-                        </td>
-                    </tr>
-            </table>
-        </section>
-            
-    </main>
+        </main>
     </div>
 </div>
 <app-footer></app-footer>

@@ -40,7 +40,7 @@
                                         <td>{{funcionario.email}}</td>
                                         <td>{{funcionario.dt_nasc  | date: 'dd/MM/yyyy' }}</td>
                                         <td>
-                                            <button class="btn btn-success" [routerLink]="['/funcionario/editar', funcionario.id]" href="#"><i class="fa-regular fa-pen-to-square"> </i></button>
+                                            <button class="btn btn-success" [routerLink]="['/funcionario/editar-funcionario', funcionario.id]" href="#"><i class="fa-regular fa-pen-to-square"> </i></button>
                                         </td>
                                         <td>
                                             <button class="btn btn-danger" (click)="removerFuncionario($event, funcionario)"><i class="fa-solid fa-delete-left"></i></button>

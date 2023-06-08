@@ -1,0 +1,10 @@
+.novo-funcionario {
+    padding: 0.5rem;
+}
+
+.manutencao-funcionario__table {
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 2rem;
+    margin: 12px 0 32px;
+}
