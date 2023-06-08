@@ -35,7 +35,7 @@ export class EditarRoupaComponent implements OnInit {
   atualizar(): void {
     if (this.formRoupa.form.valid) {
       this.roupaService.atualizar(this.roupa);
-      this.router.navigate(['/funcionario/manutencao-funcionario']);
+      this.router.navigate(['/funcionario/manutencao-roupa']);
     }
   }
 }
