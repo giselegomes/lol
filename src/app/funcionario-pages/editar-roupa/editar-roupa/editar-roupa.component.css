@@ -1,0 +1,35 @@
+.editar-funcionario__table {
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    padding: 2rem;
+    margin: 12px 0 32px;
+}
+
+.editar-funcionario form {
+    padding: 1rem;
+}
+
+.novo__row {
+    padding-bottom: 22px;
+}
+
+.editar-funcionario .actions {
+    display: flex;
+    column-gap: 12px;
+}
+
+.required {
+    color: var(--text-erro);
+}
+
+.erro {
+    background-color: var(--background-erro);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.erro p {
+    margin: 0;
+    color: var(--text-erro);
+    font-size: 12px;
+}

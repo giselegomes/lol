@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu"
+            class="area-logada__sidebar funcionario col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
+            <div class="position-sticky pt-3 sidebar-sticky">
+                <app-sidebar-funcionario></app-sidebar-funcionario>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Manutenção de roupas</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                </div>
+            </div>
+
+            <section class="editar-funcionario">
+                <h2 class="h3">Editar cadastro de roupa: </h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="editar-funcionario__table col-md-10">
+
+                            <form class="row g-3" #formRoupa="ngForm" (ngSubmit)="atualizar()">
+
+                                <section class="novo__row row">
+                                    <div class="col-10">
+                                        <label class="form-label">Nome completo: <span class="required">*</span></label>
+
+                                        <input type="text" class="form-control" id="inputNome" name="nome"
+                                            [(ngModel)]="roupa.nome" required>
+
+                                    </div>
+                                </section>
+
+                                
+                                <section class="novo__row row">
+                                    <div class="col-5">
+                                        <label class="form-label">Valor: <span class="required">*</span></label>
+                                        <input type="text" class="form-control" id="inputValor"
+                                            formControlName="valor" [(ngModel)]="roupa.valor" ngModel required>
+                                    </div>
+
+                                    <div class="col-5">
+                                        <label class="form-label">Prazo: <span class="required">*</span></label>
+                                        <input type="number" class="form-control" id="inputPrazo"
+                                            formControlName="prazo" [(ngModel)]="roupa.prazo" ngModel required>
+                                    </div>
+
+
+                                </section>
+                                <section class="row">
+                                    <div class="col-12 actions">
+                                        <button type="submit" class="autocadastro__btn btn btn-primary"
+                                            (click)="atualizar()" [disabled]="!formRoupa.form.valid">
+                                            Salvar
+                                        </button>
+
+                                        <button routerLink="/roupa/manutencao-roupa" type="submit"
+                                            class="autocadastro__btn btn btn-primary">Voltar</button>
+                                    </div>
+                                </section>
+                                <p><span class="required">*</span> campos obrigatórios</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+<app-footer></app-footer>
