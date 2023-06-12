@@ -11,7 +11,10 @@ export class Cliente {
         public numero?: number,
         public cidade?: string,
         public uf?: string,
-        public telefone?: number) {
-    }
+        public telefone?: number,
+        public senha?: string,
+        ) {
+            
+       }
 }
 
