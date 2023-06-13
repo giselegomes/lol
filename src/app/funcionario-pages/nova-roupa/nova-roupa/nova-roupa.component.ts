@@ -25,10 +25,10 @@ export class NovaRoupaComponent implements OnInit {
 
   ) {
     this.formRoupa = this.formBuilder.group({
-      nome: ['', Validators.required],
-      valor: ['', Validators.required],
-      prazo: [ '', Validators.required],
-    })
+      nome: [''],
+      valor: [''],
+      prazo: [''],
+    });
   }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class NovaRoupaComponent implements OnInit {
   inserir(): void {
     if (this.formRoupa.valid) {
       this.roupaService.inserirRoupa(this.roupa);
-      this.router.navigate(['/funcionario/manutencao-roupa']);
+      this.router.navigate(['/funcionario/manutencao-roupas']);
     }
   }
 }
