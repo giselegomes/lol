@@ -5,6 +5,7 @@ import { PedidoOnlineComponent } from './pedido-online/pedido-online/pedido-onli
 import { ListagemPedidosComponent } from './listagem-pedidos/listagem-pedidos/listagem-pedidos.component';
 import { ConsultarPedidosComponent } from './consultar-pedidos/consultar-pedidos/consultar-pedidos.component';
 import { PagamentoComponent } from './pagamento/pagamento/pagamento.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
     {
@@ -14,23 +15,43 @@ const routes: Routes = [
     },
     {
         path: 'cliente/inicial-cliente',
-        component: InicialClienteComponent
+        component: InicialClienteComponent,
+        canActivate: [AuthGuard],
+        data: {
+            role: 'cliente'
+        }
     },
     {
         path: 'cliente/pedido-online',
-        component: PedidoOnlineComponent
+        component: PedidoOnlineComponent,
+        canActivate: [AuthGuard],
+        data: {
+            role: 'cliente'
+        }
     },
     {
         path: 'cliente/listagem-pedidos',
-        component: ListagemPedidosComponent
+        component: ListagemPedidosComponent,
+        canActivate: [AuthGuard],
+        data: {
+            role: 'cliente'
+        }
     },
     {
         path: 'cliente/consultar-pedidos',
-        component: ConsultarPedidosComponent
+        component: ConsultarPedidosComponent,
+        canActivate: [AuthGuard],
+        data: {
+            role: 'cliente'
+        }
     },
     {
         path: 'cliente/pagar-pedido',
-        component: PagamentoComponent
+        component: PagamentoComponent,
+        canActivate: [AuthGuard],
+        data: {
+            role: 'cliente'
+        }
     }
 ];
 
