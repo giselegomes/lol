@@ -18,7 +18,7 @@ const routes: Routes = [
         component: InicialClienteComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'cliente'
+            role: ['cliente', 'funcionario']
         }
     },
     {
@@ -26,7 +26,7 @@ const routes: Routes = [
         component: PedidoOnlineComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'cliente'
+            role: ['cliente', 'funcionario']
         }
     },
     {
@@ -34,7 +34,7 @@ const routes: Routes = [
         component: ListagemPedidosComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'cliente'
+            role: ['cliente', 'funcionario']
         }
     },
     {
@@ -42,7 +42,7 @@ const routes: Routes = [
         component: ConsultarPedidosComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'cliente'
+            role: ['cliente', 'funcionario']
         }
     },
     {
@@ -50,7 +50,7 @@ const routes: Routes = [
         component: PagamentoComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'cliente'
+            role: ['cliente', 'funcionario']
         }
     }
 ];
