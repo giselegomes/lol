@@ -30,10 +30,10 @@ export class LoginService {
     let usuario: Usuario | null = null;
     let tipo: string = '';
 
-    if (login.login === "cliente" && login.senha === "senha_cliente") {
+    if (login.login === "cliente" && login.senha === "123") {
       usuario = new Usuario(1, "Razer-Cliente", login.login, login.senha, "cliente");
       tipo = 'cliente';
-    } else if (login.login === "funcionario" && login.senha === "senha_funcionario") {
+    } else if (login.login === "funcionario" && login.senha === "123") {
       usuario = new Usuario(1, "Razer-Funcionario", login.login, login.senha, "funcionario");
       tipo = 'funcionario';
     }
