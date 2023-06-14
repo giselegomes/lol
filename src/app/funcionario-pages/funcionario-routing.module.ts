@@ -24,7 +24,7 @@ const routes: Routes = [
         component: InicialFuncionarioComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -32,7 +32,7 @@ const routes: Routes = [
         component: VisualizarPedidosComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -40,7 +40,7 @@ const routes: Routes = [
         component: ManutencaoRoupasComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -48,7 +48,7 @@ const routes: Routes = [
         component: NovaRoupaComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -56,7 +56,7 @@ const routes: Routes = [
         component: ManutencaoFuncionarioComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -64,7 +64,7 @@ const routes: Routes = [
         component: NovoFuncionarioComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -72,7 +72,7 @@ const routes: Routes = [
         component: RelatorioReceitaComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -80,7 +80,7 @@ const routes: Routes = [
         component: RelatorioClientesComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -88,7 +88,7 @@ const routes: Routes = [
         component: RelatorioMelhoresClientesComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -96,7 +96,7 @@ const routes: Routes = [
         component: EditarRoupaComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     },
     {
@@ -104,7 +104,7 @@ const routes: Routes = [
         component: EditarFuncionarioComponent,
         canActivate: [AuthGuard],
         data: {
-            role: 'funcionario'
+            role: 'funcionario, cliente'
         }
     }
 ];

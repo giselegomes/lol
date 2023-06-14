@@ -32,10 +32,12 @@ export class AutocadastroComponent implements OnInit {
 
   inserir(): void {
     if (this.formCliente.form.valid) {
+      this.cliente.perfil = 'cliente'; // Definindo o perfil como 'cliente'
       this.clienteService.inserir(this.cliente);
       this.router.navigate(["/"]);
     }
   }
+  
 
   momentForm: FormGroup;
 

@@ -43,6 +43,7 @@ export class NovoFuncionarioComponent implements OnInit {
 
   inserirFuncionario(): void {
     if (this.formFuncionario.valid) {
+      this.funcionario.perfil = 'funcionario'; // Definindo o perfil como 'cliente'
       this.funcionarioService.inserirFuncionario(this.funcionario);
       this.router.navigate(['/funcionario/manutencao-funcionario']);
     }
