@@ -27,13 +27,14 @@ import { NovoFuncionarioModule } from './funcionario-pages/novo-funcionario';
 import { EditarFuncionarioModule } from './funcionario-pages/editar-funcionario';
 import { NovaRoupaModule } from './funcionario-pages/nova-roupa';
 
+import { AuthModule } from './auth/auth.module';
+
 // Módulos: Cliente
 import { InicialClienteModule } from './cliente-pages/inicial-cliente';
 import { PedidoOnlineModule } from './cliente-pages/pedido-online/pedido-online.module';
 import { ListagemPedidosModule } from './cliente-pages/listagem-pedidos/listagem-pedidos.module';
 import { ConsultarPedidosModule } from './cliente-pages/consultar-pedidos/consultar-pedidos.module';
 import { PagamentoModule } from './cliente-pages/pagamento/pagamento.module';
-
 
 // módulos com as services
 import { ClienteModule } from './cliente/cliente.module';
@@ -80,6 +81,7 @@ import { EditarRoupaModule } from './funcionario-pages/editar-roupa/editar-roupa
         ManutencaoRoupasModule,
         EditarRoupaModule,
         NovaRoupaModule,
+        AuthModule
     ]
 })
 export class AppModule { }

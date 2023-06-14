@@ -4,7 +4,7 @@ export class Pedido {
         public pecas?: Peca[],
         public dataPedido?: Date,
         public status?: string
-    ) { }
+    ) { }   
 
     public calcularValorTotalPedido(): number {
         let valorTotalPedido = 0;
