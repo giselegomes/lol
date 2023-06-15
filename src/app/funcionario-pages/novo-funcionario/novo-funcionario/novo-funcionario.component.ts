@@ -5,6 +5,7 @@ import { FuncionarioService } from '../../../funcionario/services/funcionario.se
 import { Funcionario } from '../../../shared/models/funcionario.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Usuario } from 'src/app/shared/models/usuario.model';
 
 @Component({
   selector: 'app-novo-funcionario',
@@ -69,10 +70,19 @@ export class NovoFuncionarioComponent implements OnInit {
         this.funcionarioService.inserirFuncionario(this.funcionario).subscribe(
           funcionario => {
             this.loading = false;
-            this.router.navigate(["/"])
+            this.router.navigate(["/funcionario/manutencao-funcionario"])
+          }
+        );
+      }
+      else {
+        this.funcionarioService.alterar(this.funcionario).subscribe(
+          funcionario => {
+            this.loading = false;
+            this.router.navigate(["/funcionario/manutencao-funcionario"])
           }
         );
       }
     }
+    this.loading = false;
   }
 }

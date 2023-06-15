@@ -12,6 +12,7 @@ import { NgForm } from '@angular/forms';
 export class EditarFuncionarioComponent implements OnInit {
   @ViewChild("formFuncionario") formFuncionario!: NgForm;
   funcionario!: Funcionario;
+  loading!: boolean;
 
   constructor(
     private funcionarioService: FuncionarioService,
@@ -20,20 +21,36 @@ export class EditarFuncionarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // let id = +this.route.snapshot.params['id'];
-    // // const res = this.funcionarioService.buscarFuncionario(id);
-
-    // if (res !== undefined) {
-    //   this.funcionario = res;
-    // } else {
-    //   throw new Error("Funcionário não encontrado: id = " + id);
-    // }
+    this.loading = false;
+    this.route.params.subscribe(params => {
+      const id = +params['id']; // Converter o parâmetro 'id' para número
+      this.carregarFuncionario(id);
+    });
   }
 
-  // atualizarFuncionario(): void {
-  //   if (this.formFuncionario.form.valid) {
-  //     this.funcionarioService.atualizarFuncionario(this.funcionario);
-  //     this.router.navigate(['/funcionario/manutencao-funcionario']);
-  //   }
-  // }
+  carregarFuncionario(id: number): void {
+    this.funcionarioService.buscarPorId(id).subscribe(
+      funcionario => {
+        this.funcionario = funcionario;
+      },
+      error => {
+        // Tratar erro ao carregar o funcionário
+      }
+    );
+  }
+
+  alterar(): void {
+    if (this.formFuncionario.form.valid) {
+      this.loading = true;
+      this.funcionarioService.alterar(this.funcionario).subscribe(
+        funcionario => {
+          this.loading = false;
+          this.router.navigate(['/funcionario/manutencao-funcionario']);
+        },
+        error => {
+          // Tratar erro ao alterar o funcionário
+        }
+      );
+    }
+  }
 }

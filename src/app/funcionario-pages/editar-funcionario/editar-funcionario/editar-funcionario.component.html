@@ -1,4 +1,4 @@
-<!-- <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu"
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="editar-funcionario__table col-md-10">
 
-                            <form class="row g-3" #formFuncionario="ngForm" (ngSubmit)="atualizarFuncionario()">
+                            <form class="row g-3" #formFuncionario="ngForm" (ngSubmit)="alterar()">
 
                                 <section class="novo__row row">
                                     <div class="col-10">
@@ -53,7 +53,7 @@
                                 <section class="row">
                                     <div class="col-12 actions">
                                         <button type="submit" class="autocadastro__btn btn btn-primary"
-                                            (click)="atualizarFuncionario()" [disabled]="!formFuncionario.form.valid">
+                                            (click)="alterar()" [disabled]="!formFuncionario.form.valid">
                                             Salvar
                                         </button>
 
@@ -70,4 +70,4 @@
         </main>
     </div>
 </div>
-<app-footer></app-footer> -->
+<app-footer></app-footer>

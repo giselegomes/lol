@@ -8,10 +8,11 @@ import { RelatorioClientesComponent } from './relatorio-clientes';
 import { RelatorioMelhoresClientesComponent } from './relatorio-melhores-clientes';
 import { ManutencaoFuncionarioComponent } from './manutencao-funcionario/manutencao-funcionario';
 import { NovoFuncionarioComponent } from './novo-funcionario/novo-funcionario';
-import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario';
+// import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario';
 import { NovaRoupaComponent } from './nova-roupa/nova-roupa/nova-roupa.component';
 import { EditarRoupaComponent } from './editar-roupa/editar-roupa/editar-roupa.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { EditarFuncionarioComponent } from './editar-funcionario/editar-funcionario';
 
 const routes: Routes = [
     {
