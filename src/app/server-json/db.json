@@ -1,236 +1,241 @@
-[
-	{
-		"clientes": [
-			{
-				"id": 1,
-				"nome": "João",
-				"cpf": 11111111111,
-				"email": "joao@joao.com",
-				"cep": 78507120,
-				"uf": "Minas Gerais",
-				"cidade": "Sabará",
-				"endereco": "Duque de Caxias",
-				"numero": 9437,
-				"telefone": 999979999,
-				"senha": "joao",
-				"perfil": "cliente"
-			},
-			{
-				"id": 2,
-				"nome": "José",
-				"cpf": 22222222222,
-				"email": "jose@jose.com",
-				"cep": 71014676,
-				"uf": "Paraíba",
-				"cidade": "João P.",
-				"endereco": "Castro Alves",
-				"numero": 6788,
-				"telefone": 999959999,
-				"senha": "jose",
-				"perfil": "cliente"
-			},
-			{
-				"id": 3,
-				"nome": "Joana",
-				"cpf": 33333333333,
-				"email": "joana@joana.com",
-				"cep": 63762156,
-				"uf": "Distrito Federal",
-				"cidade": "Brasília",
-				"endereco": "Goiás",
-				"numero": 1268,
-				"telefone": 999959999,
-				"senha": "joana",
-				"perfil": "cliente"
-			},
-			{
-				"id": 4,
-				"nome": "Joaquina",
-				"cpf": 44444444444,
-				"email": "joaquina@joaquina.com",
-				"cep": 83790180,
-				"uf": "Parana",
-				"cidade": "Curitiba",
-				"endereco": "Fernando de Noronha",
-				"numero": 1314,
-				"telefone": 99999999,
-				"senha": "joaquina",
-				"perfil": "cliente"
-			}
-		]
-	},
-	{
-		"funcionarios": [
-			{
-				"id": 1,
-				"nome": "admin",
-				"email": "admin@admin.com",
-				"dt_nasc": "1999-12-12T02:00:00.000Z",
-				"senha": "admin",
-				"perfil": "funcionario"
-			},
-			{
-				"id": 2,
-				"nome": "Maria",
-				"email": "maria@lol.com",
-				"dt_nasc": "1989-03-02T03:00:00.000Z",
-				"senha": "maria",
-				"perfil": "funcionario"
-			},
-			{
-				"id": 3,
-				"nome": "Mário",
-				"email": "mario@lol.com",
-				"dt_nasc": "1992-11-28T02:00:00.000Z",
-				"senha": "mario",
-				"perfil": "funcionario"
-			}
-		]
-	},
-	{
-		"roupas": [
-			{
-				"id": 1,
-				"nome": "Blusa",
-				"valor": 5.5,
-				"prazo": 1
-			},
-			{
-				"id": 2,
-				"nome": "Calça",
-				"valor": 7,
-				"prazo": 1
-			},
-			{
-				"id": 3,
-				"nome": "Calcinha",
-				"valor": 2,
-				"prazo": 1
-			},
-			{
-				"id": 4,
-				"nome": "Camisa",
-				"valor": 7,
-				"prazo": 1
-			},
-			{
-				"id": 5,
-				"nome": "Camiseta",
-				"valor": 3,
-				"prazo": 1
-			},
-			{
-				"id": 6,
-				"nome": "Casaco",
-				"valor": 10,
-				"prazo": 2
-			},
-			{
-				"id": 7,
-				"nome": "Cueca",
-				"valor": 2,
-				"prazo": 1
-			},
-			{
-				"id": 8,
-				"nome": "Gravata",
-				"valor": 1,
-				"prazo": 1
-			},
-			{
-				"id": 9,
-				"nome": "Jaqueta",
-				"valor": 10,
-				"prazo": 2
-			},
-			{
-				"id": 10,
-				"nome": "Meia",
-				"valor": 1,
-				"prazo": 1
-			},
-			{
-				"id": 11,
-				"nome": "Moletom",
-				"valor": 9.5,
-				"prazo": 2
-			},
-			{
-				"id": 12,
-				"nome": "Pijama",
-				"valor": 12,
-				"prazo": 1
-			},
-			{
-				"id": 13,
-				"nome": "Regata",
-				"valor": 3,
-				"prazo": 2
-			},
-			{
-				"id": 14,
-				"nome": "Roupa de Banho",
-				"valor": 6,
-				"prazo": 1
-			},
-			{
-				"id": 15,
-				"nome": "Saia",
-				"valor": 5,
-				"prazo": 1
-			},
-			{
-				"id": 16,
-				"nome": "Shorts",
-				"valor": 5,
-				"prazo": 1
-			},
-			{
-				"id": 17,
-				"nome": "Suéter",
-				"valor": 12,
-				"prazo": 3
-			},
-			{
-				"id": 18,
-				"nome": "Terno",
-				"valor": 25,
-				"prazo": 3
-			},
-			{
-				"id": 19,
-				"nome": "Vestido",
-				"valor": 10,
-				"prazo": 2
-			}
-		]
-	},
-	{
-		"pedidos": [
-			{
-				"id": 1,
-				"pecas": [
-					{
-						"id":1,
-						"quantidade":1
-					}
-				],
-				"dataPedido": "2023-03-02T03:00:00.000Z" ,
-				"status": "Aceito",
-				"dono": 1
-			},
-			{
-				"id": 1,
-				"pecas": [
-					{
-						"id":1,
-						"quantidade":1
-					}
-				],
-				"dataPedido": "2021-05-02T03:00:00.000Z" ,
-				"status": "Aceito",
-				"dono": 2
-			}
-		]
-	}
-]
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "João",
+      "cpf": 11111111111,
+      "email": "joao@joao.com",
+      "cep": 78507120,
+      "uf": "Minas Gerais",
+      "cidade": "Sabará",
+      "endereco": "Duque de Caxias",
+      "numero": 9437,
+      "telefone": 999979999,
+      "senha": "joao",
+      "perfil": "cliente"
+    },
+    {
+      "id": 2,
+      "nome": "José",
+      "cpf": 22222222222,
+      "email": "jose@jose.com",
+      "cep": 71014676,
+      "uf": "Paraíba",
+      "cidade": "João P.",
+      "endereco": "Castro Alves",
+      "numero": 6788,
+      "telefone": 999959999,
+      "senha": "jose",
+      "perfil": "cliente"
+    },
+    {
+      "id": 3,
+      "nome": "Joana",
+      "cpf": 33333333333,
+      "email": "joana@joana.com",
+      "cep": 63762156,
+      "uf": "Distrito Federal",
+      "cidade": "Brasília",
+      "endereco": "Goiás",
+      "numero": 1268,
+      "telefone": 999959999,
+      "senha": "joana",
+      "perfil": "cliente"
+    },
+    {
+      "id": 4,
+      "nome": "Joaquina",
+      "cpf": 44444444444,
+      "email": "joaquina@joaquina.com",
+      "cep": 83790180,
+      "uf": "Parana",
+      "cidade": "Curitiba",
+      "endereco": "Fernando de Noronha",
+      "numero": 1314,
+      "telefone": 99999999,
+      "senha": "joaquina",
+      "perfil": "cliente"
+    },
+    {
+      "cpf": "11111111111",
+      "nome": "Gisele Gomes",
+      "email": "gselegomes@gmail.com",
+      "cep": "81930-500",
+      "endereco": "Rua Nair Cravo Westphalen",
+      "numero": "0",
+      "cidade": "Curitiba",
+      "uf": "PR",
+      "telefone": "9999999999",
+      "perfil": "cliente",
+      "id": 5
+    }
+  ],
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "admin",
+      "email": "admin@admin.com",
+      "dt_nasc": "1999-12-12T02:00:00.000Z",
+      "senha": "admin",
+      "perfil": "funcionario"
+    },
+    {
+      "id": 2,
+      "nome": "Maria",
+      "email": "maria@lol.com",
+      "dt_nasc": "1989-03-02T03:00:00.000Z",
+      "senha": "maria",
+      "perfil": "funcionario"
+    },
+    {
+      "id": 3,
+      "nome": "Mário",
+      "email": "mario@lol.com",
+      "dt_nasc": "1992-11-28T02:00:00.000Z",
+      "senha": "mario",
+      "perfil": "funcionario"
+    }
+  ],
+  "roupas": [
+    {
+      "id": 1,
+      "nome": "Blusa",
+      "valor": 5.5,
+      "prazo": 1
+    },
+    {
+      "id": 2,
+      "nome": "Calça",
+      "valor": 7,
+      "prazo": 1
+    },
+    {
+      "id": 3,
+      "nome": "Calcinha",
+      "valor": 2,
+      "prazo": 1
+    },
+    {
+      "id": 4,
+      "nome": "Camisa",
+      "valor": 7,
+      "prazo": 1
+    },
+    {
+      "id": 5,
+      "nome": "Camiseta",
+      "valor": 3,
+      "prazo": 1
+    },
+    {
+      "id": 6,
+      "nome": "Casaco",
+      "valor": 10,
+      "prazo": 2
+    },
+    {
+      "id": 7,
+      "nome": "Cueca",
+      "valor": 2,
+      "prazo": 1
+    },
+    {
+      "id": 8,
+      "nome": "Gravata",
+      "valor": 1,
+      "prazo": 1
+    },
+    {
+      "id": 9,
+      "nome": "Jaqueta",
+      "valor": 10,
+      "prazo": 2
+    },
+    {
+      "id": 10,
+      "nome": "Meia",
+      "valor": 1,
+      "prazo": 1
+    },
+    {
+      "id": 11,
+      "nome": "Moletom",
+      "valor": 9.5,
+      "prazo": 2
+    },
+    {
+      "id": 12,
+      "nome": "Pijama",
+      "valor": 12,
+      "prazo": 1
+    },
+    {
+      "id": 13,
+      "nome": "Regata",
+      "valor": 3,
+      "prazo": 2
+    },
+    {
+      "id": 14,
+      "nome": "Roupa de Banho",
+      "valor": 6,
+      "prazo": 1
+    },
+    {
+      "id": 15,
+      "nome": "Saia",
+      "valor": 5,
+      "prazo": 1
+    },
+    {
+      "id": 16,
+      "nome": "Shorts",
+      "valor": 5,
+      "prazo": 1
+    },
+    {
+      "id": 17,
+      "nome": "Suéter",
+      "valor": 12,
+      "prazo": 3
+    },
+    {
+      "id": 18,
+      "nome": "Terno",
+      "valor": 25,
+      "prazo": 3
+    },
+    {
+      "id": 19,
+      "nome": "Vestido",
+      "valor": 10,
+      "prazo": 2
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "pecas": [
+        {
+          "id": 1,
+          "quantidade": 1
+        }
+      ],
+      "dataPedido": "2023-03-02T03:00:00.000Z",
+      "status": "Aceito",
+      "dono": 1
+    },
+    {
+      "id": 2,
+      "pecas": [
+        {
+          "id": 1,
+          "quantidade": 1
+        }
+      ],
+      "dataPedido": "2021-05-02T03:00:00.000Z",
+      "status": "Aceito",
+      "dono": 2
+    }
+  ]
+}

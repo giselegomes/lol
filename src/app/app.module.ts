@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http'; 
 
-
 //Componentes globais
 import { PedidoAprovadoComponent } from './components/pedido-aprovado/pedido-aprovado.component';
 import { PedidoComponent } from './components/pedido/pedido.component';

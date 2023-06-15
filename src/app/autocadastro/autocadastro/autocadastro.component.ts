@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { FormBuilder, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ClienteService } from '../../cliente/services/cliente.service';
 import { Cliente } from '../../shared/models/cliente.model';
@@ -21,29 +21,19 @@ interface Endereco {
   templateUrl: './autocadastro.component.html',
   styleUrls: ['./autocadastro.component.css']
 })
+
+
 export class AutocadastroComponent implements OnInit {
-  @ViewChild('formCliente') formCliente! : NgForm;
-  cliente! : Cliente;
-  
-
-  ngOnInit(): void {
-    this.cliente = new Cliente();
-  }
-
-  inserir(): void {
-    if (this.formCliente.form.valid) {
-      this.cliente.perfil = 'cliente'; // Definindo o perfil como 'cliente'
-      this.clienteService.inserir(this.cliente);
-      this.router.navigate(["/"]);
-    }
-  }
-  
-
-  momentForm: FormGroup;
+  @ViewChild('formCliente') formCliente!: NgForm;
+  novoCliente: boolean = true;
+  cliente: Cliente = new Cliente();
+  id!: string;
+  loading!: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
+    private route: ActivatedRoute,
     private clienteService: ClienteService,
     private router: Router
   ) {
@@ -59,6 +49,41 @@ export class AutocadastroComponent implements OnInit {
       telefone: ['', Validators.required],
     });
   }
+
+  ngOnInit(): void {
+    this.cliente = new Cliente();
+    this.loading = false;
+
+    this.id = this.route.snapshot.params['id'];
+    this.novoCliente = !this.id;
+
+    if (!this.novoCliente) {
+      this.clienteService.buscarPorId(+this.id).subscribe(
+        cliente => {
+          this.cliente = cliente;
+          this.cliente.senha = "";
+        }
+      );
+    }
+  }
+
+  inserir(): void {
+    this.loading = true;
+    if (this.formCliente.form.valid) {
+      if (this.novoCliente) {
+        this.cliente.perfil = 'cliente'; // Definindo o perfil como 'cliente'
+        this.clienteService.inserir(this.cliente).subscribe (
+          cliente => {
+            this.loading = false;
+            this.router.navigate(["/"])
+          }
+        );
+      }
+    }
+  }
+
+  momentForm: FormGroup;
+
 
   buscarCEP() {
     const cep = this.momentForm.get('cep').value;
