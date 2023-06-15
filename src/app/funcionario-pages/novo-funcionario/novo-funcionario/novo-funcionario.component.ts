@@ -3,20 +3,28 @@ import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl, NgFor
 
 import { FuncionarioService } from '../../../funcionario/services/funcionario.service';
 import { Funcionario } from '../../../shared/models/funcionario.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-novo-funcionario',
   templateUrl: './novo-funcionario.component.html',
   styleUrls: ['./novo-funcionario.component.css']
 })
+
 export class NovoFuncionarioComponent implements OnInit {
-  @ViewChild('formCliente') formCliente! : NgForm;
+  @ViewChild('formCliente') formCliente!: NgForm;
+  novoFuncionario: boolean = true;
+  funcionario: Funcionario = new Funcionario();
+  id!: string;
+  loading!: boolean;
   formFuncionario: FormGroup;
-  funcionario: Funcionario;
+
 
   constructor(
     private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private route: ActivatedRoute,
     private funcionarioService: FuncionarioService,
     private router: Router
   ) {
@@ -27,11 +35,23 @@ export class NovoFuncionarioComponent implements OnInit {
       senha: ['', Validators.required],
       confirmarSenha: ['', Validators.required]
     }, { validator: this.validaSenha });
-
   }
 
   ngOnInit(): void {
     this.funcionario = new Funcionario();
+    this.loading = false;
+
+    this.id = this.route.snapshot.params['id'];
+    this.novoFuncionario = !this.id;
+
+    if (!this.novoFuncionario) {
+      this.funcionarioService.buscarPorId(+this.id).subscribe(
+        funcionario => {
+          this.funcionario = funcionario;
+          this.funcionario.senha = "";
+        }
+      );
+    }
   }
 
   validaSenha: ValidatorFn = (control: AbstractControl): { [key: string]: any } | null => {
@@ -42,10 +62,17 @@ export class NovoFuncionarioComponent implements OnInit {
   };
 
   inserirFuncionario(): void {
+    this.loading = true;
     if (this.formFuncionario.valid) {
-      this.funcionario.perfil = 'funcionario'; // Definindo o perfil como 'cliente'
-      this.funcionarioService.inserirFuncionario(this.funcionario);
-      this.router.navigate(['/funcionario/manutencao-funcionario']);
+      if (this.novoFuncionario) {
+        this.funcionario.perfil = 'funcionario'; // Definindo o perfil como 'cliente'
+        this.funcionarioService.inserirFuncionario(this.funcionario).subscribe(
+          funcionario => {
+            this.loading = false;
+            this.router.navigate(["/"])
+          }
+        );
+      }
     }
   }
 }

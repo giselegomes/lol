@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 import { Cliente } from '../../shared/models/cliente.model';
 import { Observable } from 'rxjs';
 
-// const LS_CHAVE: string = "clientes";
-
 @Injectable({
   providedIn: 'root'
 })

@@ -15,18 +15,40 @@ export class ManutencaoFuncionarioComponent implements OnInit {
   constructor(private funcionarioService: FuncionarioService) { }
 
   ngOnInit(): void {
-    this.funcionarios = this.listarFuncionarios();
+    this.funcionarios = [];
+    this.listarFuncionarios();
   }
 
   listarFuncionarios(): Funcionario[] {
-    return this.funcionarioService.listarFuncionarios();
+    this.funcionarioService.listarFuncionarios().subscribe({
+      next: (data: Funcionario[]) => {
+        if (data == null) {
+          this.funcionarios = [];
+        }
+        else {
+          this.funcionarios = data;
+        }
+      }
+    });
+    return this.funcionarios;
   }
 
-  removerFuncionario($event: any, funcionario: Funcionario) {
+  removerFuncionario($event: any, funcionario: Funcionario): void {
     $event.preventDefault();
-    if(confirm(`Deseja realmente remover o(a) ${funcionario.nome}?`)) {
-      this.funcionarioService.removerFuncionario(funcionario.id!);
-      this.funcionarios = this.listarFuncionarios();
+    if (confirm('Deseja realmente remover o usuário "' +
+      funcionario.nome + '"?')) {
+      this.funcionarioService.removerFuncionario(funcionario.id!).
+        subscribe({
+          complete: () => { this.listarFuncionarios(); }
+        });
     }
   }
+
+  // removerFuncionario($event: any, funcionario: Funcionario) {
+  //   $event.preventDefault();
+  //   if(confirm(`Deseja realmente remover o(a) ${funcionario.nome}?`)) {
+  //     this.funcionarioService.removerFuncionario(funcionario.id!);
+  //     this.funcionarios = this.listarFuncionarios();
+  //   }
+  // }
 }

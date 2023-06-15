@@ -20,20 +20,20 @@ export class EditarFuncionarioComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id'];
-    const res = this.funcionarioService.buscarFuncionario(id);
+    // let id = +this.route.snapshot.params['id'];
+    // // const res = this.funcionarioService.buscarFuncionario(id);
 
-    if (res !== undefined) {
-      this.funcionario = res;
-    } else {
-      throw new Error("Funcionário não encontrado: id = " + id);
-    }
+    // if (res !== undefined) {
+    //   this.funcionario = res;
+    // } else {
+    //   throw new Error("Funcionário não encontrado: id = " + id);
+    // }
   }
 
-  atualizarFuncionario(): void {
-    if (this.formFuncionario.form.valid) {
-      this.funcionarioService.atualizarFuncionario(this.funcionario);
-      this.router.navigate(['/funcionario/manutencao-funcionario']);
-    }
-  }
+  // atualizarFuncionario(): void {
+  //   if (this.formFuncionario.form.valid) {
+  //     this.funcionarioService.atualizarFuncionario(this.funcionario);
+  //     this.router.navigate(['/funcionario/manutencao-funcionario']);
+  //   }
+  // }
 }

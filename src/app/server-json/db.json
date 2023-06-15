@@ -72,14 +72,6 @@
   ],
   "funcionarios": [
     {
-      "id": 1,
-      "nome": "admin",
-      "email": "admin@admin.com",
-      "dt_nasc": "1999-12-12T02:00:00.000Z",
-      "senha": "admin",
-      "perfil": "funcionario"
-    },
-    {
       "id": 2,
       "nome": "Maria",
       "email": "maria@lol.com",

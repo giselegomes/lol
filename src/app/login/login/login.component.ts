@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Roupa } from 'src/app/shared/models/roupa.model';
-import { Funcionario } from 'src/app/shared/models/funcionario.model';
-import { Cliente } from 'src/app/shared/models/cliente.model';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +12,6 @@ export class LoginComponent implements OnInit {
   //ao carregar a página inicial de login
   ngOnInit(): void {
     this.criaListaRoupa2();
-    this.criaListaFuncionario();
-    this.criaListaCliente();
   }
 
   criaListaRoupa2(): void {
@@ -43,29 +39,4 @@ export class LoginComponent implements OnInit {
     ]
     localStorage.setItem("chave_roupas", JSON.stringify(listaRoupas));
   }
-
-  criaListaFuncionario(): void {
-
-    let listaFuncionarios: Funcionario[] = [
-      { id: 1, nome: "admin", email: "admin@admin.com", dt_nasc: new Date (1999, 11 ,12), senha: "admin" },
-      { id: 2, nome: "Maria", email: "maria@lol.com", dt_nasc: new Date (1989, 1 ,30), senha: "maria" },
-      { id: 3, nome: "Mário", email: "mario@lol.com", dt_nasc: new Date (1992, 10,28), senha: "mario" },
-    ]
-    localStorage.setItem("chave_funcionarios", JSON.stringify(listaFuncionarios));
-
-  }
-
-  criaListaCliente(): void{
-
-    let listaCliente: Cliente[] = [
-      { id:1, nome: 'João', cpf: 11111111111, email: "teste@gmail.com", cep: 78507120, uf: 'Minas Gerais', cidade: 'Sabará', endereco: 'Duque de Caxias', numero: 9437, telefone:999979999 },
-      { id:2, nome: 'José', cpf: 22222222222, email: "teste@gmail.com", cep: 71014676, uf: 'Paraíba', cidade: 'João P.', endereco: 'Castro Alves', numero: 6788, telefone: 999959999 },
-      { id:3, nome: 'Joana', cpf: 33333333333,  email: "teste@gmail.com", cep: 63762156, uf: 'Distrito Federal', cidade: 'Brasília', endereco: 'Goiás', numero: 1268, telefone: 999959999 },
-      { id:4, nome: 'Joaquina', cpf: 44444444444,  email: "teste@gmail.com", cep: 83790180, uf: 'Parana', cidade: 'Curitiba', endereco: 'Fernando de Noronha', numero: 1314, telefone:99999999 }
-    ]
-    localStorage.setItem("chave_clientes", JSON.stringify(listaCliente));
-
-  }
-
-
 }
