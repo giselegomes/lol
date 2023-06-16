@@ -18,9 +18,9 @@
             <select class="form-select" [(ngModel)]="selectedStatus">
                 <option value="">Todos</option>
                 <option value="Aprovado">Aprovado</option>
-                <option value="Em aberto">Em Aberto</option>
+                <option value="Em aberto">Em aberto</option>
                 <option value="Cancelado">Cancelado</option>
-                <option value="Aguardando Pagamento">Aguardando Pagamento</option>
+                <option value="Aguardando Pagamento">Aguardando pagamento</option>
             </select>
 
             <section class="listagem">
@@ -40,7 +40,7 @@
                                 <tbody>
                                     <tr *ngFor="let pedido of applyStatusFilter()">
                                         <td>{{pedido.id}}</td>
-                                        <td>{{ pedido.dataPedido | date: 'dd/MM/yyyy' }}</td>
+                                        <td>{{pedido.dataPedido | date: 'dd/MM/yyyy' }}</td>
                                         <td>{{pedido.status}}</td>
                                         <td *ngIf="pedido.status === 'Aguardando Pagamento'">
                                             <button routerLink="/cliente/pagar-pedido" class="btn btn-primary">Pagar

@@ -11,7 +11,7 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Olá, fulano!</h1>
+                <h1 class="h2">Bem vindo(a)!</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
@@ -37,11 +37,11 @@
                                     <!-- Renderiza apenas pedidos com o status em aberto -->
                                     <ng-container *ngFor="let pedido of pedidos">
                                         <tr *ngIf="pedido.status === 'Em aberto'">
-                                            <td>{{pedido.num_pedido}}</td>
+                                            <td>{{pedido.id}}</td>
                                             <td>{{pedido.status}}</td>
-                                            <td>{{pedido.dt_recolhimento}}</td>
-                                            <td>{{pedido.dt_devolucao}}</td>
-                                            <td>{{pedido.valor}}</td>
+                                            <!-- <td>{{pedido.dt_recolhimento}}</td> -->
+                                            <!-- <td>{{pedido.dt_devolucao}}</td> -->
+                                            <!-- <td>{{pedido.valor}}</td> -->
                                             <!-- <td>
                                             <a href="#">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

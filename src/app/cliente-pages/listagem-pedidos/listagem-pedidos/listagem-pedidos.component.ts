@@ -15,17 +15,26 @@ export class ListagemPedidosComponent implements OnInit {
   constructor(private pedidoService: PedidoService) { }
 
   ngOnInit(): void {
-    this.pedidos = this.listarPedidos();
+    this.pedidos = [];
+    this.listarPedidos();
   }
 
-  listarPedidos(): Pedido[] {
-    // return this.pedidoService.listarPedidos();
-    return [
-      new Pedido(1, [], new Date(1993, 1, 28), "Cancelado"),
-      new Pedido(2, [], new Date(2013, 1, 29), "Aguardando agamento"),
-      new Pedido(3, [], new Date(2023, 1, 28), "Em aberto"),
-      new Pedido(4, [], new Date(2003, 1, 21), "Cancelado")
-    ];
+  listarPedidos(): void {
+    this.pedidoService.listarPedidos().subscribe({
+      next: (data: Pedido[]) => {
+        if (data == null) {
+          this.pedidos = [];
+        } else {
+          this.pedidos = data.map(pedido => ({
+            ...pedido,
+            dataPedido: new Date(pedido.dataPedido)
+          }));
+        }
+      },
+      error: (error) => {
+        // Lógica de tratamento de erro
+      }
+    });
   }
 
   selectedStatus: string = ''; // Variável para armazenar o valor selecionado no seletor
@@ -49,3 +58,13 @@ export class ListagemPedidosComponent implements OnInit {
   }
 }
 
+
+  // listarPedidos(): Pedido[] {
+  //   // return this.pedidoService.listarPedidos();
+  //   return [
+  //     new Pedido(1, [], new Date(1993, 1, 28), "Cancelado"),
+  //     new Pedido(2, [], new Date(2013, 1, 29), "Aguardando agamento"),
+  //     new Pedido(3, [], new Date(2023, 1, 28), "Em aberto"),
+  //     new Pedido(4, [], new Date(2003, 1, 21), "Cancelado")
+  //   ];
+  // }

@@ -1,8 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Pedido } from './../../shared/models/pedido.model'
-
-const LS_CHAVE: string = "pedidos"
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +10,27 @@ const LS_CHAVE: string = "pedidos"
 
 export class PedidoService {
 
-  constructor() { }
+  BASE_URL = "http://localhost:3000/pedidos/"
 
-  listarPedidos(): Pedido[] {
-    const pedidos = localStorage[LS_CHAVE];
-    return pedidos ? JSON.parse(pedidos) : [];
+  httpOptions = {
+    headers: new HttpHeaders({
+      "Content-Type": 'application/json'
+    })
+  };
+
+  constructor(private httpClient: HttpClient) { }
+
+  listarPedidos(): Observable<Pedido[]> {
+    return this.httpClient.get<Pedido[]>(this.BASE_URL,
+    this.httpOptions);
   }
 
-  inserirPedido(pedido: Pedido): void {
-    const pedidos = this.listarPedidos();
-    pedido.id = new Date().getTime();
+  // inserirPedido(pedido: Pedido): void {
+  //   const pedidos = this.listarPedidos();
+  //   pedido.id = new Date().getTime();
 
-    pedidos.push(pedido)
+  //   pedidos.push(pedido)
 
-    localStorage[LS_CHAVE] = JSON.stringify(pedidos);
-  }
+  //   localStorage[LS_CHAVE] = JSON.stringify(pedidos);
+  // }
 }

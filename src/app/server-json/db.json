@@ -177,25 +177,34 @@
       "id": 1,
       "pecas": [
         {
-          "id": 1,
+          "nome": "Camiseta",
+          "preco": 20,
+          "prazo": "2 dias",
+          "quantidade": 2
+        },
+        {
+          "nome": "Calça",
+          "preco": 30,
+          "prazo": "3 dias",
           "quantidade": 1
         }
       ],
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Aceito",
-      "dono": 1
+      "status": "Em aberto"
     },
     {
       "id": 2,
       "pecas": [
         {
-          "id": 1,
+          "nome": "Vestido",
+          "preco": 50,
+          "prazo": "5 dias",
           "quantidade": 1
         }
       ],
-      "dataPedido": "2021-05-02T03:00:00.000Z",
-      "status": "Aceito",
-      "dono": 2
+      "dataPedido": "2023-03-02T03:00:00.000Z",
+      "status": "Aprovado"
     }
   ]
+  
 }

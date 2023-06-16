@@ -6,15 +6,15 @@ export class Pedido {
         public status?: string
     ) { }   
 
-    public calcularValorTotalPedido(): number {
-        let valorTotalPedido = 0;
-        if (this.pecas) {
-            for (const peca of this.pecas) {
-                valorTotalPedido += peca.calcularTotalPorPeca();
-            }
-        }
-        return valorTotalPedido;
-    }
+    // public calcularValorTotalPedido(): number {
+    //     let valorTotalPedido = 0;
+    //     if (this.pecas) {
+    //         for (const peca of this.pecas) {
+    //             valorTotalPedido += peca.calcularTotalPorPeca();
+    //         }
+    //     }
+    //     return valorTotalPedido;
+    // }
 }
 
 // // depois será preciso importar o model de peças aqui
