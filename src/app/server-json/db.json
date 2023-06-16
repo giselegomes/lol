@@ -82,39 +82,9 @@
   ],
   "roupas": [
     {
-      "id": 1,
-      "nome": "Blusaaaaa",
-      "valor": 5.5,
-      "prazo": 1
-    },
-    {
-      "id": 2,
-      "nome": "Calça",
-      "valor": 7,
-      "prazo": 1
-    },
-    {
-      "id": 3,
-      "nome": "Calcinha",
-      "valor": 2,
-      "prazo": 1
-    },
-    {
-      "id": 4,
-      "nome": "Camisa",
-      "valor": 7,
-      "prazo": 1
-    },
-    {
-      "id": 5,
-      "nome": "Camiseta",
-      "valor": 3,
-      "prazo": 1
-    },
-    {
       "id": 6,
-      "nome": "Casaco",
-      "valor": 10,
+      "nome": "Casacos",
+      "valor": "10111",
       "prazo": 2
     },
     {
@@ -194,6 +164,12 @@
       "nome": "Vestido",
       "valor": 10,
       "prazo": 2
+    },
+    {
+      "nome": "Luvas",
+      "valor": "2",
+      "prazo": 1,
+      "id": 20
     }
   ],
   "pedidos": [

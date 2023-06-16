@@ -32,9 +32,6 @@ export class EditarFuncionarioComponent implements OnInit {
     this.funcionarioService.buscarPorId(id).subscribe(
       funcionario => {
         this.funcionario = funcionario;
-      },
-      error => {
-        // Tratar erro ao carregar o funcionário
       }
     );
   }

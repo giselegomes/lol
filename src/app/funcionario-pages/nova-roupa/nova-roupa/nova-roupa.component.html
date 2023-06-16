@@ -1,4 +1,4 @@
-<!-- <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu"
@@ -25,7 +25,7 @@
                             <form class="row g-3" [formGroup]="formRoupa">
                                 <section class="novo__row row">
                                     <div class="col-10">
-                                        <label class="form-label">Nome: <span class="required">*</span></label>
+                                        <label class="form-label">Nome da peça: <span class="required">*</span></label>
                                         <input type="text" class="form-control" id="inputNome" formControlName="nome"
                                             [(ngModel)]="roupa.nome" required>
                                     </div>
@@ -34,12 +34,18 @@
                                 <section class="novo__row row">
                                     <div class="col-5">
                                         <label class="form-label">Valor: <span class="required">*</span></label>
-                                        <input type="text" class="form-control" id="inputValor"
-                                            formControlName="valor" [(ngModel)]="roupa.valor" ngModel required>
+                                        <div class="input-group col-5">
+    
+                                            <span class="input-group-text">R$</span>
+                                            <input type="text" class="form-control" id="inputValor" formControlName="valor"
+                                                [(ngModel)]="roupa.valor" ngModel required>
+                                            <span class="input-group-text">.00</span>
+                                        </div>
                                     </div>
-
+                                    
                                     <div class="col-5">
-                                        <label class="form-label">Prazo: <span class="required">*</span></label>
+                                        <label class="form-label">Prazo (dias úteis): <span
+                                                class="required">*</span></label>
                                         <input type="number" class="form-control" id="inputPrazo"
                                             formControlName="prazo" [(ngModel)]="roupa.prazo" ngModel required>
                                     </div>
@@ -48,7 +54,7 @@
                                 <section class="row">
                                     <div class="col-12 actions">
                                         <button type="submit" class="autocadastro__btn btn btn-primary"
-                                            (click)="inserir()" [disabled]="!formRoupa.valid">
+                                            (click)="inserirRoupa()" [disabled]="!formRoupa.valid">
                                             Cadastrar
                                         </button>
 
@@ -66,4 +72,4 @@
         </main>
     </div>
 </div>
-<app-footer></app-footer> -->
+<app-footer></app-footer>

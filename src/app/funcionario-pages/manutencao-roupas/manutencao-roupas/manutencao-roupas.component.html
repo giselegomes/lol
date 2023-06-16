@@ -9,7 +9,8 @@
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Manutenção de roupas</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
@@ -18,7 +19,8 @@
             <section class="manutencao-roupa">
 
                 <div class="novo-roupa">
-                    <button routerLink="/funcionario/nova-roupa" type="button" class="btn btn-success"> <i class="fa-solid fa-plus"></i> Novo Roupa</button>
+                    <button routerLink="/funcionario/nova-roupa" type="button" class="btn btn-success"> <i
+                            class="fa-solid fa-plus"></i> Novo Roupa</button>
                 </div>
 
                 <div class="container">
@@ -27,25 +29,28 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Prazo de Lavagem</th>
-                                        <th scope="col">Valor</th>
-                                        <th scope="col">Editar</th>
-                                        <th scope="col">Deletar</th>
+                                        <th scope="col-3">Nome</th>
+                                        <th scope="col-2">Prazo (dias úteis)</th>
+                                        <th scope="col-3">Valor</th>
+                                        <th scope="col-2">Editar</th>
+                                        <th scope="col-2">Deletar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let roupa of roupas">
                                         <td>{{roupa.nome}}</td>
                                         <td>{{roupa.prazo}}</td>
-                                        <td>{{roupa.valor}}</td>
+                                        <td>R$ {{roupa.valor | number:'1.2-2'}}</td>
                                         <td>
-                                            <a class="btn btn-success" [routerLink]="['/funcionario/editar-roupa', roupa.id]" href="#"><i class="fa-regular fa-pen-to-square"> </i></a>
+                                            <a class="btn btn-success"
+                                                [routerLink]="['/funcionario/editar-roupa', roupa.id]" href="#"><i
+                                                    class="fa-regular fa-pen-to-square"> </i></a>
                                             <!-- [routerLink]="['/roupa/editar', roupa.id]"-->
                                         </td>
-                                        <!-- <td>
-                                            <button class="btn btn-danger" (click)="removerRoupa($event, roupa)" ><i class="fa-solid fa-delete-left"></i></button>
-                                        </td> -->
+                                        <td>
+                                            <button class="btn btn-danger" (click)="removerRoupa($event, roupa)"><i
+                                                    class="fa-solid fa-delete-left"></i></button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

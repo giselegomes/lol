@@ -35,12 +35,15 @@ export class ManutencaoRoupasComponent implements OnInit {
     return this.roupas;
   }
 
-  // removerRoupa($event: any, roupa: Roupa) {
-  //   $event.preventDefault();
-  //   if(confirm(`Deseja realmente remover a roupa ${roupa.nome}?`)) {
-  //     this.roupaService.removerRoupa(roupa.id!);
-  //     this.roupas = this.roupaService.listarRoupas();
-  //   }
-  // }
+  removerRoupa($event: any, roupa: Roupa): void {
+    $event.preventDefault();
+    if (confirm('Deseja realmente remover "' +
+      roupa.nome + '"?')) {
+      this.roupaService.removerRoupa(roupa.id!).
+        subscribe({
+          complete: () => { this.listarRoupas(); }
+        });
+    }
+  }
 
 }

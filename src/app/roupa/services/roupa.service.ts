@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 
 export class RoupaService {
 
-  BASE_URL = "http://localhost:3000/roupas"; 
+  BASE_URL = "http://localhost:3000/roupas/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,17 +23,32 @@ export class RoupaService {
   // }
 
   constructor(private httpClient: HttpClient) { }
-  
+
   listarRoupas(): Observable<Roupa[]> {
     return this.httpClient.get<Roupa[]>(this.BASE_URL, this.httpOptions);
   }
 
-  // inserirRoupa(roupa: Roupa): void {
-  //   const roupas = this.listarRoupas();
-  //   roupa.id = new Date().getTime();
-  //   roupas.push(roupa);
-  //   localStorage[LS_CHAVE] = JSON.stringify(roupas);
-  // }
+  removerRoupa(id: number): Observable<Roupa> {
+    return this.httpClient.delete<Roupa>(this.BASE_URL + id,
+      this.httpOptions);
+  }
+
+  inserirRoupa(roupa: Roupa): Observable<Roupa> {
+    return this.httpClient.post<Roupa>(this.BASE_URL,
+      JSON.stringify(roupa),
+      this.httpOptions);
+  }
+
+  buscarPorId(id: number): Observable<Roupa> {
+    return this.httpClient.get<Roupa>(this.BASE_URL + id,
+      this.httpOptions);
+  }
+
+  alterar(roupa: Roupa): Observable<Roupa> {
+    return this.httpClient.put<Roupa>(this.BASE_URL + roupa.id,
+      JSON.stringify(roupa),
+      this.httpOptions);
+  }
 
   // buscarPorId(id: number): Roupa | undefined {
   //   const roupas: Roupa[] = this.listarRoupas();
@@ -53,12 +68,6 @@ export class RoupaService {
   //       objs[index] = roupa
   //     }
   //   });
-  //   localStorage[LS_CHAVE] = JSON.stringify(roupas);
-  // }
-
-  // removerRoupa(id: number): void {
-  //   let roupas: Roupa[] = this.listarRoupas();
-  //   roupas = roupas.filter(roupa => roupa.id !== id);
   //   localStorage[LS_CHAVE] = JSON.stringify(roupas);
   // }
 }

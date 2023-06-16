@@ -21,7 +21,6 @@ export class NovoFuncionarioComponent implements OnInit {
   loading!: boolean;
   formFuncionario: FormGroup;
 
-
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
