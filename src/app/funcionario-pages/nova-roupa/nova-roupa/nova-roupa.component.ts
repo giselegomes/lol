@@ -35,10 +35,10 @@ export class NovaRoupaComponent implements OnInit {
     this.roupa = new Roupa();
   }
 
-  inserir(): void {
-    if (this.formRoupa.valid) {
-      this.roupaService.inserirRoupa(this.roupa);
-      this.router.navigate(['/funcionario/manutencao-roupas']);
-    }
-  }
+  // inserir(): void {
+  //   if (this.formRoupa.valid) {
+  //     this.roupaService.inserirRoupa(this.roupa);
+  //     this.router.navigate(['/funcionario/manutencao-roupas']);
+  //   }
+  // }
 }

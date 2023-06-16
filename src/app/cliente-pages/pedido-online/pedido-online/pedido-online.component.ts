@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RoupaService } from 'src/app/roupa/services/roupa.service';
+import { Roupa } from 'src/app/shared/models/roupa.model';
 
-// classe que representa as peças de roupa
 export class itemRoupa {
   nome: string;
   valor: number;
@@ -12,72 +13,54 @@ export class itemRoupa {
   templateUrl: './pedido-online.component.html',
   styleUrls: ['./pedido-online.component.css']
 })
-export class PedidoOnlineComponent {
-
-// prazo = quantidade de dias
-  itens: itemRoupa[] = [
-    { nome: "Blusa", valor: 5.50, prazo: "1" },
-    { nome: "Calça", valor: 7.00, prazo: "1" },
-    { nome: "Calcinha", valor: 2.00, prazo: "1" },
-    { nome: "Camisa", valor: 7.00, prazo: "1" },
-    { nome: "Camiseta", valor: 3.00, prazo: "1" },
-    { nome: "Casaco", valor: 10.00, prazo: "2" },
-    { nome: "Cueca", valor: 2.00, prazo: "1" },
-    { nome: "Gravata", valor: 1.00, prazo: "1" },
-    { nome: "Jaqueta", valor: 10.00, prazo: "2" },
-    { nome: "Meia", valor: 1.00, prazo: "1" },
-    { nome: "Moletom", valor: 9.50, prazo: "2" },
-    { nome: "Pijama", valor: 12.00, prazo: "1" },
-    { nome: "Regata", valor: 3.00, prazo: "2" },
-    { nome: "Roupa de Banho", valor: 6.00, prazo: "1" },
-    { nome: "Saia", valor: 5.00, prazo: "1" },
-    { nome: "Shorts", valor: 5.00, prazo: "1" },
-    { nome: "Suéter", valor: 12.00, prazo: "3" },
-    { nome: "Terno", valor: 25.00, prazo: "3" },
-    { nome: "Vestido", valor: 10.00, prazo: "2" }
-  ];
-
-  // Item selecionado pelo usuário
+export class PedidoOnlineComponent implements OnInit {
+  roupas: Roupa[] = [];
   itemSelecionado: itemRoupa;
-
-  // Quantidade de itens a serem adicionados ao carrinho
   quantidade: number = 1;
-
-  // Lista de itens adicionados ao carrinho
   itensPedido: { item: itemRoupa, quantidade: number }[] = [];
-
-  // Total de itens no carrinho
   totalPedido: number = 0;
+  aceitar: boolean = false;
+  recusar: boolean = false;
 
-  constructor() { }
+  constructor(private roupaService: RoupaService) { }
 
-  // Função para adicionar um item ao carrinho
+  ngOnInit() {
+    this.listarRoupas();
+  }
+
+  listarRoupas() {
+    this.roupaService.listarRoupas().subscribe(
+      (data: Roupa[]) => {
+        if (data == null) {
+          this.roupas = [];
+        } else {
+          this.roupas = data;
+        }
+      }
+    );
+  }
+
   adicionarItemPedido() {
-
     if (!this.itemSelecionado) {
       alert("Por favor, selecione uma peça de roupa");
       return;
     }
 
     if (this.quantidade === 0) {
-      alert("Por favor, insera a quantidade de peças");
+      alert("Por favor, insira a quantidade de peças");
       return;
     }
+
     let itemPedido = { item: this.itemSelecionado, quantidade: this.quantidade };
     this.itensPedido.push(itemPedido);
     this.totalPedido += this.itemSelecionado.valor * this.quantidade;
   }
 
-  // Função para remover um item do carrinho
   removerItemPedido(index: number) {
     let itemRemovido = this.itensPedido[index];
     this.itensPedido.splice(index, 1);
     this.totalPedido -= itemRemovido.item.valor * itemRemovido.quantidade;
   }
-
-  // modal pedido aprovado /
-  aceitar: boolean = false;
-  recusar: boolean = false;
 
   fecharModal(event: Event) {
     event.preventDefault();
@@ -90,5 +73,4 @@ export class PedidoOnlineComponent {
     this.recusar = false;
     location.reload();
   }
-
 }

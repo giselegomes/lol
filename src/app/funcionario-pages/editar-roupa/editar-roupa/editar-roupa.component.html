@@ -22,7 +22,8 @@
                     <div class="row">
                         <div class="editar-roupa__table col-md-10">
 
-                            <form class="row g-3" #formRoupa="ngForm" (ngSubmit)="atualizar()">
+                            <!-- <form class="row g-3" #formRoupa="ngForm" (ngSubmit)="atualizar()"> -->
+                            <form class="row g-3" #formRoupa="ngForm">
 
                                 <section class="novo__row row">
                                     <div class="col-10">
@@ -52,10 +53,10 @@
                                 </section>
                                 <section class="row">
                                     <div class="col-12 actions">
-                                        <button type="submit" class="autocadastro__btn btn btn-primary"
+                                        <!-- <button type="submit" class="autocadastro__btn btn btn-primary"
                                             (click)="atualizar()" [disabled]="!formRoupa.form.valid">
                                             Salvar
-                                        </button>
+                                        </button> -->
 
                                         <button routerLink="/roupa/manutencao-roupa" type="submit"
                                             class="autocadastro__btn btn btn-primary">Voltar</button>

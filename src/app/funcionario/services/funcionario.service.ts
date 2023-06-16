@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class FuncionarioService {
 
   BASE_URL = "http://localhost:3000/funcionarios/";
+  
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": 'application/json'

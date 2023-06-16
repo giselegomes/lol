@@ -23,20 +23,20 @@ export class EditarRoupaComponent implements OnInit {
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params['id'];
-    const res = this.roupaService.buscarPorId(id);
+    // const res = this.roupaService.buscarPorId(id);
 
-    if (res !== undefined) {
-      this.roupa = res;
-    } else {
-      throw new Error("Roupa não encontrad: id = " + id);
-    }
+    // if (res !== undefined) {
+    //   this.roupa = res;
+    // } else {
+    //   throw new Error("Roupa não encontrad: id = " + id);
+    // }
   }
 
-  atualizar(): void {
-    if (this.formRoupa.form.valid) {
-      this.roupaService.atualizar(this.roupa);
-      this.router.navigate(['/funcionario/manutencao-roupas']);
-    }
-  }
+  // atualizar(): void {
+  //   if (this.formRoupa.form.valid) {
+  //     this.roupaService.atualizar(this.roupa);
+  //     this.router.navigate(['/funcionario/manutencao-roupas']);
+  //   }
+  // }
 }
 

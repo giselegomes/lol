@@ -21,7 +21,7 @@
                     <h2>Faça seu pedido:</h2>
                     <div class="form-group col-6">
                         <select class="form-select" [(ngModel)]="itemSelecionado">
-                            <option *ngFor="let item of itens" [ngValue]="item">{{ item.nome }}</option>
+                            <option *ngFor="let roupa of roupas" [ngValue]="roupa">{{ roupa.nome }}</option>
                         </select>
                     </div>
                     <div class="form-group col-4">
@@ -76,7 +76,8 @@
                 <div class="orcamento__itens">
                     <p><strong>Total de itens do pedido:</strong> 0</p>
                     <p><strong>Valor total do pedido:</strong> R$ {{ totalPedido.toFixed(2) }} </p>
-                    <p><strong> Prazo de entrega: </strong> 2 dias úteis<p>
+                    <p><strong> Prazo de entrega: </strong> 2 dias úteis
+                    <p>
                 </div>
                 <div class="orcamento__actions">
                     <button class="btn btn-primary" (click)="aceitar = !aceitar">
