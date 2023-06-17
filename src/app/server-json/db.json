@@ -176,12 +176,12 @@
     {
       "id": 1,
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Em aberto"
+      "status": "Cancelado"
     },
     {
       "id": 5,
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Em aberto"
+      "status": "Cancelado"
     },
     {
       "id": 1687017478897,
@@ -206,7 +206,7 @@
     {
       "id": 1687017534732,
       "dataPedido": "2023-06-17T15:58:54.732Z",
-      "status": "Em aberto",
+      "status": "Cancelado",
       "pecas": [
         {
           "nome": "Gravata",

@@ -31,4 +31,10 @@ export class PedidoService {
     JSON.stringify(pedido),
     this.httpOptions);
     }
+
+    atualizarPedido(pedido: Pedido): Observable<Pedido> {
+      const url = `${this.BASE_URL}${pedido.id}`;
+      return this.httpClient.put<Pedido>(url, JSON.stringify(pedido), this.httpOptions);
+    }
+    
 }
