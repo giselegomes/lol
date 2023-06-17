@@ -25,12 +25,10 @@ export class PedidoService {
     this.httpOptions);
   }
 
-  // inserirPedido(pedido: Pedido): void {
-  //   const pedidos = this.listarPedidos();
-  //   pedido.id = new Date().getTime();
-
-  //   pedidos.push(pedido)
-
-  //   localStorage[LS_CHAVE] = JSON.stringify(pedidos);
-  // }
+  inserirPedido(pedido: Pedido): Observable<Pedido> {
+    pedido.id = new Date().getTime();
+    return this.httpClient.post<Pedido>(this.BASE_URL,
+    JSON.stringify(pedido),
+    this.httpOptions);
+    }
 }

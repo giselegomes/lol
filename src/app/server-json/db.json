@@ -175,36 +175,47 @@
   "pedidos": [
     {
       "id": 1,
-      "pecas": [
-        {
-          "nome": "Camiseta",
-          "preco": 20,
-          "prazo": "2 dias",
-          "quantidade": 2
-        },
-        {
-          "nome": "Calça",
-          "preco": 30,
-          "prazo": "3 dias",
-          "quantidade": 1
-        }
-      ],
       "dataPedido": "2023-03-02T03:00:00.000Z",
       "status": "Em aberto"
     },
     {
-      "id": 2,
+      "id": 5,
+      "dataPedido": "2023-03-02T03:00:00.000Z",
+      "status": "Em aberto"
+    },
+    {
+      "id": 1687017478897,
+      "dataPedido": "2023-06-17T15:57:58.897Z",
+      "status": "Aprovado",
       "pecas": [
         {
-          "nome": "Vestido",
-          "preco": 50,
-          "prazo": "5 dias",
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
           "quantidade": 1
+        },
+        {
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 3
         }
       ],
-      "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Aprovado"
+      "valorTotal": 4
+    },
+    {
+      "id": 1687017534732,
+      "dataPedido": "2023-06-17T15:58:54.732Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Gravata",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 50
+        }
+      ],
+      "valorTotal": 50
     }
   ]
-  
 }

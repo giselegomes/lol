@@ -30,9 +30,6 @@ export class ListagemPedidosComponent implements OnInit {
             dataPedido: new Date(pedido.dataPedido)
           }));
         }
-      },
-      error: (error) => {
-        // Lógica de tratamento de erro
       }
     });
   }

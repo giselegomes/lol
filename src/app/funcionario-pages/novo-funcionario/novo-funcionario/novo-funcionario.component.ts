@@ -5,7 +5,6 @@ import { FuncionarioService } from '../../../funcionario/services/funcionario.se
 import { Funcionario } from '../../../shared/models/funcionario.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from 'src/app/shared/models/usuario.model';
 
 @Component({
   selector: 'app-novo-funcionario',

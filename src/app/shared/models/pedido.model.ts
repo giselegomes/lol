@@ -1,10 +1,3 @@
-export class Pedido {
-    constructor(
-        public id?: number,
-        public pecas?: Peca[],
-        public dataPedido?: Date,
-        public status?: string
-    ) { }   
 
     // public calcularValorTotalPedido(): number {
     //     let valorTotalPedido = 0;
@@ -15,18 +8,36 @@ export class Pedido {
     //     }
     //     return valorTotalPedido;
     // }
-}
+
 
 // // depois será preciso importar o model de peças aqui
-export class Peca {
-    constructor(
-        public nome: string,
-        public preco: number,
-        public prazo: string,
-        public quantidade: number,
-    ) { }
 
-    public calcularTotalPorPeca(): number {
-        return this.preco * this.quantidade;
-    }
-}
+export class ItemRoupa {
+    nome: string;
+    valor: number;
+    prazo: string;
+  }
+  
+  export class Pedido {
+    constructor(
+      public id?: number,
+      public dataPedido?: Date,
+      public status?: string,
+      public pecas?: ItemRoupa[],
+      public valorTotal?: number
+    ) { }
+  }
+  
+  export class Peca {
+    constructor(
+      public nome: string,
+      public valor: number,
+      public prazo: string,
+      public quantidade: number
+    ) { }
+  
+    // public calcularTotalPorPeca(): number {
+    //   return this.valor * this.quantidade;
+    // }
+  }
+  

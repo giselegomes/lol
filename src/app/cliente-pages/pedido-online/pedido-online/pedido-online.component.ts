@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RoupaService } from 'src/app/roupa/services/roupa.service';
+import { PedidoService } from 'src/app/pedido/services/pedido.service';
+import { Pedido, Peca, ItemRoupa } from 'src/app/shared/models/pedido.model';
 import { Roupa } from 'src/app/shared/models/roupa.model';
-
-export class itemRoupa {
-  nome: string;
-  valor: number;
-  prazo: string;
-}
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedido-online',
@@ -15,14 +13,20 @@ export class itemRoupa {
 })
 export class PedidoOnlineComponent implements OnInit {
   roupas: Roupa[] = [];
-  itemSelecionado: itemRoupa;
+  itemSelecionado: ItemRoupa;
   quantidade: number = 1;
-  itensPedido: { item: itemRoupa, quantidade: number }[] = [];
+  itensPedido: { item: ItemRoupa, quantidade: number }[] = [];
   totalPedido: number = 0;
   aceitar: boolean = false;
   recusar: boolean = false;
 
-  constructor(private roupaService: RoupaService) { }
+  constructor(
+    private roupaService: RoupaService,
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private pedidoService: PedidoService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.listarRoupas();
@@ -72,5 +76,32 @@ export class PedidoOnlineComponent implements OnInit {
     event.preventDefault();
     this.recusar = false;
     location.reload();
+  }
+
+  aceitarPedido() {
+    const pecas: Peca[] = this.itensPedido.map(item => {
+      const peca: Peca = {
+        nome: item.item.nome,
+        valor: item.item.valor,
+        prazo: item.item.prazo,
+        quantidade: item.quantidade
+      };
+      return peca;
+    });
+
+    const pedido: Pedido = {
+      id: 0,
+      dataPedido: new Date(),
+      status: 'Em aberto',
+      pecas: pecas,
+      valorTotal: this.totalPedido
+    };
+
+    this.pedidoService.inserirPedido(pedido).subscribe(
+      (response: any) => {
+        console.log('Pedido salvo no json-server:', response);
+        // Realize outras ações necessárias
+      }
+    );
   }
 }
