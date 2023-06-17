@@ -1,17 +1,3 @@
-
-    // public calcularValorTotalPedido(): number {
-    //     let valorTotalPedido = 0;
-    //     if (this.pecas) {
-    //         for (const peca of this.pecas) {
-    //             valorTotalPedido += peca.calcularTotalPorPeca();
-    //         }
-    //     }
-    //     return valorTotalPedido;
-    // }
-
-
-// // depois será preciso importar o model de peças aqui
-
 export class ItemRoupa {
     nome: string;
     valor: number;
@@ -35,9 +21,5 @@ export class ItemRoupa {
       public prazo: string,
       public quantidade: number
     ) { }
-  
-    // public calcularTotalPorPeca(): number {
-    //   return this.valor * this.quantidade;
-    // }
   }
   

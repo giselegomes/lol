@@ -176,7 +176,7 @@
     {
       "id": 1,
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Cancelado"
+      "status": "Confirmado"
     },
     {
       "id": 5,
@@ -206,7 +206,7 @@
     {
       "id": 1687017534732,
       "dataPedido": "2023-06-17T15:58:54.732Z",
-      "status": "Cancelado",
+      "status": "Aguardando pagamento",
       "pecas": [
         {
           "nome": "Gravata",
@@ -216,6 +216,78 @@
         }
       ],
       "valorTotal": 50
+    },
+    {
+      "id": 1687020263261,
+      "dataPedido": "2023-06-17T16:44:23.261Z",
+      "status": "Confirmado",
+      "pecas": [
+        {
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Shorts",
+          "valor": 5,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Casacos",
+          "valor": "10111",
+          "prazo": 2,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 10117
+    },
+    {
+      "id": 1687020265461,
+      "dataPedido": "2023-06-17T16:44:25.461Z",
+      "status": "Confirmado",
+      "pecas": [
+        {
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Shorts",
+          "valor": 5,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Casacos",
+          "valor": "10111",
+          "prazo": 2,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 10117
+    },
+    {
+      "id": 1687028595202,
+      "dataPedido": "2023-06-17T19:03:15.202Z",
+      "status": "Confirmado",
+      "pecas": [
+        {
+          "nome": "Moletom",
+          "valor": 9.5,
+          "prazo": 2,
+          "quantidade": 1
+        },
+        {
+          "nome": "Regata",
+          "valor": 3,
+          "prazo": 2,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 12.5
     }
   ]
 }

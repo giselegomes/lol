@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PedidoService } from '../../../pedido/services/pedido.service';
+import { Pedido } from '../../../shared/models/pedido.model';
 
 @Component({
   selector: 'app-inicial-funcionario',
@@ -7,42 +9,60 @@ import { Component } from '@angular/core';
 })
 
 
-export class InicialFuncionarioComponent {
+export class InicialFuncionarioComponent implements OnInit {
+    pedidos: Pedido[] = [];
 
-  pedidos = [
-    { num_pedido: 444, status_pedido: "Em aberto", dataHora: new Date(2023, 4, 18, 1, 30) },
-    { num_pedido: 555, status_pedido: "Em aberto", dataHora: new Date(2023, 3, 16, 1, 20) },
-    { num_pedido: 666, status_pedido: "Em aberto", dataHora: new Date(2023, 2, 11, 13, 30) },
-    { num_pedido: 777, status_pedido: "Em aberto", dataHora: new Date(2023, 3, 16, 9, 30) },
-    { num_pedido: 888, status_pedido: "Em aberto", dataHora: new Date(2023, 4, 16, 10, 50) },
-    { num_pedido: 999, status_pedido: "Em aberto", dataHora: new Date(2023, 3, 18, 8, 30) }
-  ];
+    constructor(private pedidoService: PedidoService) {}
 
-  // pedidos em ordem crescente
-  get pedidosSorted() {
-    return this.pedidos.sort((a, b) => a.dataHora.getTime() - b.dataHora.getTime());
+     ngOnInit(): void {
+      this.listarPedidos();
   }
+
+  listarPedidos(): void {
+    this.pedidoService.listarPedidos().subscribe((data: Pedido[]) => {
+      if (data == null) {
+        this.pedidos = [];
+      } else {
+        this.pedidos = data.map((pedido) => ({
+          ...pedido,
+          dataPedido: new Date(pedido.dataPedido),
+        }));
+      }
+    });
+  }
+
+ // pedidos em ordem crescente
+  // get pedidosSorted() {
+  //   return this.pedidos.sort((a, b) => a.dataHora.getTime() - b.dataHora.getTime());
+  // }
 
   recolher: boolean = false;
 
   pedidoSelecionado: any;
   numeroPedido: number;
 
-  abrirModalRecolhimento(num_pedido: number) {
+  abrirModalRecolhimento(id: number) {
     // abre a modal 
     this.recolher = true;
     // pega o pedido selecionado
-    this.pedidoSelecionado = this.pedidos.find(p => p.num_pedido === num_pedido);
+    this.pedidoSelecionado = this.pedidos.find(p => p.id === id);
     // para printar o número do pedido na modal
-    this.numeroPedido = num_pedido;
+    this.numeroPedido = id;
   }
 
-   confirmarRecolhimento() {
-    // ao clicar, muda o status para "Recolhido"
-    this.pedidoSelecionado.status_pedido = 'Recolhido';
-    // fecha a modal
-    this.recolher = false;
-    alert("Pedido recolhido.") } 
+  confirmarRecolhimento(id: number) {
+    const pedido = this.pedidos.find((p) => p.id === id);
+    if (pedido) {
+      pedido.status = 'Confirmado';
+      this.pedidoService.atualizarPedido(pedido).subscribe(
+        (response: Pedido) => {
+          console.log('Pedido atualizado:', response);
+          // Realize outras ações necessárias
+        },
+        (error) => {
+          console.error('Erro ao atualizar pedido:', error);
+        }
+      );
+    }
   }
-
-
+}

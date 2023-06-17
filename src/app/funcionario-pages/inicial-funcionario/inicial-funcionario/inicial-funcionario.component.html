@@ -25,23 +25,24 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let pedido of pedidosSorted">
-                    <td class="col-3 text-center">{{ pedido.num_pedido }}</td>
-                    <td class="col-2 text-center">
-                      {{ pedido.dataHora | date : "dd/MM/yyyy" }}
-                    </td>
-                    <td class="col-2 text-center">
-                      {{ pedido.dataHora | date : "HH:mm" }}
-                    </td>
-                    <td class="col-2 text-center">
-                      {{ pedido.status_pedido }}
-                    </td>
-                    <td *ngIf="pedido.status_pedido === 'Em aberto'" class="col-3 text-center">
-                      <button (click)="abrirModalRecolhimento(pedido.num_pedido)" class="btn btn-action">
-                        Confirmar Recolhimento
-                      </button>
-                    </td>
-                  </tr>
+                  <ng-container *ngFor="let pedido of pedidos">
+                    <tr *ngIf="pedido.status === 'Em aberto'">
+                      <td class="col-3 text-center">{{ pedido.id}}</td>
+                      <td class="col-2 text-center">
+                        {{ pedido.dataPedido | date : "dd/MM/yyyy" }}
+                      </td>
+                      <td class="col-2 text-center">
+                        {{ pedido.dataPedido | date : "HH:mm" }}
+                      </td>
+                      <td class="col-2 text-center">
+                        {{ pedido.status }}
+                      </td>
+                      <td *ngIf="pedido.status === 'Em aberto'" class="col-3 text-center">
+                        <button class="btn btn-action" (click)="confirmarRecolhimento(pedido.id)">Confirmar
+                          Recolhimento</button>
+                      </td>
+                    </tr>
+                  </ng-container>
                 </tbody>
               </table>
             </div>
@@ -49,21 +50,7 @@
         </div>
       </section>
 
-      <section *ngIf="recolher">
-        <div>
-          <div class="modal__content">
-            <h3 class="modal__title">
-              Deseja confirmar recolhimento do pedido?
-            </h3>
-            <p>Número do pedido: {{ numeroPedido }}</p>
-            <div class="modal__button">
-              <button class="btn" (click)="confirmarRecolhimento()">Sim</button>
-              <button class="btn" (click)="recolher = false">Não</button>
-            </div>
-          </div>
-          <div class="overlay"></div>
-        </div>
-      </section>
+
     </main>
   </div>
 </div>

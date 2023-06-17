@@ -45,29 +45,27 @@
                                     'finalizado': pedido.status === 'Finalizado',
                                 }">
                                     <td>{{pedido.id}}</td>
-                                    <td>{{ pedido.dataHora | date: 'dd/MM/yyyy' }}</td>
-                                    <td>{{ pedido.dataHora | date:'HH:mm' }}</td>
+                                    <td>{{ pedido.dataPedido | date: 'dd/MM/yyyy' }}</td>
+                                    <td>{{ pedido.dataPedido| date:'HH:mm' }}</td>
                                     <td class="linha">
                                         {{pedido.status}}
                                     </td>
                                     <td
                                         *ngIf="pedido.status != 'Pago' && pedido.status != 'Em aberto' && pedido.status != 'Recolhido'">
-                                        <button class="btn btn-action ver">Ver</button>
+                                        <button cl ass="btn btn-action ver">Ver</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Em aberto'">
-                                        <button class="btn btn-action" 
-                                        (click)="abrirModalRecolhimento(pedido.id)">
-                                           Confirmar Recolhimento</button>
+                                        <button class="btn btn-action" (click)="confirmarRecolhimento(pedido.id)">
+                                            Confirmar recolhimento</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Recolhido'">
-                                        <button class="btn btn-action"
-                                            (click)="abrirModalConfirmar(pedido.id)">Confirmar
-                                            Lavagem</button>
+                                        <button class="btn btn-action" (click)="confirmarLavagem(pedido.id)">Confirmar
+                                            lavagem</button>
                                     </td>
                                     <td *ngIf="pedido.status === 'Pago'">
                                         <button class="btn btn-action"
-                                            (click)="abrirModalFinalizar(pedido.id)">Confirmar
-                                            Finalização</button>
+                                            (click)="confirmarFinalizacao(pedido.id)">Confirmar
+                                            finalização</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -75,48 +73,48 @@
                     </div>
                 </div>
             </div>
-
+            <!-- 
             <section *ngIf="confirmar">
                 <div>
                     <div class="modal__content">
                         <h3 class="modal__title">Deseja confirmar lavagem?</h3>
                         <p>Número do pedido: {{numeroPedido}}</p>
                         <div class="modal__button">
-                            <button class="btn" (click)="confirmarLavagem()">Sim</button>
+                           
                             <button class="btn" (click)="confirmar = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>
                 </div>
-            </section>
+            </section> -->
 
-            <section *ngIf="finalizar">
+            <!-- <section *ngIf="finalizar">
                 <div>
                     <div class="modal__content">
                         <h3 class="modal__title">Deseja finalizar pedido?</h3>
                         <p>Número do pedido: {{numeroPedido}}</p>
                         <div class="modal__button">
-                            <button class="btn" (click)="confirmarFinalizacao()">Sim</button>
+                    
                             <button class="btn" (click)="finalizar = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>
                 </div>
-            </section>
+            </section> -->
 
-            <section *ngIf="recolher">
+            <!-- <section *ngIf="recolher">
                 <div>
                     <div class="modal__content">
                         <h3 class="modal__title">Deseja confirmar recolhimento do pedido?</h3>
                         <p>Número do pedido: {{numeroPedido}}</p>
                         <div class="modal__button">
-                            <button class="btn" (click)="confirmarRecolhimento()">Sim</button>
+                            <button class="btn" (click)="confirmarRecolhimento(pedido.id)">Sim</button>
                             <button class="btn" (click)="recolher = false">Não</button>
                         </div>
                     </div>
                     <div class="overlay"></div>
                 </div>
-            </section>
+            </section> -->
         </main>
 
     </div>
