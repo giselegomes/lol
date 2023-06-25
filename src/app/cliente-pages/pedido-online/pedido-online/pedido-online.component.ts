@@ -35,7 +35,7 @@ export class PedidoOnlineComponent implements OnInit {
   listarRoupas() {
     this.roupaService.listarRoupas().subscribe(
       (data: Roupa[]) => {
-        if (data == null) {
+        if (data === null) {
           this.roupas = [];
         } else {
           this.roupas = data;
@@ -79,6 +79,11 @@ export class PedidoOnlineComponent implements OnInit {
   }
 
   aceitarPedido() {
+    if (this.itensPedido.length === 0) {
+      alert("Por favor, adicione itens ao pedido");
+      return;
+    }
+
     const pecas: Peca[] = this.itensPedido.map(item => {
       const peca: Peca = {
         nome: item.item.nome,
@@ -100,7 +105,12 @@ export class PedidoOnlineComponent implements OnInit {
     this.pedidoService.inserirPedido(pedido).subscribe(
       (response: any) => {
         console.log('Pedido salvo no json-server:', response);
-        // Realize outras ações necessárias
+        alert("Pedido realizado!");
+        this.router.navigate(['/cliente']); // Redireciona para a rota '/cliente'
+      },
+      (error: any) => {
+        console.error('Erro ao salvar o pedido:', error);
+        alert("Erro ao realizar o pedido. Por favor, tente novamente.");
       }
     );
   }

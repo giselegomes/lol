@@ -46,9 +46,7 @@
                                             <button routerLink="/cliente/pagar-pedido" class="btn btn-primary">Pagar
                                                 Pedido</button>
                                         </td>
-                                        <td *ngIf="pedido.status != 'Aguardando Pagamento'">
-                                            <button class="btn btn-primary">Ver pedido</button>
-                                        </td>
+                                    
                                         <td *ngIf="pedido.status === 'Em aberto'">
                                             <button class="btn btn-danger" (click)="cancelarPedido(pedido.id)">Cancelar
                                                 Pedido</button>

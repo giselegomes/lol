@@ -286,7 +286,7 @@
     {
       "id": 1687650256461,
       "dataPedido": "2023-06-24T23:44:16.461Z",
-      "status": "Em aberto",
+      "status": "Cancelado",
       "pecas": [
         {
           "nome": "Gravata",
@@ -318,7 +318,7 @@
     {
       "id": 1687652241349,
       "dataPedido": "2023-06-25T00:17:21.349Z",
-      "status": "Em aberto",
+      "status": "Cancelado",
       "pecas": [
         {
           "nome": "Roupa de Banho",
@@ -340,6 +340,93 @@
         }
       ],
       "valorTotal": 78
+    },
+    {
+      "id": 1687653821939,
+      "dataPedido": "2023-06-25T00:43:41.939Z",
+      "status": "Cancelado",
+      "pecas": [],
+      "valorTotal": 0
+    },
+    {
+      "id": 1687654036948,
+      "dataPedido": "2023-06-25T00:47:16.948Z",
+      "status": "Cancelado",
+      "pecas": [],
+      "valorTotal": 0
+    },
+    {
+      "id": 1687654078153,
+      "dataPedido": "2023-06-25T00:47:58.153Z",
+      "status": "Cancelado",
+      "pecas": [],
+      "valorTotal": 0
+    },
+    {
+      "id": 1687654125271,
+      "dataPedido": "2023-06-25T00:48:45.270Z",
+      "status": "Cancelado",
+      "pecas": [
+        {
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Shorts",
+          "valor": 5,
+          "prazo": 1,
+          "quantidade": 5
+        }
+      ],
+      "valorTotal": 26
+    },
+    {
+      "id": 1687654159363,
+      "dataPedido": "2023-06-25T00:49:19.363Z",
+      "status": "Cancelado",
+      "pecas": [
+        {
+          "nome": "Meia",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Vestido",
+          "valor": 10,
+          "prazo": 2,
+          "quantidade": 1
+        },
+        {
+          "nome": "Saia",
+          "valor": 5,
+          "prazo": 1,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 16
+    },
+    {
+      "id": 1687654244415,
+      "dataPedido": "2023-06-25T00:50:44.415Z",
+      "status": "Cancelado",
+      "pecas": [
+        {
+          "nome": "Pijama",
+          "valor": 12,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Shorts",
+          "valor": 5,
+          "prazo": 1,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 17
     }
   ]
 }
