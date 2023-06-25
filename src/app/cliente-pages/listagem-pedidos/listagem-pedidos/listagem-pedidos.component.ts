@@ -23,7 +23,7 @@ export class ListagemPedidosComponent implements OnInit {
 
   pagarPedido(pedido: any) {
     const pedidoId = pedido.numero; // supondo que o número do pedido seja o identificador
-    this.router.navigate(['/cliente/pagar-pedido', pedidoId]);
+    this.router.navigate(['/cliente/pagar-pedido/:id', pedidoId]);
   }
 
   listarPedidos(): void {

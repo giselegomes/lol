@@ -46,13 +46,13 @@ const routes: Routes = [
         }
     },
     {
-        path: 'cliente/pagar-pedido',
+        path: 'cliente/pagar-pedido/:id',
         component: PagamentoComponent,
         canActivate: [AuthGuard],
         data: {
-            role: ['cliente', 'funcionario']
+          role: ['cliente', 'funcionario']
         }
-    }
+      }
 ];
 
 

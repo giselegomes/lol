@@ -43,8 +43,8 @@
                                         <td>{{pedido.dataPedido | date: 'dd/MM/yyyy' }}</td>
                                         <td>{{pedido.status}}</td>
                                         <td *ngIf="pedido.status === 'Aguardando pagamento'">
-                                            <button routerLink="/cliente/pagar-pedido" class="btn btn-primary">Pagar
-                                                Pedido</button>
+                                            <button [routerLink]="'/cliente/pagar-pedido/' + pedido.id" class="btn btn-primary">Pagar Pedido</button>
+
                                         </td>
                                     
                                         <td *ngIf="pedido.status === 'Em aberto'">

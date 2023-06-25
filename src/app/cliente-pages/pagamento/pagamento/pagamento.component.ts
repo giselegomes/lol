@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { PedidoService } from '../../../pedido/services/pedido.service';
 import { Pedido } from '../../../shared/models/pedido.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-pagamento',
   templateUrl: './pagamento.component.html',
@@ -9,42 +11,53 @@ import { Pedido } from '../../../shared/models/pedido.model';
 })
 export class PagamentoComponent implements OnInit {
 
-  pedidos: Pedido[] = [];
+  pedidoId: string;
+  pedido: Pedido;
+ 
 
-  constructor(private pedidoService: PedidoService) { }
+  constructor(private route: ActivatedRoute, 
+    private pedidoService: PedidoService, 
+    private router: Router) {}
 
-  ngOnInit(): void {
-    this.listarPedidos();
-  }
-
-  listarPedidos(): void {
-    this.pedidoService.listarPedidos().subscribe((data: Pedido[]) => {
-      if (data == null) {
-        this.pedidos = [];
-      } else {
-        this.pedidos = data.map((pedido) => ({
-          ...pedido,
-          dataPedido: new Date(pedido.dataPedido),
-        }));
-      }
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.pedidoId = params['id'];
+      this.buscarPedido(this.pedidoId).subscribe(
+        (pedido: Pedido) => {
+          this.pedido = pedido;
+        },
+        (error) => {
+          console.error('Erro ao buscar pedido:', error);
+        }
+      );
     });
   }
 
+  buscarPedido(id: string): Observable<Pedido> {
+    const idNumero = parseInt(id); // Converte o ID para número
+
+    return this.pedidoService.buscarPorId(idNumero);
+  }
 
   pagarPedido(id: number) {
-    const pedido = this.pedidos.find((p) => p.id === id);
-    if (pedido) {
-      pedido.status = 'Pago';
-      this.pedidoService.atualizarPedido(pedido).subscribe(
-        (response: Pedido) => {
-          console.log('Pagamento realizado:', response);
-          // Realize outras ações necessárias
-          alert("Pagamento realizado")
-        },
-        (error) => {
-          console.error('Erro ao pagar pedido:', error);
-        }
-      );
-    } '1111'
+    this.buscarPedido(id.toString()).subscribe(
+      (pedido: Pedido) => {
+        pedido.status = 'Pago';
+        this.pedidoService.atualizarPedido(pedido).subscribe(
+          (response: Pedido) => {
+            console.log('Pagamento realizado:', response);
+            // Realize outras ações necessárias
+            alert("Pedido realizado!");
+            this.router.navigate(['/cliente']); // Redireciona para a rota '/cliente'
+          },
+          (error) => {
+            console.error('Erro ao pagar pedido:', error);
+          }
+        );
+      },
+      (error) => {
+        console.error('Erro ao buscar pedido:', error);
+      }
+    );
   }
 }

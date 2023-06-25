@@ -18,9 +18,9 @@
 
             <section class="pedido">
                 <h2 class="pagamento__title">Dados do pedido:</h2>
-                <p><strong>Número do pedido: 111</strong> </p>
-                <p><strong>Valor total do pedido:</strong> R$: 105,00</p>
-            </section>
+                <p><strong>Número do pedido: {{ pedido?.id }}</strong></p>
+                <p><strong>Valor total do pedido:</strong> R$: {{ pedido?.valorTotal }}</p>
+              </section>
 
             <section class="pagamento">
                 <h2 class="pagamento__title">Efetuar pagamento:</h2>
@@ -46,7 +46,7 @@
                                         <input type="number" class="form-control" id="cvv_cartao" required>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Confirmar pagamento</button>
+                                <button type="submit" class="btn btn-primary" (click)="pagarPedido(pedido.id)">Confirmar pagamento</button>
                             </form>
                         </div>
                     </div>

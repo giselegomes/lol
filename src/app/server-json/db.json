@@ -154,7 +154,7 @@
     {
       "id": 1687020263261,
       "dataPedido": "2023-06-17T16:44:23.261Z",
-      "status": "Recolhido",
+      "status": "Aguardando pagamento",
       "pecas": [
         {
           "nome": "Meia",
@@ -206,7 +206,7 @@
     {
       "id": 1687028595202,
       "dataPedido": "2023-06-17T19:03:15.202Z",
-      "status": "Aguardando pagamento",
+      "status": "Pago",
       "pecas": [
         {
           "nome": "Moletom",
@@ -456,7 +456,7 @@
     {
       "id": 1687713039114,
       "dataPedido": "2023-06-25T17:10:39.114Z",
-      "status": "Aguardando pagamento",
+      "status": "Finalizado",
       "pecas": [
         {
           "nome": "Meia (par)",
