@@ -1,40 +1,52 @@
-<h1>Login</h1>
-<div *ngIf="message" class="alert alert-danger
- alert-dismissible fade show" role="alert">
-    {{message}}
-    <a href="#" class="close" data-dismiss="alert" aria-label="close"> &times;</a>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="$event.preventDefault()">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+<section class="login">
+    <header class="login__header">
+        <img src="../../../assets/images/roupas.png">
+        <h1 class="login__title">LOL - Lavanderia On-line</h1>
+    </header>
+    <section class="login__modal">
+        <h2 class="login__subtitle">Login:</h2>
 
-<div class="well">
-    <form #formLogin="ngForm">
-        <div class="form-group">
-            <label for="usuario">Usuário:</label>
-            <input type="text" class="form-control" id="usuario" name="usuario" [(ngModel)]="login.login"
-                #usuario="ngModel" required>
-            <div *ngIf="usuario.errors && (usuario.dirty || usuario.touched)" class="alert alert-danger">
-                <div [hidden]="!usuario.errors?.['required']">
-                    Digite o usuário
+        <div *ngIf="message" class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{message}}
+        </div>
+
+        <form class="login__form" #formLogin="ngForm">
+
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="E-mail:" id="usuario" name="usuario"
+                        [(ngModel)]="login.login" #usuario="ngModel" required>
+
+                    <div *ngIf="usuario.errors && (usuario.dirty || usuario.touched)" class="col-sm-12 login__erro">
+                        <p [hidden]="!usuario.errors?.['required']">
+                            Digite o usuário
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" placeholder="Senha:" id="senha" name="senha"
+                        [(ngModel)]="login.senha" #senha="ngModel" required>
+
+                    <div *ngIf="senha.errors && (senha.dirty || senha.touched)" class="col-sm-12 login__erro">
+                        <p [hidden]="!senha.errors?.['required']">
+                            Digite a senha.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="text" class="form-control" id="senha" name="senha" [(ngModel)]="login.senha" #senha="ngModel"
-                required>
-            <div *ngIf="senha.errors && (senha.dirty || senha.touched)" class="alert alert-danger">
-                <div [hidden]="!senha.errors?.['required']">
-                    Digite a senha.
-                </div>
+            <button type="button" class="login__btn btn btn-primary" (click)="logar()"
+                [disabled]="!formLogin.form.valid">
+                Entrar
+            </button>
+            <div class="login__register">
+                <p>Não tem uma conta? <a [routerLink]="['/autocadastro']" href="#">Cadastre-se</a></p>
+                <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
             </div>
-        </div>
-        <button type="button" class="btn btn-primary" (click)="logar()" [disabled]="!formLogin.form.valid">
-            <i class="fa fa-save" aria-hidden="true"></i> Logar
-        </button>
-        <a class="btn btn-secondary" [routerLink]="['/autocadastro']">
-            <i class="fa fa-arrow-left" aria-hidden="true"></i> Registrar
-        </a>
-    </form>
-</div>
+        </form>
+    </section>
+</section>

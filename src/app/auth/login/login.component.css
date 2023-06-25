@@ -45,3 +45,15 @@
 .login__register {
     padding-top: 1rem;
 }
+
+.login__erro {
+    background-color: var(--background-erro);
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.login__erro p {
+    margin: 0;
+    color: var(--text-erro);
+    font-size: 12px;
+}

@@ -82,12 +82,6 @@
   ],
   "roupas": [
     {
-      "id": 6,
-      "nome": "Casacos",
-      "valor": "10111",
-      "prazo": 2
-    },
-    {
       "id": 7,
       "nome": "Cueca",
       "valor": 2,
@@ -288,6 +282,38 @@
         }
       ],
       "valorTotal": 12.5
+    },
+    {
+      "id": 1687650256461,
+      "dataPedido": "2023-06-24T23:44:16.461Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Gravata",
+          "valor": 1,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Suéter",
+          "valor": 12,
+          "prazo": 3,
+          "quantidade": 1
+        },
+        {
+          "nome": "Jaqueta",
+          "valor": 10,
+          "prazo": 2,
+          "quantidade": 1
+        },
+        {
+          "nome": "Suéter",
+          "valor": 12,
+          "prazo": 3,
+          "quantidade": 1
+        }
+      ],
+      "valorTotal": 35
     }
   ]
 }
