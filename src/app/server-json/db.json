@@ -110,12 +110,12 @@
     {
       "id": 1,
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Confirmado"
+      "status": "Recolhido"
     },
     {
       "id": 5,
       "dataPedido": "2023-03-02T03:00:00.000Z",
-      "status": "Cancelado"
+      "status": "Rejeitado"
     },
     {
       "id": 1687017478897,
@@ -154,7 +154,7 @@
     {
       "id": 1687020263261,
       "dataPedido": "2023-06-17T16:44:23.261Z",
-      "status": "Confirmado",
+      "status": "Recolhido",
       "pecas": [
         {
           "nome": "Meia",
@@ -180,7 +180,7 @@
     {
       "id": 1687020265461,
       "dataPedido": "2023-06-17T16:44:25.461Z",
-      "status": "Confirmado",
+      "status": "Aguardando pagamento",
       "pecas": [
         {
           "nome": "Meia",
@@ -206,7 +206,7 @@
     {
       "id": 1687028595202,
       "dataPedido": "2023-06-17T19:03:15.202Z",
-      "status": "Confirmado",
+      "status": "Aguardando pagamento",
       "pecas": [
         {
           "nome": "Moletom",
@@ -226,7 +226,7 @@
     {
       "id": 1687650256461,
       "dataPedido": "2023-06-24T23:44:16.461Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Gravata",
@@ -258,7 +258,7 @@
     {
       "id": 1687652241349,
       "dataPedido": "2023-06-25T00:17:21.349Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Roupa de Banho",
@@ -284,28 +284,28 @@
     {
       "id": 1687653821939,
       "dataPedido": "2023-06-25T00:43:41.939Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [],
       "valorTotal": 0
     },
     {
       "id": 1687654036948,
       "dataPedido": "2023-06-25T00:47:16.948Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [],
       "valorTotal": 0
     },
     {
       "id": 1687654078153,
       "dataPedido": "2023-06-25T00:47:58.153Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [],
       "valorTotal": 0
     },
     {
       "id": 1687654125271,
       "dataPedido": "2023-06-25T00:48:45.270Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Meia",
@@ -325,7 +325,7 @@
     {
       "id": 1687654159363,
       "dataPedido": "2023-06-25T00:49:19.363Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Meia",
@@ -351,7 +351,7 @@
     {
       "id": 1687654244415,
       "dataPedido": "2023-06-25T00:50:44.415Z",
-      "status": "Cancelado",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Pijama",
@@ -371,7 +371,7 @@
     {
       "id": 1687711543284,
       "dataPedido": "2023-06-25T16:45:43.284Z",
-      "status": "Em aberto",
+      "status": "Rejeitado",
       "pecas": [
         {
           "nome": "Blusa",
@@ -397,7 +397,7 @@
     {
       "id": 1687711761041,
       "dataPedido": "2023-06-25T16:49:21.041Z",
-      "status": "Em aberto",
+      "status": "Recolhido",
       "pecas": [
         {
           "nome": "Meia (par)",
@@ -426,7 +426,7 @@
     {
       "id": 1687712480294,
       "dataPedido": "2023-06-25T17:01:20.294Z",
-      "status": "Em aberto",
+      "status": "Recolhido",
       "pecas": [
         {
           "nome": "Calça",
@@ -456,7 +456,7 @@
     {
       "id": 1687713039114,
       "dataPedido": "2023-06-25T17:10:39.114Z",
-      "status": "Em aberto",
+      "status": "Aguardando pagamento",
       "pecas": [
         {
           "nome": "Meia (par)",
@@ -472,7 +472,7 @@
     {
       "id": 1687713049464,
       "dataPedido": "2023-06-25T17:10:49.464Z",
-      "status": "Em aberto",
+      "status": "Recolhido",
       "pecas": [
         {
           "nome": "Cobertor",
@@ -513,6 +513,29 @@
         }
       ],
       "valorTotal": 105,
+      "prazoEntrega": 20
+    },
+    {
+      "id": 1687729525794,
+      "dataPedido": "2023-06-25T21:45:25.794Z",
+      "status": "Recolhido",
+      "pecas": [
+        {
+          "nome": "Blusa",
+          "valor": "12",
+          "prazo": 3,
+          "quantidade": 15,
+          "prazoPeca": 3
+        },
+        {
+          "nome": "Cobertor",
+          "valor": "100",
+          "prazo": 20,
+          "quantidade": 1,
+          "prazoPeca": 20
+        }
+      ],
+      "valorTotal": 280,
       "prazoEntrega": 20
     }
   ]

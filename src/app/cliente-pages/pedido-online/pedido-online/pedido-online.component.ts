@@ -32,7 +32,7 @@ export class PedidoOnlineComponent implements OnInit {
   ngOnInit() {
     this.listarRoupas();
   }
-
+  
   listarRoupas() {
     this.roupaService.listarRoupas().subscribe(
       (data: Roupa[]) => {

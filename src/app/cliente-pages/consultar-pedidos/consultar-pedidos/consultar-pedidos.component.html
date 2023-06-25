@@ -26,10 +26,11 @@
                 <div class="pedido" *ngIf="pedidoEncontrado">
                     <h2 class="pedido__title">Detalhes do pedido:</h2>
                     <div class="pedido__infos">
-                        <p><strong>Número do pedido:</strong> {{ pedidoEncontrado.num_pedido }}</p>
+                        <p><strong>Número do pedido:</strong> {{ pedidoEncontrado.id}}</p>
                         <p><strong>Status:</strong> {{ pedidoEncontrado.status }}</p>
-                        <p><strong>Prazo:</strong> indefinido </p>
-                        <p><strong>Valor total do pedido:</strong> R$: {{ pedidoEncontrado.valor }}</p>
+                        <p><strong>Prazo:</strong> {{ pedidoEncontrado.prazoEntrega }} {{ pedidoEncontrado.prazoEntrega
+                            > 1 ? 'dias' : 'dia'}}</p>
+                        <p><strong>Valor total do pedido:</strong> R$: {{ pedidoEncontrado.valorTotal  | number:'1.2-2'}}</p>
                     </div>
 
                     <div class="container">
@@ -42,15 +43,18 @@
                                             <th scope="col">Peça de Roupa:</th>
                                             <th scope="col">Valor por peça:</th>
                                             <th scope="col">Quantidade:</th>
-                                            <th scope="col">Valor total por peças: </th>
+                                            <th scope="col">Valor total por peças:</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>{{pedidoEncontrado.pecas[0]}}</td>
-                                            <td>R$: 12,00</td>
-                                            <td>1</td>
-                                            <td>{{pedidoEncontrado.valor}}</td>
+                                        <ng-container *ngFor="let peca of pedidoEncontrado.pecas; let i = index">
+                                            <tr>
+                                                <td>{{ peca.nome }}</td>
+                                                <td>R$: {{ peca.valor }}</td>
+                                                <td>{{ peca.quantidade }}</td>
+                                                <td>R$: {{ (peca.valor * peca.quantidade).toFixed(2) }}</td>
+                                            </tr>
+                                        </ng-container>
                                     </tbody>
                                 </table>
                             </div>

@@ -2,6 +2,7 @@ export class ItemRoupa {
     nome: string;
     valor: number;
     prazo: number;
+    quantidade: number;
   }
   
   export class Pedido {

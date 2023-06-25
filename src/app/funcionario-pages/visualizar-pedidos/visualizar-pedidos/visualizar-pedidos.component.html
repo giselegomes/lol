@@ -41,7 +41,7 @@
                                     'rejeitado': pedido.status === 'Rejeitado',
                                     'recolhido': pedido.status === 'Recolhido',
                                     'aguardando': pedido.status === 'Aguardando pagamento',
-                                    'pago': pedido.status === 'Pago',
+                                    'pago': pedido.status === 'Aprovado',
                                     'finalizado': pedido.status === 'Finalizado',
                                 }">
                                     <td>{{pedido.id}}</td>
@@ -52,7 +52,7 @@
                                     </td>
                                     <td
                                         *ngIf="pedido.status != 'Pago' && pedido.status != 'Em aberto' && pedido.status != 'Recolhido'">
-                                        <button cl ass="btn btn-action ver">Ver</button>
+                                        <span></span>
                                     </td>
                                     <td *ngIf="pedido.status === 'Em aberto'">
                                         <button class="btn btn-action" (click)="confirmarRecolhimento(pedido.id)">

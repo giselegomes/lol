@@ -1,44 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PedidoService } from 'src/app/pedido/services/pedido.service';
+import { Pedido } from 'src/app/shared/models/pedido.model';
 
 @Component({
-  selector: 'app-consultar-pednumeroPedidoos',
+  selector: 'app-consultar-pedidos',
   templateUrl: './consultar-pedidos.component.html',
   styleUrls: ['./consultar-pedidos.component.css']
 })
+export class ConsultarPedidosComponent implements OnInit {
+  pedidos: Pedido[] = [];
 
-export class ConsultarPedidosComponent 
+  constructor(private pedidoService: PedidoService) {}
 
-{
-
-  
-  pedidos = [
-    { num_pedido: 111, pecas: ["Camisa", "Calça", "Cinto"], status: "Cancelado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "24,00" },
-    { num_pedido: 222, pecas: ["Camisa", "Calça", "Cinto"], status: "Aprovado", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "32,00" },
-    { num_pedido: 333, pecas: ["Camisa", "Calça", "Cinto"], status: "Aguardando Pagamento", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" },
-    { num_pedido: 444, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "33,00" },
-    { num_pedido: 555, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "89,00" },
-    { num_pedido: 666, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "67,00" },
-    { num_pedido: 777, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "100,00" },
-    { num_pedido: 888, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "92,00" },
-    { num_pedido: 999, pecas: ["Camisa", "Calça", "Cinto"], status: "Em aberto", dt_recolhimento: "10/12/2022", dt_devolucao: '12/12/2022', valor: "22,00" }
-  ]
+  ngOnInit(): void {
+    this.pesquisarPedido();
+  }
 
   pesquisa: number;
-  pedidoEncontrado: any;
+  pedidoEncontrado: Pedido | undefined;
   pedidoNaoEncontrado: boolean = false;
 
-  pesquisarPedido() {
-    this.pedidoNaoEncontrado = false; // redefine para false
-    this.pedidoEncontrado = this.pedidos.find(pedido => pedido.num_pedido === Number(this.pesquisa));
-    if (!this.pedidoEncontrado) {
-      this.pedidoNaoEncontrado = true;
-    }
+  pesquisarPedido(): void {
+    this.pedidoService.buscarPorId(this.pesquisa).subscribe({
+      next: (pedido: Pedido | null) => {
+        if (pedido === null) {
+          this.pedidos = [];
+          this.pedidoEncontrado = undefined;
+          this.pedidoNaoEncontrado = true;
+        } else {
+          this.pedidos = [pedido];
+          this.pedidoEncontrado = pedido;
+          this.pedidoNaoEncontrado = false;
+        }
+      },
+      error: (error) => {
+        console.error('Erro ao buscar o pedido:', error);
+        this.pedidos = [];
+        this.pedidoEncontrado = undefined;
+        this.pedidoNaoEncontrado = true;
+      }
+    });
   }
 }
-
-
-
-
-
-
-

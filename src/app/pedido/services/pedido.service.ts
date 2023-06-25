@@ -36,5 +36,9 @@ export class PedidoService {
       const url = `${this.BASE_URL}${pedido.id}`;
       return this.httpClient.put<Pedido>(url, JSON.stringify(pedido), this.httpOptions);
     }
+    buscarPorId(id: number): Observable<Pedido> {
+      return this.httpClient.get<Pedido>(this.BASE_URL + id,
+        this.httpOptions);
+    }
     
 }

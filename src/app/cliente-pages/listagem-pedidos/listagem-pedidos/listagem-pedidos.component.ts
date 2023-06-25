@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../../../pedido/services/pedido.service';
 import { Pedido } from '../../../shared/models/pedido.model';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-listagem-pedidos',
@@ -11,10 +12,18 @@ export class ListagemPedidosComponent implements OnInit {
   pedidos: Pedido[] = [];
   selectedStatus: string = '';
 
-  constructor(private pedidoService: PedidoService) {}
+  constructor(
+    private pedidoService: PedidoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.listarPedidos();
+  }
+
+  pagarPedido(pedido: any) {
+    const pedidoId = pedido.numero; // supondo que o número do pedido seja o identificador
+    this.router.navigate(['/cliente/pagar-pedido', pedidoId]);
   }
 
   listarPedidos(): void {
@@ -45,7 +54,7 @@ export class ListagemPedidosComponent implements OnInit {
   cancelarPedido(id: number) {
     const pedido = this.pedidos.find((p) => p.id === id);
     if (pedido) {
-      pedido.status = 'Cancelado';
+      pedido.status = 'Rejeitado';
       this.pedidoService.atualizarPedido(pedido).subscribe(
         (response: Pedido) => {
           console.log('Pedido atualizado:', response);

@@ -53,7 +53,7 @@ export class InicialFuncionarioComponent implements OnInit {
   confirmarRecolhimento(id: number) {
     const pedido = this.pedidos.find((p) => p.id === id);
     if (pedido) {
-      pedido.status = 'Confirmado';
+      pedido.status = 'Recolhido';
       this.pedidoService.atualizarPedido(pedido).subscribe(
         (response: Pedido) => {
           console.log('Pedido atualizado:', response);
