@@ -32,7 +32,6 @@ export class InicialClienteComponent implements OnInit {
         }
       },
       error: (error) => {
-        // Lógica de tratamento de erro
       }
     });
   }

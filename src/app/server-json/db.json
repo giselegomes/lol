@@ -314,6 +314,32 @@
         }
       ],
       "valorTotal": 35
+    },
+    {
+      "id": 1687652241349,
+      "dataPedido": "2023-06-25T00:17:21.349Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Roupa de Banho",
+          "valor": 6,
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Suéter",
+          "valor": 12,
+          "prazo": 3,
+          "quantidade": 1
+        },
+        {
+          "nome": "Suéter",
+          "valor": 12,
+          "prazo": 3,
+          "quantidade": 5
+        }
+      ],
+      "valorTotal": 78
     }
   ]
 }
