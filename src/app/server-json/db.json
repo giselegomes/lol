@@ -120,7 +120,7 @@
     {
       "id": 1687017478897,
       "dataPedido": "2023-06-17T15:57:58.897Z",
-      "status": "Aprovado",
+      "status": "Pago",
       "pecas": [
         {
           "nome": "Meia",
