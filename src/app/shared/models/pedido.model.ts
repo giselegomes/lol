@@ -1,7 +1,7 @@
 export class ItemRoupa {
     nome: string;
     valor: number;
-    prazo: string;
+    prazo: number;
   }
   
   export class Pedido {
@@ -10,7 +10,8 @@ export class ItemRoupa {
       public dataPedido?: Date,
       public status?: string,
       public pecas?: ItemRoupa[],
-      public valorTotal?: number
+      public valorTotal?: number,
+      public prazoEntrega?: number
     ) { }
   }
   
@@ -18,8 +19,9 @@ export class ItemRoupa {
     constructor(
       public nome: string,
       public valor: number,
-      public prazo: string,
-      public quantidade: number
+      public prazo: number,
+      public quantidade: number,
+      public prazoPeca: number
     ) { }
   }
   

@@ -47,7 +47,7 @@
                                 <tr *ngFor="let itemPedido of itensPedido; let i = index">
                                     <td>{{itemPedido.item.nome}}</td>
                                     <td>{{itemPedido.quantidade}}</td>
-                                    <td>R$ {{ itemPedido.item.valor.toFixed(2) }}</td>
+                                    <td>R$ {{ itemPedido.item.valor }}</td>
                                     <td>R$ {{ (itemPedido.item.valor * itemPedido.quantidade).toFixed(2) }}</td>
                                     <td>
                                         <a (click)="removerItemPedido(i)">
@@ -69,10 +69,8 @@
             <div class="pedido__orcamento">
                 <h3 class="orcamento__title">Orçamento:</h3>
                 <div class="orcamento__itens">
-                    <p><strong>Total de itens do pedido:</strong> 0</p>
                     <p><strong>Valor total do pedido:</strong> R$ {{ totalPedido.toFixed(2) }} </p>
-                    <p><strong> Prazo de entrega: </strong> 2 dias úteis
-                    <p>
+                    <p><strong>Prazo de entrega: </strong> {{ maiorPrazo }} {{ maiorPrazo > 1 ? 'dias' : 'dia' }}</p>
                 </div>
                 <div class="orcamento__actions">
                     <button class="btn btn-primary" (click)="aceitarPedido()">Aprovar Pedido</button>

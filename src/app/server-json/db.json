@@ -82,88 +82,28 @@
   ],
   "roupas": [
     {
-      "id": 7,
-      "nome": "Cueca",
-      "valor": 2,
-      "prazo": 1
+      "nome": "Blusa",
+      "valor": "12",
+      "prazo": 3,
+      "id": 1
     },
     {
-      "id": 8,
-      "nome": "Gravata",
-      "valor": 1,
-      "prazo": 1
-    },
-    {
-      "id": 9,
-      "nome": "Jaqueta",
-      "valor": 10,
-      "prazo": 2
-    },
-    {
-      "id": 10,
-      "nome": "Meia",
-      "valor": 1,
-      "prazo": 1
-    },
-    {
-      "id": 11,
-      "nome": "Moletom",
-      "valor": 9.5,
-      "prazo": 2
-    },
-    {
-      "id": 12,
-      "nome": "Pijama",
-      "valor": 12,
-      "prazo": 1
-    },
-    {
-      "id": 13,
-      "nome": "Regata",
-      "valor": 3,
-      "prazo": 2
-    },
-    {
-      "id": 14,
-      "nome": "Roupa de Banho",
-      "valor": 6,
-      "prazo": 1
-    },
-    {
-      "id": 15,
-      "nome": "Saia",
-      "valor": 5,
-      "prazo": 1
-    },
-    {
-      "id": 16,
-      "nome": "Shorts",
-      "valor": 5,
-      "prazo": 1
-    },
-    {
-      "id": 17,
-      "nome": "Suéter",
-      "valor": 12,
-      "prazo": 3
-    },
-    {
-      "id": 18,
-      "nome": "Terno",
-      "valor": 25,
-      "prazo": 3
-    },
-    {
-      "id": 19,
-      "nome": "Vestido",
-      "valor": 10,
-      "prazo": 2
-    },
-    {
-      "nome": "Luvas",
-      "valor": "2",
+      "nome": "Calça",
+      "valor": "12",
       "prazo": 1,
-      "id": 20
+      "id": 2
+    },
+    {
+      "nome": "Meia (par)",
+      "valor": "5",
+      "prazo": 1,
+      "id": 3
+    },
+    {
+      "nome": "Cobertor",
+      "valor": "100",
+      "prazo": 20,
+      "id": 4
     }
   ],
   "pedidos": [
@@ -427,6 +367,153 @@
         }
       ],
       "valorTotal": 17
+    },
+    {
+      "id": 1687711543284,
+      "dataPedido": "2023-06-25T16:45:43.284Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Blusa",
+          "valor": "12",
+          "prazo": 3,
+          "quantidade": 1
+        },
+        {
+          "nome": "Calça",
+          "valor": "12",
+          "prazo": 1,
+          "quantidade": 1
+        },
+        {
+          "nome": "Blusa",
+          "valor": "12",
+          "prazo": 3,
+          "quantidade": 50
+        }
+      ],
+      "valorTotal": 624
+    },
+    {
+      "id": 1687711761041,
+      "dataPedido": "2023-06-25T16:49:21.041Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Meia (par)",
+          "valor": "5",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPedido": 1
+        },
+        {
+          "nome": "Blusa",
+          "valor": "12",
+          "prazo": 3,
+          "quantidade": 1,
+          "prazoPedido": 3
+        },
+        {
+          "nome": "Cobertor",
+          "valor": "100",
+          "prazo": 20,
+          "quantidade": 1,
+          "prazoPedido": 20
+        }
+      ],
+      "valorTotal": 117
+    },
+    {
+      "id": 1687712480294,
+      "dataPedido": "2023-06-25T17:01:20.294Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Calça",
+          "valor": "12",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPedido": 1
+        },
+        {
+          "nome": "Cobertor",
+          "valor": "100",
+          "prazo": 20,
+          "quantidade": 1,
+          "prazoPedido": 20
+        },
+        {
+          "nome": "Meia (par)",
+          "valor": "5",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPedido": 1
+        }
+      ],
+      "valorTotal": 117,
+      "prazoEntrega": 20
+    },
+    {
+      "id": 1687713039114,
+      "dataPedido": "2023-06-25T17:10:39.114Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Meia (par)",
+          "valor": "5",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPedido": 1
+        }
+      ],
+      "valorTotal": 5,
+      "prazoEntrega": 1
+    },
+    {
+      "id": 1687713049464,
+      "dataPedido": "2023-06-25T17:10:49.464Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Cobertor",
+          "valor": "100",
+          "prazo": 20,
+          "quantidade": 1,
+          "prazoPedido": 20
+        },
+        {
+          "nome": "Calça",
+          "valor": "12",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPedido": 1
+        }
+      ],
+      "valorTotal": 112,
+      "prazoEntrega": 20
+    },
+    {
+      "id": 1687713188257,
+      "dataPedido": "2023-06-25T17:13:08.257Z",
+      "status": "Em aberto",
+      "pecas": [
+        {
+          "nome": "Meia (par)",
+          "valor": "5",
+          "prazo": 1,
+          "quantidade": 1,
+          "prazoPeca": 1
+        },
+        {
+          "nome": "Cobertor",
+          "valor": "100",
+          "prazo": 20,
+          "quantidade": 1,
+          "prazoPeca": 20
+        }
+      ],
+      "valorTotal": 105,
+      "prazoEntrega": 20
     }
   ]
 }

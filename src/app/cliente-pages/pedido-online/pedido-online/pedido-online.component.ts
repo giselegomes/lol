@@ -19,6 +19,7 @@ export class PedidoOnlineComponent implements OnInit {
   totalPedido: number = 0;
   aceitar: boolean = false;
   recusar: boolean = false;
+  maiorPrazo: number = 0;
 
   constructor(
     private roupaService: RoupaService,
@@ -58,12 +59,20 @@ export class PedidoOnlineComponent implements OnInit {
     let itemPedido = { item: this.itemSelecionado, quantidade: this.quantidade };
     this.itensPedido.push(itemPedido);
     this.totalPedido += this.itemSelecionado.valor * this.quantidade;
+
+    if (this.itemSelecionado.prazo > this.maiorPrazo) {
+      this.maiorPrazo = this.itemSelecionado.prazo;
+    }
   }
 
   removerItemPedido(index: number) {
     let itemRemovido = this.itensPedido[index];
     this.itensPedido.splice(index, 1);
     this.totalPedido -= itemRemovido.item.valor * itemRemovido.quantidade;
+
+    if (itemRemovido.item.prazo === this.maiorPrazo) {
+      this.maiorPrazo = Math.max(...this.itensPedido.map(item => item.item.prazo));
+    }
   }
 
   fecharModal(event: Event) {
@@ -89,7 +98,8 @@ export class PedidoOnlineComponent implements OnInit {
         nome: item.item.nome,
         valor: item.item.valor,
         prazo: item.item.prazo,
-        quantidade: item.quantidade
+        quantidade: item.quantidade,
+        prazoPeca: item.item.prazo // Armazena o prazo do pedido
       };
       return peca;
     });
@@ -99,7 +109,8 @@ export class PedidoOnlineComponent implements OnInit {
       dataPedido: new Date(),
       status: 'Em aberto',
       pecas: pecas,
-      valorTotal: this.totalPedido
+      valorTotal: this.totalPedido,
+      prazoEntrega: this.maiorPrazo
     };
 
     this.pedidoService.inserirPedido(pedido).subscribe(
